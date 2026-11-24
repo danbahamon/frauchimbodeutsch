@@ -10,7 +10,7 @@ import { PluralGame } from '../games/PluralGame'
 import { PromptGame } from '../games/PromptGame'
 import { saveResultCard } from '../lib/card'
 import { t } from '../lib/i18n'
-import { buildQueue, openLevels, readStat, testHands, type PlayHand } from '../lib/progress'
+import { SHELF, buildQueue, isBoard, openLevels, readStat, testHands, type PlayHand } from '../lib/progress'
 import { deLabel, gloss, makeTask, uid } from '../lib/text'
 import type { Source } from '../lib/types'
 import { useStore } from '../state'
@@ -80,7 +80,7 @@ export function Round() {
   const level = hand?.level ?? round?.level ?? 1
   if (round && hand) meta.current = { ...meta.current, level }
   const task = useMemo(() => {
-    if (!hand || level !== 5 && level !== 8) return null
+    if (!hand || (level !== SHELF.scramble && level !== SHELF.recall)) return null
     const word = hand.words[step]
     return word ? makeTask(word, level, bridge) : null
   }, [hand, step, level, bridge])
@@ -130,7 +130,14 @@ export function Round() {
         const stat = readStat(data.words, item.id)
         const outcome = byId.get(item.id)
         const sitting = !outcome ? undefined : outcome.correct && outcome.errors === 0 ? 'clean' as const : outcome.correct ? 'helped' as const : 'missed' as const
-        return [{ de: deLabel(word), gloss: gloss(word, bridge), level: stat.level, target: item.target, sitting }]
+        return [{
+          de: deLabel(word),
+          gloss: gloss(word, bridge),
+          level: stat.level,
+          target: item.target,
+          sitting,
+          note: t(locale, 'stats.record', { seen: stat.seen, correct: stat.correct, misses: stat.misses }),
+        }]
       }).sort((a, b) => a.de.localeCompare(b.de, 'de'))
       const reached = rows.filter((row) => row.level >= row.target).length
       const tag = locale === 'de' ? 'de-DE' : locale === 'es' ? 'es-ES' : 'en-US'
@@ -210,17 +217,18 @@ export function Round() {
         </div>
         <div className="runner-side">
           {run > 1 ? <span className="streak-pill">{t(locale, 'play.streak', { n: run })}</span> : null}
-          <span className="runner-count">{level === 1 ? hand.words.length : `${Math.min(step + 1, hand.words.length)}/${hand.words.length}`}</span>
+          <span className="runner-count">{isBoard(level) ? hand.words.length : `${Math.min(step + 1, hand.words.length)}/${hand.words.length}`}</span>
         </div>
       </header>
       <div className="progress" aria-hidden="true">
-        <i style={{ width: level === 1 ? '12%' : `${(step / Math.max(hand.words.length, 1)) * 100}%` }} />
+        <i style={{ width: isBoard(level) ? '12%' : `${(step / Math.max(hand.words.length, 1)) * 100}%` }} />
       </div>
       <div className="play-scroll">
-        {level === 1 ? (
+        {isBoard(level) ? (
           <MatchGame
             key={handIndex}
             words={hand.words}
+            mode={level === SHELF.memory ? 'memory' : 'open'}
             bridge={bridge}
             locale={locale}
             sound={data.profile?.sound !== false}
@@ -229,7 +237,7 @@ export function Round() {
             onDone={() => setPhase('done')}
           />
         ) : null}
-        {level === 2 && hand.words[step] ? (
+        {level === SHELF.article && hand.words[step] ? (
           <ArticleGame
             key={`${handIndex}-${step}`}
             word={hand.words[step]}
@@ -244,7 +252,7 @@ export function Round() {
             }}
           />
         ) : null}
-        {(level === 3 || level === 6) && hand.words[step] ? (
+        {(level === SHELF.sentence || level === SHELF.fill) && hand.words[step] ? (
           <GapGame
             key={`${handIndex}-${step}`}
             word={hand.words[step]}
@@ -260,7 +268,7 @@ export function Round() {
             }}
           />
         ) : null}
-        {(level === 4 || level === 7) && hand.words[step] ? (
+        {(level === SHELF.plurals || level === SHELF.endings) && hand.words[step] ? (
           <PluralGame
             key={`${handIndex}-${step}`}
             word={hand.words[step]}

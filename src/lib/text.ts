@@ -187,7 +187,7 @@ export function matchCards(words: readonly Word[], bridge: Bridge): MemoryCard[]
 
 export function makeTask(word: Word, level: number, bridge: Bridge): Task {
   void bridge
-  const direction: Direction = level === 8 ? (Math.random() < 0.5 ? 'to-de' : 'to-bridge') : 'to-de'
+  const direction: Direction = level === 9 ? (Math.random() < 0.5 ? 'to-de' : 'to-bridge') : 'to-de'
   return {
     word,
     direction,

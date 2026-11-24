@@ -1,5 +1,5 @@
 import { WORD_BY_ID, WORD_BY_N } from '../data/words'
-import { MAX_LEVEL } from './progress'
+import { MAX_LEVEL, SHELF, migrateShelf } from './progress'
 import type { TargetWord } from './types'
 
 function bytesToB64(bytes: Uint8Array) {
@@ -49,12 +49,13 @@ export function encodeTest(title: string, words: TargetWord[]) {
     bytes[offset + 1] = row.n & 255
     bytes[offset + 2] = row.target
   })
-  return `v2.${bytesToB64(bytes)}`
+  return `v3.${bytesToB64(bytes)}`
 }
 
 export function decodeSet(payload: string): { title: string; words: TargetWord[] } | null {
-  if (payload.startsWith('v2.')) {
+  if (payload.startsWith('v3.') || payload.startsWith('v2.')) {
     try {
+      const version = payload.startsWith('v3.') ? 3 : 2
       const bytes = b64ToBytes(payload.slice(3))
       const titleLen = ((bytes[0] ?? 0) << 8) | (bytes[1] ?? 0)
       if (titleLen < 1 || 2 + titleLen > bytes.length) return null
@@ -64,7 +65,8 @@ export function decodeSet(payload: string): { title: string; words: TargetWord[]
         const n = ((bytes[index] ?? 0) << 8) | (bytes[index + 1] ?? 0)
         const word = WORD_BY_N.get(n)
         if (!word) continue
-        words.push({ id: word.id, target: clampTarget(bytes[index + 2] ?? 3) })
+        const stored = bytes[index + 2] ?? SHELF.sentence
+        words.push({ id: word.id, target: version === 2 ? migrateShelf(stored, 2) : clampTarget(stored) })
       }
       if (!words.length) return null
       return { title, words }
@@ -85,7 +87,7 @@ export function decodeSet(payload: string): { title: string; words: TargetWord[]
       for (let bit = 0; bit < 8; bit++) {
         if ((byte & (1 << bit)) === 0) continue
         const word = WORD_BY_N.get(i * 8 + bit)
-        if (word) words.push({ id: word.id, target: 3 })
+        if (word) words.push({ id: word.id, target: SHELF.sentence })
       }
     }
     if (!words.length) return null

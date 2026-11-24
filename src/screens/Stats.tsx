@@ -1,13 +1,17 @@
+import { useState } from 'react'
 import { catLabel } from '../data/categories'
 import { WORDS } from '../data/words'
+import { Icon } from '../components/Icon'
 import { Lemma } from '../components/Bits'
 import { Mascot } from '../components/Mascot'
 import { t } from '../lib/i18n'
 import { CLEAN_NEED, LEVELS, categoryStats, readStat, streakOf, totals } from '../lib/progress'
+import { matchesQuery } from '../lib/text'
 import { useStore } from '../state'
 
 export function Stats() {
   const { locale, data, setRoute } = useStore()
+  const [query, setQuery] = useState('')
   const picture = totals(data.words)
   const rate = picture.seen ? Math.round((picture.cleanHits / picture.seen) * 100) : 0
   const streak = streakOf(data.sessions.map((session) => session.at))
@@ -19,6 +23,11 @@ export function Stats() {
   }).slice(0, 12)
   const recent = [...data.sessions].reverse().slice(0, 8)
   const tag = locale === 'de' ? 'de' : locale === 'es' ? 'es' : 'en'
+  const records = WORDS.flatMap((word) => {
+    const stat = readStat(data.words, word.id)
+    if (query.trim()) return matchesQuery(word, query) ? [{ word, stat }] : []
+    return stat.seen > 0 ? [{ word, stat }] : []
+  }).sort((a, b) => b.stat.seen - a.stat.seen || a.word.de.localeCompare(b.word.de, 'de'))
 
   return (
     <div>
@@ -35,6 +44,29 @@ export function Stats() {
         <div className="kpi"><small>{t(locale, 'stats.mastered')}</small><b>{picture.mastered}</b></div>
         <div className="kpi"><small>{t(locale, 'stats.seen')}</small><b>{picture.seen}</b></div>
       </div>
+      <section className="panel">
+        <h2>{t(locale, 'stats.words')}</h2>
+        <label className="search">
+          <Icon name="search" />
+          <input
+            value={query}
+            placeholder={t(locale, 'words.search')}
+            aria-label={t(locale, 'words.search')}
+            onChange={(event) => setQuery(event.target.value)}
+          />
+        </label>
+        {records.length ? (
+          <div className="stack" style={{ marginTop: 12 }}>
+            {(query.trim() ? records.slice(0, 40) : records).map(({ word, stat }) => (
+              <article key={word.id} className="sum-row">
+                <Lemma word={word} />
+                <p>{t(locale, 'stats.record', { seen: stat.seen, correct: stat.correct, misses: stat.misses })}</p>
+                <small>{t(locale, 'common.level', { n: stat.level })} · {t(locale, `level.${stat.level}.name`)}</small>
+              </article>
+            ))}
+          </div>
+        ) : <p>{t(locale, 'stats.words.empty')}</p>}
+      </section>
       <section className="panel">
         <h2>{t(locale, 'stats.shelves')}</h2>
         <div className="bars">

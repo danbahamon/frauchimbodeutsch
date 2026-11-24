@@ -21,6 +21,7 @@ export interface WordStat {
   level: number
   clean: number
   seen: number
+  correct: number
   cleanHits: number
   misses: number
   mastered: boolean

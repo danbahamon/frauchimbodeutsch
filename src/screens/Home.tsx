@@ -4,7 +4,7 @@ import { Icon } from '../components/Icon'
 import { Mascot } from '../components/Mascot'
 import { t, greetKey } from '../lib/i18n'
 import { roundRoute } from '../lib/launch'
-import { assignLevel, collect, countReached, countSitting, isUnlocked, nextLocked, streakOf, almostWords, wordOfDay, LEVELS, UNLOCK_AT } from '../lib/progress'
+import { assignLevel, collect, countReached, countSitting, isBoard, isUnlocked, nextLocked, streakOf, almostWords, wordOfDay, LEVELS, UNLOCK_AT } from '../lib/progress'
 import { deLabel, gloss } from '../lib/text'
 import { useStore } from '../state'
 
@@ -16,7 +16,7 @@ export function Home() {
   const today = assignLevel(data.words)
   const streak = streakOf(data.sessions.map((session) => session.at))
   const almost = almostWords(data.words)
-  const almostReady = !!almost && collect(data.words, almost.level, { ids: almost.ids }).length >= (almost.level === 1 ? 2 : 1)
+  const almostReady = !!almost && collect(data.words, almost.level, { ids: almost.ids }).length >= (isBoard(almost.level) ? 2 : 1)
   const word = wordOfDay()
   const cat = word ? getCategory(word.cat) : undefined
   const locked = nextLocked(data.words)

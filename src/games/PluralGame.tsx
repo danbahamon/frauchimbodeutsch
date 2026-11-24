@@ -3,6 +3,7 @@ import { getCategory } from '../data/categories'
 import { Icon } from '../components/Icon'
 import { playFeedback, speakGerman } from '../lib/audio'
 import { t } from '../lib/i18n'
+import { SHELF } from '../lib/progress'
 import { deLabel, firstLetter, gloss, matchesPlural, pluralChips } from '../lib/text'
 import type { Bridge, Locale, Word } from '../lib/types'
 
@@ -31,7 +32,7 @@ export function PluralGame({
   onGrade: (wordId: string, errors: number, correct: boolean) => Mark
   onNext: () => void
 }) {
-  const write = level === 7
+  const write = level === SHELF.endings
   const noun = word.kind === 'noun'
   const chips = useMemo(() => (write ? [] : pluralChips(word)), [word, write])
   const [chosen, setChosen] = useState<string | null>(null)

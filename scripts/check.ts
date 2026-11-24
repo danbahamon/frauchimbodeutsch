@@ -1,6 +1,6 @@
 import { CATEGORIES } from '../src/data/categories'
 import { WORDS } from '../src/data/words'
-import { applyStat, blankStat, buildQueue, isUnlocked, planHands } from '../src/lib/progress'
+import { SHELF, applyStat, blankStat, buildQueue, isUnlocked, migrateShelf, planHands } from '../src/lib/progress'
 import { decodeSet, encodeSet, encodeTest } from '../src/lib/share'
 import { fold, glossForms, matchesDe, matchesGloss } from '../src/lib/text'
 
@@ -44,7 +44,11 @@ const decoded = decodeSet(coded)
 if (!decoded || decoded.title !== 'Frühstück & Markt' || decoded.words.map((item) => item.id).join() !== sample.join()) {
   problems.push(`share roundtrip failed: ${JSON.stringify(decoded)}`)
 }
-if (!decoded?.words.every((item) => item.target === 3)) problems.push('legacy share lost the sentence goal')
+if (!decoded?.words.every((item) => item.target === SHELF.sentence)) problems.push('legacy share lost the sentence goal')
+const oldSentence = encodeTest('Alt', [{ id: sample[0] ?? '', target: 3 }]).replace(/^v3\./, 'v2.')
+const moved = decodeSet(oldSentence)
+if (!moved || moved.words[0]?.target !== SHELF.sentence) problems.push(`old sentence goal stayed on shelf ${moved?.words[0]?.target}`)
+if (migrateShelf(6, 2) !== SHELF.fill || migrateShelf(8, 2) !== SHELF.recall) problems.push('shelf migration drifted')
 const aimed = sample.map((id, index) => ({ id, target: (index % 8) + 1 }))
 const again = decodeSet(encodeTest('Frühstück & Markt', aimed))
 if (!again || again.title !== 'Frühstück & Markt' || again.words.map((item) => `${item.id}:${item.target}`).join() !== aimed.map((item) => `${item.id}:${item.target}`).join()) {
@@ -62,6 +66,13 @@ const up = applyStat({ stat, gameLevel: 1, errors: 0, correct: true })
 if (!up.leveled || up.stat.level !== 2) problems.push('three cleans did not level')
 const ignored = applyStat({ stat: up.stat, gameLevel: 1, errors: 0, correct: true })
 if (ignored.stat.level !== 2 || ignored.leveled) problems.push('easier game changed a higher word')
+if (ignored.stat.seen !== up.stat.seen + 1 || ignored.stat.correct !== up.stat.correct + 1) problems.push('practice was not counted')
+let memory = { ...blankStat(), level: SHELF.memory }
+memory = applyStat({ stat: memory, gameLevel: SHELF.memory, errors: 2, correct: true }).stat
+if (memory.clean !== 1 || memory.correct !== 1 || memory.misses !== 2) problems.push('studied match did not count')
+let face = blankStat()
+face = applyStat({ stat: face, gameLevel: SHELF.open, errors: 1, correct: true }).stat
+if (face.clean !== 0 || face.correct !== 1 || face.misses !== 1) problems.push('open board ignored the first try')
 
 const hands = planHands(WORDS.slice(0, 7), 1)
 if (hands.length !== 2 || hands[0].length + hands[1].length !== 7) problems.push(`planHands ${hands.map((hand) => hand.length).join('+')}`)

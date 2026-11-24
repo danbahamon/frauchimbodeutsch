@@ -3,13 +3,46 @@ import { WORD_BY_ID, WORDS } from '../data/words'
 import { shuffle } from './text'
 import type { Source, StatMap, TargetWord, Word, WordStat } from './types'
 
-export const MAX_LEVEL = 8
-export const LEVELS = [1, 2, 3, 4, 5, 6, 7, 8]
+export const SHELF = {
+  open: 1,
+  article: 2,
+  memory: 3,
+  sentence: 4,
+  plurals: 5,
+  scramble: 6,
+  fill: 7,
+  endings: 8,
+  recall: 9,
+} as const
+
+export const MAX_LEVEL = 9
+export const LEVELS = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 export const UNLOCK_AT = 50
 export const CLEAN_NEED = 3
 
+const FROM_FIVE = [0, 1, 2, 5, 6, 8]
+const FROM_EIGHT = [0, 1, 2, 4, 5, 6, 7, 8, 9]
+
+function clampShelf(value: number, max: number) {
+  if (!Number.isFinite(value)) return 1
+  return Math.min(max, Math.max(1, Math.round(value)))
+}
+
+export function migrateShelf(level: number, version: 1 | 2 | 3) {
+  if (version === 1) {
+    const eight = FROM_FIVE[clampShelf(level, 5)] ?? 1
+    return FROM_EIGHT[eight] ?? 1
+  }
+  if (version === 2) return FROM_EIGHT[clampShelf(level, 8)] ?? 1
+  return clampShelf(level, MAX_LEVEL)
+}
+
+export function isBoard(level: number) {
+  return level === SHELF.open || level === SHELF.memory
+}
+
 export function blankStat(): WordStat {
-  return { level: 1, clean: 0, seen: 0, cleanHits: 0, misses: 0, mastered: false }
+  return { level: 1, clean: 0, seen: 0, correct: 0, cleanHits: 0, misses: 0, mastered: false }
 }
 
 export function readStat(stats: StatMap, id: string) {
@@ -25,15 +58,18 @@ export interface ApplyInput {
 
 export function applyStat(input: ApplyInput) {
   const prev = input.stat
-  if (prev.level !== input.gameLevel) return { stat: prev, leveled: false, masteredNow: false }
-  const clean = input.correct && input.errors === 0
-  const counts = prev.level === input.gameLevel && !prev.mastered
-  const next: WordStat = {
+  const wrong = input.correct ? Math.max(0, input.errors) : Math.max(input.errors, 1)
+  const counted: WordStat = {
     ...prev,
     seen: prev.seen + 1,
-    cleanHits: prev.cleanHits + (clean ? 1 : 0),
-    misses: prev.misses + (clean ? 0 : 1),
+    correct: prev.correct + (input.correct ? 1 : 0),
+    cleanHits: prev.cleanHits + (input.correct && input.errors === 0 ? 1 : 0),
+    misses: prev.misses + wrong,
   }
+  if (prev.level !== input.gameLevel) return { stat: counted, leveled: false, masteredNow: false }
+  const clean = input.correct && (input.gameLevel === SHELF.memory || input.errors === 0)
+  const counts = !prev.mastered
+  const next: WordStat = counted
   let leveled = false
   let masteredNow = false
   if (counts && clean) {
@@ -150,7 +186,7 @@ export function orderPool(pool: readonly Word[], stats: StatMap, level: number, 
 
 export function planHands(words: readonly Word[], level: number) {
   if (!words.length) return []
-  const max = level === 2 || level === 4 ? 8 : 6
+  const max = level === SHELF.article || level === SHELF.plurals ? 8 : isBoard(level) ? 4 : 6
   if (words.length <= max) return [words.slice()]
   const handsCount = Math.ceil(words.length / max)
   const size = Math.ceil(words.length / handsCount)
@@ -161,7 +197,7 @@ export function planHands(words: readonly Word[], level: number) {
 
 export function buildQueue(stats: StatMap, level: number, source: Source, opts?: { cat?: string; ids?: string[] }) {
   const pool = collect(stats, level, opts)
-  const min = level === 1 ? 2 : 1
+  const min = isBoard(level) ? 2 : 1
   if (pool.length < min) return { pool, hands: [] as Word[][] }
   const ordered = orderPool(pool, stats, level, source === 'class')
   const cap = source === 'class' ? ordered.length : source === 'category' ? Math.min(ordered.length, 24) : Math.min(ordered.length, 18)
@@ -240,6 +276,7 @@ export function streakOf(stamps: number[]) {
 export function totals(stats: StatMap) {
   const levels = Array.from({ length: MAX_LEVEL + 1 }, () => 0)
   let seen = 0
+  let correct = 0
   let cleanHits = 0
   let misses = 0
   let mastered = 0
@@ -248,10 +285,11 @@ export function totals(stats: StatMap) {
     levels[stat.level] += 1
     if (stat.mastered) mastered += 1
     seen += stat.seen
+    correct += stat.correct
     cleanHits += stat.cleanHits
     misses += stat.misses
   }
-  return { levels, seen, cleanHits, misses, mastered }
+  return { levels, seen, correct, cleanHits, misses, mastered }
 }
 
 export function categoryStats(stats: StatMap) {

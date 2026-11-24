@@ -3,6 +3,7 @@ import { getCategory } from '../data/categories'
 import { Icon } from '../components/Icon'
 import { playFeedback, speakGerman } from '../lib/audio'
 import { t } from '../lib/i18n'
+import { SHELF } from '../lib/progress'
 import { deLabel, firstLetter, gloss, matchesDe, matchesGloss, puzzleAnswer, puzzleGoal, shuffle, type Task } from '../lib/text'
 import type { Bridge, Locale } from '../lib/types'
 
@@ -83,7 +84,7 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
 
   useEffect(() => {
     if (voice && showGerman) speakGerman(deLabel(word), true)
-    if (level === 8) inputRef.current?.focus()
+    if (level === SHELF.recall) inputRef.current?.focus()
   }, [word, voice, showGerman, level])
 
   useEffect(() => {
@@ -91,7 +92,7 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
       if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return
       if (event.key === 'Enter') {
         if (done.current) onNext()
-        else if (level === 5) submitPuzzle()
+        else if (level === SHELF.scramble) submitPuzzle()
         return
       }
     }
@@ -99,7 +100,7 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
     return () => window.removeEventListener('keydown', onKey)
   })
 
-  const instruction = level === 5
+  const instruction = level === SHELF.scramble
     ? 'play.prompt.scramble'
     : direction === 'to-bridge'
       ? 'play.prompt.recall.bridge'
@@ -151,7 +152,7 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
           </button>
         ) : null}
       </div>
-      {level === 5 ? (
+      {level === SHELF.scramble ? (
         <>
           <div className="slots">
             {slots.map((slot) => (
@@ -179,7 +180,7 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
           </div>
         </>
       ) : null}
-      {level === 8 ? (
+      {level === SHELF.recall ? (
         <input
           ref={inputRef}
           className="write"
@@ -209,14 +210,14 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
         </div>
       ) : null}
       <div className="row">
-        {level === 5 && !locked ? (
+        {level === SHELF.scramble && !locked ? (
           <>
             <button type="button" className="ghost" onClick={() => setFilled([])}>{t(locale, 'play.clear')}</button>
             <button type="button" className="ghost" onClick={hint}>{t(locale, 'play.hint')}</button>
             <button type="button" className="primary" disabled={filled.length !== puzzle.solution.length} onClick={submitPuzzle}>{t(locale, 'play.check')}</button>
           </>
         ) : null}
-        {level === 8 && !locked ? (
+        {level === SHELF.recall && !locked ? (
           <>
             <button type="button" className="ghost" onClick={hint}>{t(locale, 'play.hint')}</button>
             <button type="button" className="ghost" onClick={() => finish(Math.max(errorsRef.current, 1), false)}>{t(locale, 'play.show')}</button>

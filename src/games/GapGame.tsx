@@ -3,6 +3,7 @@ import { getCategory } from '../data/categories'
 import { Icon } from '../components/Icon'
 import { playFeedback, speakGerman } from '../lib/audio'
 import { t } from '../lib/i18n'
+import { SHELF } from '../lib/progress'
 import { firstLetter, fold, gapChips, gapLabel, gapParts, gloss } from '../lib/text'
 import type { Bridge, Locale, Word } from '../lib/types'
 
@@ -31,7 +32,7 @@ export function GapGame({
   onGrade: (wordId: string, errors: number, correct: boolean) => Mark
   onNext: () => void
 }) {
-  const write = level === 6
+  const write = level === SHELF.fill
   const chips = useMemo(() => (write ? [] : gapChips(word)), [word, write])
   const frame = gapParts(word)
   const [chosen, setChosen] = useState<string | null>(null)

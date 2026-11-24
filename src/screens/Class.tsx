@@ -6,7 +6,7 @@ import { Icon } from '../components/Icon'
 import { saveResultCard } from '../lib/card'
 import { t } from '../lib/i18n'
 import { testRoute } from '../lib/launch'
-import { LEVELS, readStat } from '../lib/progress'
+import { LEVELS, SHELF, readStat } from '../lib/progress'
 import { deLabel, gloss, matchesQuery, uid } from '../lib/text'
 import type { TargetWord, Word } from '../lib/types'
 import { useStore } from '../state'
@@ -37,6 +37,11 @@ function Shared({ title, words }: { title: string; words: TargetWord[] }) {
       gloss: gloss(item.word, bridge),
       level: readStat(data.words, item.id).level,
       target: item.target,
+      note: t(locale, 'stats.record', {
+        seen: readStat(data.words, item.id).seen,
+        correct: readStat(data.words, item.id).correct,
+        misses: readStat(data.words, item.id).misses,
+      }),
     }))
     const reached = cardRows.filter((row) => row.level >= row.target).length
     const saved = await saveResultCard({
@@ -82,6 +87,7 @@ function Shared({ title, words }: { title: string; words: TargetWord[] }) {
                   {t(locale, 'shared.goal', { level: item.target, name: t(locale, `level.${item.target}.name`) })}
                   {done ? ` · ${t(locale, 'shared.complete')}` : ''}
                 </p>
+                <p className="fine">{t(locale, 'stats.record', { seen: stat.seen, correct: stat.correct, misses: stat.misses })}</p>
               </div>
               <Pips stat={stat} />
               <SpeakButton text={deLabel(item.word)} label={t(locale, 'play.listen')} />
@@ -99,7 +105,7 @@ function Builder() {
   const [title, setTitle] = useState('')
   const [query, setQuery] = useState('')
   const [cat, setCat] = useState<string | null>(null)
-  const [goal, setGoal] = useState(3)
+  const [goal, setGoal] = useState<number>(SHELF.sentence)
   const [picked, setPicked] = useState<TargetWord[]>([])
   const [armed, setArmed] = useState<string | null>(null)
   const filtered = useMemo(() => WORDS.filter((word) => {

@@ -4,6 +4,7 @@ export interface CardRow {
   level: number
   target: number
   sitting?: 'clean' | 'helped' | 'missed'
+  note?: string
 }
 
 export interface CardInput {
@@ -36,7 +37,8 @@ function wrap(ctx: CanvasRenderingContext2D, text: string, max: number) {
 export async function saveResultCard(input: CardInput) {
   await document.fonts.ready
   const width = 840
-  const rowH = input.rows.length > 36 ? 46 : 54
+  const noted = input.rows.some((row) => row.note)
+  const rowH = input.rows.length > 36 ? 46 : noted ? 72 : 54
   const height = 228 + input.rows.length * rowH + (input.sittingLine ? 36 : 0) + 56
   const canvas = document.createElement('canvas')
   const scale = 2
@@ -86,6 +88,10 @@ export async function saveResultCard(input: CardInput) {
     ctx.font = '500 15px Outfit, sans-serif'
     ctx.fillStyle = '#5c5148'
     ctx.fillText(row.gloss, 58, y + 46, 360)
+    if (row.note) {
+      ctx.font = '500 13px Outfit, sans-serif'
+      ctx.fillText(row.note, 58, y + 60, width - 140)
+    }
     ctx.textAlign = 'right'
     ctx.fillStyle = '#1c1712'
     ctx.font = '600 16px Outfit, sans-serif'
