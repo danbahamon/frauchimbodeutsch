@@ -1,4 +1,6 @@
 import { WORD_BY_ID, WORD_BY_N } from '../data/words'
+import { MAX_LEVEL } from './progress'
+import type { TargetWord } from './types'
 
 function bytesToB64(bytes: Uint8Array) {
   let bin = ''
@@ -24,7 +26,52 @@ export function encodeSet(title: string, ids: string[]) {
   return `${bytesToB64(bytes)}.${bytesToB64(new TextEncoder().encode(clean))}`
 }
 
-export function decodeSet(payload: string) {
+function clampTarget(value: number) {
+  if (!Number.isFinite(value)) return 3
+  return Math.min(MAX_LEVEL, Math.max(1, Math.round(value)))
+}
+
+export function encodeTest(title: string, words: TargetWord[]) {
+  const clean = title.trim().slice(0, 80) || 'Praxis'
+  const titleBytes = new TextEncoder().encode(clean)
+  const rows = words.flatMap((item) => {
+    const n = WORD_BY_ID.get(item.id)?.n
+    if (!n) return []
+    return [{ n, target: clampTarget(item.target) }]
+  })
+  const bytes = new Uint8Array(2 + titleBytes.length + rows.length * 3)
+  bytes[0] = titleBytes.length >> 8
+  bytes[1] = titleBytes.length & 255
+  bytes.set(titleBytes, 2)
+  rows.forEach((row, index) => {
+    const offset = 2 + titleBytes.length + index * 3
+    bytes[offset] = row.n >> 8
+    bytes[offset + 1] = row.n & 255
+    bytes[offset + 2] = row.target
+  })
+  return `v2.${bytesToB64(bytes)}`
+}
+
+export function decodeSet(payload: string): { title: string; words: TargetWord[] } | null {
+  if (payload.startsWith('v2.')) {
+    try {
+      const bytes = b64ToBytes(payload.slice(3))
+      const titleLen = ((bytes[0] ?? 0) << 8) | (bytes[1] ?? 0)
+      if (titleLen < 1 || 2 + titleLen > bytes.length) return null
+      const title = new TextDecoder().decode(bytes.slice(2, 2 + titleLen)).trim() || 'Praxis'
+      const words: TargetWord[] = []
+      for (let index = 2 + titleLen; index + 2 < bytes.length; index += 3) {
+        const n = ((bytes[index] ?? 0) << 8) | (bytes[index + 1] ?? 0)
+        const word = WORD_BY_N.get(n)
+        if (!word) continue
+        words.push({ id: word.id, target: clampTarget(bytes[index + 2] ?? 3) })
+      }
+      if (!words.length) return null
+      return { title, words }
+    } catch {
+      return null
+    }
+  }
   const dot = payload.indexOf('.')
   if (dot <= 0) return null
   const bits = payload.slice(0, dot)
@@ -32,25 +79,25 @@ export function decodeSet(payload: string) {
   if (!titleBits) return null
   try {
     const bytes = b64ToBytes(bits)
-    const ids: string[] = []
+    const words: TargetWord[] = []
     for (let i = 0; i < bytes.length; i++) {
       const byte = bytes[i] ?? 0
       for (let bit = 0; bit < 8; bit++) {
         if ((byte & (1 << bit)) === 0) continue
         const word = WORD_BY_N.get(i * 8 + bit)
-        if (word) ids.push(word.id)
+        if (word) words.push({ id: word.id, target: 3 })
       }
     }
-    if (!ids.length) return null
+    if (!words.length) return null
     const title = new TextDecoder().decode(b64ToBytes(titleBits)).trim() || 'Praxis'
-    return { title, wordIds: ids }
+    return { title, words }
   } catch {
     return null
   }
 }
 
-export function shareLink(title: string, ids: string[]) {
+export function shareLink(title: string, words: TargetWord[]) {
   const url = new URL(location.href)
-  url.hash = `c=${encodeSet(title, ids)}`
+  url.hash = `c=${encodeTest(title, words)}`
   return url.toString()
 }

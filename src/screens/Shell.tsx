@@ -32,7 +32,7 @@ function tabOf(route: Route) {
 function screenKey(route: Route) {
   if (route.name === 'round') return `round-${route.nonce}`
   if (route.name === 'category') return `cat-${route.cat}`
-  if (route.name === 'shared') return `shared-${route.title}-${route.wordIds.length}`
+  if (route.name === 'shared') return `shared-${route.title}-${route.words.length}`
   return route.name
 }
 

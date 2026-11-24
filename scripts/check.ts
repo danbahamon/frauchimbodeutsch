@@ -1,7 +1,7 @@
 import { CATEGORIES } from '../src/data/categories'
 import { WORDS } from '../src/data/words'
 import { applyStat, blankStat, buildQueue, isUnlocked, planHands } from '../src/lib/progress'
-import { decodeSet, encodeSet } from '../src/lib/share'
+import { decodeSet, encodeSet, encodeTest } from '../src/lib/share'
 import { fold, glossForms, matchesDe, matchesGloss } from '../src/lib/text'
 
 const problems: string[] = []
@@ -9,7 +9,7 @@ const en = new Map<string, string>()
 const es = new Map<string, string>()
 const de = new Map<string, string>()
 
-if (WORDS.length < 400) problems.push(`only ${WORDS.length} words`)
+if (WORDS.length < 1700) problems.push(`only ${WORDS.length} words`)
 
 for (const cat of CATEGORIES) {
   const count = WORDS.filter((word) => word.cat === cat.id).length
@@ -41,8 +41,14 @@ for (const word of WORDS) {
 const sample = WORDS.slice(0, 12).map((word) => word.id)
 const coded = encodeSet('Frühstück & Markt', sample)
 const decoded = decodeSet(coded)
-if (!decoded || decoded.title !== 'Frühstück & Markt' || decoded.wordIds.join() !== sample.join()) {
+if (!decoded || decoded.title !== 'Frühstück & Markt' || decoded.words.map((item) => item.id).join() !== sample.join()) {
   problems.push(`share roundtrip failed: ${JSON.stringify(decoded)}`)
+}
+if (!decoded?.words.every((item) => item.target === 3)) problems.push('legacy share lost the sentence goal')
+const aimed = sample.map((id, index) => ({ id, target: (index % 8) + 1 }))
+const again = decodeSet(encodeTest('Frühstück & Markt', aimed))
+if (!again || again.title !== 'Frühstück & Markt' || again.words.map((item) => `${item.id}:${item.target}`).join() !== aimed.map((item) => `${item.id}:${item.target}`).join()) {
+  problems.push(`test share failed: ${JSON.stringify(again)}`)
 }
 if (decodeSet('%%%')) problems.push('bad share accepted')
 

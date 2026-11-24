@@ -2,11 +2,11 @@ import { createContext, useContext, useEffect, useMemo, useRef, useState, type R
 import { applyStat, readStat } from './lib/progress'
 import { decodeSet } from './lib/share'
 import { loadState, saveState, type Persisted } from './lib/storage'
-import type { Bridge, ClassSet, Locale, Profile, Route, SessionRec } from './lib/types'
+import type { Bridge, ClassSet, Locale, Profile, Route, SessionRec, TargetWord } from './lib/types'
 
 interface ShareJob {
   title: string
-  wordIds: string[]
+  words: TargetWord[]
 }
 
 interface Solved {
@@ -31,7 +31,7 @@ interface Store {
   replaceAll: (next: Persisted) => void
   resetProgress: () => void
   flash: (message: string) => void
-  openShare: (title: string, wordIds: string[]) => void
+  openShare: (title: string, words: TargetWord[]) => void
   closeShare: () => void
 }
 
@@ -74,7 +74,7 @@ export function Provider({ children }: { children: ReactNode }) {
         window.setTimeout(() => setNotice((current) => (current === 'link' ? null : current)), 2800)
         return
       }
-      setData((current) => ({ ...current, route: { name: 'shared', title: parsed.title, wordIds: parsed.wordIds } }))
+      setData((current) => ({ ...current, route: { name: 'shared', title: parsed.title, words: parsed.words } }))
     }
     read()
     window.addEventListener('hashchange', read)
@@ -126,7 +126,7 @@ export function Provider({ children }: { children: ReactNode }) {
         window.clearTimeout(timer.current)
         timer.current = window.setTimeout(() => setNotice((current) => (current === message ? null : current)), 2800)
       },
-      openShare: (title, wordIds) => setShare({ title, wordIds }),
+      openShare: (title, words) => setShare({ title, words }),
       closeShare: () => setShare(null),
     }
   }, [data, notice, share])

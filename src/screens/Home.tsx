@@ -4,7 +4,7 @@ import { Icon } from '../components/Icon'
 import { Mascot } from '../components/Mascot'
 import { t, greetKey } from '../lib/i18n'
 import { roundRoute } from '../lib/launch'
-import { assignLevel, collect, countReached, countSitting, isUnlocked, nextLocked, streakOf, almostWords, wordOfDay, UNLOCK_AT } from '../lib/progress'
+import { assignLevel, collect, countReached, countSitting, isUnlocked, nextLocked, streakOf, almostWords, wordOfDay, LEVELS, UNLOCK_AT } from '../lib/progress'
 import { deLabel, gloss } from '../lib/text'
 import { useStore } from '../state'
 
@@ -39,7 +39,7 @@ export function Home() {
         </div>
       </section>
       <div className="shelves" style={{ marginTop: 16 }}>
-        {[1, 2, 3, 4, 5].map((level) => {
+        {LEVELS.map((level) => {
           const open = isUnlocked(data.words, level)
           return (
             <button

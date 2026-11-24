@@ -28,6 +28,16 @@ export const CATEGORIES = [
   { id: 'hobbies', emoji: '🎯', en: 'Free time', es: 'Tiempo libre', de: 'Freizeit' },
   { id: 'tech', emoji: '💻', en: 'Technology', es: 'Tecnología', de: 'Technik' },
   { id: 'lands', emoji: '🗺️', en: 'Places', es: 'Lugares', de: 'Orte' },
+  { id: 'bath', emoji: '🛁', en: 'Bathroom', es: 'Baño', de: 'Bad' },
+  { id: 'office', emoji: '📎', en: 'Office', es: 'Oficina', de: 'Büro' },
+  { id: 'music', emoji: '🎵', en: 'Music', es: 'Música', de: 'Musik' },
+  { id: 'sport', emoji: '⚽', en: 'Sports', es: 'Deportes', de: 'Sport' },
+  { id: 'health', emoji: '🩺', en: 'Health', es: 'Salud', de: 'Gesundheit' },
+  { id: 'tools', emoji: '🔧', en: 'Tools', es: 'Herramientas', de: 'Werkzeug' },
+  { id: 'garden', emoji: '🌻', en: 'Garden', es: 'Jardín', de: 'Garten' },
+  { id: 'money', emoji: '💶', en: 'Money', es: 'Dinero', de: 'Geld' },
+  { id: 'materials', emoji: '🪵', en: 'Materials', es: 'Materiales', de: 'Materialien' },
+  { id: 'shapes', emoji: '🔺', en: 'Shapes', es: 'Formas', de: 'Formen' },
 ] as const
 
 export type CatId = (typeof CATEGORIES)[number]['id']

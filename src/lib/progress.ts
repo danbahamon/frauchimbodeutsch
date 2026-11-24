@@ -1,9 +1,10 @@
 import { CATEGORIES } from '../data/categories'
-import { WORDS } from '../data/words'
+import { WORD_BY_ID, WORDS } from '../data/words'
 import { shuffle } from './text'
-import type { Source, StatMap, Word, WordStat } from './types'
+import type { Source, StatMap, TargetWord, Word, WordStat } from './types'
 
-export const MAX_LEVEL = 5
+export const MAX_LEVEL = 8
+export const LEVELS = [1, 2, 3, 4, 5, 6, 7, 8]
 export const UNLOCK_AT = 50
 export const CLEAN_NEED = 3
 
@@ -24,6 +25,7 @@ export interface ApplyInput {
 
 export function applyStat(input: ApplyInput) {
   const prev = input.stat
+  if (prev.level !== input.gameLevel) return { stat: prev, leveled: false, masteredNow: false }
   const clean = input.correct && input.errors === 0
   const counts = prev.level === input.gameLevel && !prev.mastered
   const next: WordStat = {
@@ -73,7 +75,7 @@ export function isUnlocked(stats: StatMap, level: number) {
 }
 
 export function openLevels(stats: StatMap) {
-  return [1, 2, 3, 4, 5].filter((level) => isUnlocked(stats, level))
+  return LEVELS.filter((level) => isUnlocked(stats, level))
 }
 
 export function daySeed(date = new Date()) {
@@ -99,7 +101,7 @@ function pickWeighted(options: { level: number; weight: number }[], seed: number
 
 export function assignLevel(stats: StatMap, seed = daySeed()) {
   const options: { level: number; weight: number }[] = []
-  for (const level of [1, 2, 3, 4, 5]) {
+  for (const level of LEVELS) {
     if (!isUnlocked(stats, level)) continue
     const sitting = countSitting(stats, level)
     if (sitting < 4 && countReached(stats, level) < 4) continue
@@ -111,7 +113,7 @@ export function assignLevel(stats: StatMap, seed = daySeed()) {
 
 export function assignCategory(stats: StatMap, cat: string, seed = daySeed()) {
   const options: { level: number; weight: number }[] = []
-  for (const level of [1, 2, 3, 4, 5]) {
+  for (const level of LEVELS) {
     if (!isUnlocked(stats, level)) continue
     const pool = collect(stats, level, { cat })
     if (pool.length < 4) continue
@@ -130,7 +132,6 @@ export function collect(stats: StatMap, level: number, opts?: { cat?: string; id
   return WORDS.filter((word) => {
     if (idSet && !idSet.has(word.id)) return false
     if (opts?.cat && word.cat !== opts.cat) return false
-    if (idSet && level === 1) return true
     return readStat(stats, word.id).level >= level
   })
 }
@@ -149,7 +150,7 @@ export function orderPool(pool: readonly Word[], stats: StatMap, level: number, 
 
 export function planHands(words: readonly Word[], level: number) {
   if (!words.length) return []
-  const max = level === 2 ? 8 : 6
+  const max = level === 2 || level === 4 ? 8 : 6
   if (words.length <= max) return [words.slice()]
   const handsCount = Math.ceil(words.length / max)
   const size = Math.ceil(words.length / handsCount)
@@ -168,8 +169,34 @@ export function buildQueue(stats: StatMap, level: number, source: Source, opts?:
 }
 
 export function nextLocked(stats: StatMap) {
-  for (const level of [2, 3, 4, 5]) if (!isUnlocked(stats, level)) return level
+  for (const level of LEVELS) if (level > 1 && !isUnlocked(stats, level)) return level
   return null
+}
+
+export interface PlayHand {
+  level: number
+  words: Word[]
+}
+
+export function testHands(stats: StatMap, items: readonly TargetWord[], exam: boolean): PlayHand[] {
+  const buckets = new Map<number, Word[]>()
+  for (const item of items) {
+    const word = WORD_BY_ID.get(item.id)
+    if (!word) continue
+    const now = readStat(stats, word.id).level
+    const target = Math.min(MAX_LEVEL, Math.max(1, item.target || 1))
+    if (!exam && now >= target) continue
+    const game = exam ? target : now
+    const list = buckets.get(game) ?? []
+    list.push(word)
+    buckets.set(game, list)
+  }
+  const hands: PlayHand[] = []
+  for (const level of [...buckets.keys()].sort((a, b) => a - b)) {
+    const words = buckets.get(level) ?? []
+    for (const hand of planHands(shuffle(words), level)) hands.push({ level, words: hand })
+  }
+  return hands
 }
 
 export function almostWords(stats: StatMap) {
@@ -211,7 +238,7 @@ export function streakOf(stamps: number[]) {
 }
 
 export function totals(stats: StatMap) {
-  const levels = [0, 0, 0, 0, 0, 0]
+  const levels = Array.from({ length: MAX_LEVEL + 1 }, () => 0)
   let seen = 0
   let cleanHits = 0
   let misses = 0

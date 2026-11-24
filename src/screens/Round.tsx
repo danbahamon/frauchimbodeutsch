@@ -3,12 +3,16 @@ import { catLabel } from '../data/categories'
 import { WORD_BY_ID } from '../data/words'
 import { Burst } from '../components/Bits'
 import { Mascot, type MascotMood } from '../components/Mascot'
+import { ArticleGame } from '../games/ArticleGame'
+import { GapGame } from '../games/GapGame'
 import { MatchGame } from '../games/MatchGame'
+import { PluralGame } from '../games/PluralGame'
 import { PromptGame } from '../games/PromptGame'
+import { saveResultCard } from '../lib/card'
 import { t } from '../lib/i18n'
-import { buildQueue, openLevels } from '../lib/progress'
+import { buildQueue, openLevels, readStat, testHands, type PlayHand } from '../lib/progress'
 import { deLabel, gloss, makeTask, uid } from '../lib/text'
-import type { Source, Word } from '../lib/types'
+import type { Source } from '../lib/types'
 import { useStore } from '../state'
 
 interface Outcome {
@@ -29,13 +33,15 @@ function stars(clean: number, total: number) {
 
 export function Round() {
   const store = useStore()
-  const { locale, bridge, data, setRoute, recordWord, logSession } = store
+  const { locale, bridge, data, setRoute, recordWord, logSession, flash } = store
   const route = data.route
   const round = route.name === 'round' ? route : null
   const wordsRef = useRef(data.words)
-  const plan = useMemo(() => {
-    if (!round) return { hands: [] as Word[][] }
-    return buildQueue(wordsRef.current, round.level, round.source, { cat: round.cat, ids: round.wordIds })
+  const hands = useMemo(() => {
+    if (!round) return [] as PlayHand[]
+    if (round.targets?.length) return testHands(wordsRef.current, round.targets, Boolean(round.exam))
+    const queue = buildQueue(wordsRef.current, round.level, round.source, { cat: round.cat, ids: round.wordIds })
+    return queue.hands.map((words) => ({ level: round.level, words }))
   }, [round])
   const [handIndex, setHandIndex] = useState(0)
   const [step, setStep] = useState(0)
@@ -70,11 +76,12 @@ export function Round() {
     })
   }, [])
 
-  const hand = plan.hands[handIndex]
-  const level = round?.level ?? 1
+  const hand = hands[handIndex]
+  const level = hand?.level ?? round?.level ?? 1
+  if (round && hand) meta.current = { ...meta.current, level }
   const task = useMemo(() => {
-    if (!hand || level === 1) return null
-    const word = hand[step]
+    if (!hand || level !== 5 && level !== 8) return null
+    const word = hand.words[step]
     return word ? makeTask(word, level, bridge) : null
   }, [hand, step, level, bridge])
 
@@ -82,7 +89,7 @@ export function Round() {
   if (!hand) {
     return (
       <div>
-        <p>{t(locale, 'play.empty')}</p>
+        <p>{round.targets && !round.exam ? t(locale, 'shared.alldone') : t(locale, 'play.empty')}</p>
         <button type="button" className="primary" onClick={() => setRoute({ name: 'play' })}>{t(locale, 'play.home')}</button>
       </div>
     )
@@ -113,7 +120,33 @@ export function Round() {
     const opened = openLevels(data.words).filter((item) => !openedAtStart.current.includes(item))
     const ratio = list.length ? clean / list.length : 0
     const mood: MascotMood = opened.length || list.some((item) => item.leveled) || ratio >= 0.6 ? 'joy' : missed > clean ? 'think' : 'idle'
-    const left = plan.hands.slice(handIndex + 1).reduce((sum, item) => sum + item.length, 0)
+    const left = hands.slice(handIndex + 1).reduce((sum, item) => sum + item.words.length, 0)
+    const save = async () => {
+      if (!round.targets?.length) return
+      const byId = new Map(list.map((item) => [item.wordId, item]))
+      const rows = round.targets.flatMap((item) => {
+        const word = WORD_BY_ID.get(item.id)
+        if (!word) return []
+        const stat = readStat(data.words, item.id)
+        const outcome = byId.get(item.id)
+        const sitting = !outcome ? undefined : outcome.correct && outcome.errors === 0 ? 'clean' as const : outcome.correct ? 'helped' as const : 'missed' as const
+        return [{ de: deLabel(word), gloss: gloss(word, bridge), level: stat.level, target: item.target, sitting }]
+      }).sort((a, b) => a.de.localeCompare(b.de, 'de'))
+      const reached = rows.filter((row) => row.level >= row.target).length
+      const tag = locale === 'de' ? 'de-DE' : locale === 'es' ? 'es-ES' : 'en-US'
+      const saved = await saveResultCard({
+        title,
+        name: data.profile?.name || '',
+        when: new Date().toLocaleDateString(tag, { dateStyle: 'medium' }),
+        brand: 'Frau Chimbo Deutsch',
+        reached: t(locale, 'play.card.reached', { n: reached, total: rows.length }),
+        sittingLine: t(locale, 'play.card.sitting', { clean, helped, missed }),
+        shelfWord: t(locale, 'play.card.shelf'),
+        goalWord: t(locale, 'play.card.goal'),
+        rows,
+      })
+      if (saved) flash(t(locale, 'shared.saved'))
+    }
     return (
       <div className="summary">
         <div className="summary-hero">
@@ -158,6 +191,9 @@ export function Round() {
             </button>
           ) : null}
           <button type="button" className="ghost" onClick={() => setRoute({ ...round, nonce: Date.now() })}>{t(locale, 'play.again')}</button>
+          {round.targets?.length ? (
+            <button type="button" className="ghost" onClick={() => void save()}>{t(locale, 'play.save')}</button>
+          ) : null}
           <button type="button" className="text-btn" onClick={() => setRoute({ name: 'home' })}>{t(locale, 'play.home')}</button>
         </div>
         {left > 0 ? <p className="fine">{t(locale, 'play.left', { n: left })}</p> : null}
@@ -174,17 +210,17 @@ export function Round() {
         </div>
         <div className="runner-side">
           {run > 1 ? <span className="streak-pill">{t(locale, 'play.streak', { n: run })}</span> : null}
-          <span className="runner-count">{level === 1 ? hand.length : `${Math.min(step + 1, hand.length)}/${hand.length}`}</span>
+          <span className="runner-count">{level === 1 ? hand.words.length : `${Math.min(step + 1, hand.words.length)}/${hand.words.length}`}</span>
         </div>
       </header>
       <div className="progress" aria-hidden="true">
-        <i style={{ width: level === 1 ? '12%' : `${(step / Math.max(hand.length, 1)) * 100}%` }} />
+        <i style={{ width: level === 1 ? '12%' : `${(step / Math.max(hand.words.length, 1)) * 100}%` }} />
       </div>
       <div className="play-scroll">
         {level === 1 ? (
           <MatchGame
             key={handIndex}
-            words={hand}
+            words={hand.words}
             bridge={bridge}
             locale={locale}
             sound={data.profile?.sound !== false}
@@ -192,7 +228,55 @@ export function Round() {
             onGrade={grade}
             onDone={() => setPhase('done')}
           />
-        ) : task ? (
+        ) : null}
+        {level === 2 && hand.words[step] ? (
+          <ArticleGame
+            key={`${handIndex}-${step}`}
+            word={hand.words[step]}
+            bridge={bridge}
+            locale={locale}
+            sound={data.profile?.sound !== false}
+            voice={data.profile?.voice !== false}
+            onGrade={grade}
+            onNext={() => {
+              if (step + 1 >= hand.words.length) setPhase('done')
+              else setStep((value) => value + 1)
+            }}
+          />
+        ) : null}
+        {(level === 3 || level === 6) && hand.words[step] ? (
+          <GapGame
+            key={`${handIndex}-${step}`}
+            word={hand.words[step]}
+            level={level}
+            bridge={bridge}
+            locale={locale}
+            sound={data.profile?.sound !== false}
+            voice={data.profile?.voice !== false}
+            onGrade={grade}
+            onNext={() => {
+              if (step + 1 >= hand.words.length) setPhase('done')
+              else setStep((value) => value + 1)
+            }}
+          />
+        ) : null}
+        {(level === 4 || level === 7) && hand.words[step] ? (
+          <PluralGame
+            key={`${handIndex}-${step}`}
+            word={hand.words[step]}
+            level={level}
+            bridge={bridge}
+            locale={locale}
+            sound={data.profile?.sound !== false}
+            voice={data.profile?.voice !== false}
+            onGrade={grade}
+            onNext={() => {
+              if (step + 1 >= hand.words.length) setPhase('done')
+              else setStep((value) => value + 1)
+            }}
+          />
+        ) : null}
+        {task ? (
           <PromptGame
             key={`${handIndex}-${step}`}
             task={task}
@@ -203,7 +287,7 @@ export function Round() {
             voice={data.profile?.voice !== false}
             onGrade={grade}
             onNext={() => {
-              if (step + 1 >= hand.length) setPhase('done')
+              if (step + 1 >= hand.words.length) setPhase('done')
               else setStep((value) => value + 1)
             }}
           />

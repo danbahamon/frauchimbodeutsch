@@ -51,10 +51,15 @@ export interface SessionRec {
   leveled: number
 }
 
+export interface TargetWord {
+  id: string
+  target: number
+}
+
 export interface ClassSet {
   id: string
   title: string
-  wordIds: string[]
+  words: TargetWord[]
   createdAt: number
 }
 
@@ -65,7 +70,17 @@ export type Route =
   | { name: 'category'; cat: string }
   | { name: 'class' }
   | { name: 'stats' }
-  | { name: 'shared'; title: string; wordIds: string[] }
-  | { name: 'round'; nonce: number; level: number; source: Source; title?: string; cat?: string; wordIds?: string[] }
+  | { name: 'shared'; title: string; words: TargetWord[] }
+  | {
+      name: 'round'
+      nonce: number
+      level: number
+      source: Source
+      title?: string
+      cat?: string
+      wordIds?: string[]
+      targets?: TargetWord[]
+      exam?: boolean
+    }
 
 export type StatMap = Record<string, WordStat>

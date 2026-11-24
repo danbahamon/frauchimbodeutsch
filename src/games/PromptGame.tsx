@@ -4,7 +4,7 @@ import { Icon } from '../components/Icon'
 import { playFeedback, speakGerman } from '../lib/audio'
 import { t } from '../lib/i18n'
 import { deLabel, firstLetter, gloss, matchesDe, matchesGloss, puzzleAnswer, puzzleGoal, shuffle, type Task } from '../lib/text'
-import type { Art, Bridge, Locale } from '../lib/types'
+import type { Bridge, Locale } from '../lib/types'
 
 interface Mark {
   leveled: boolean
@@ -28,9 +28,7 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
   const showGerman = direction === 'to-bridge'
   const [filled, setFilled] = useState<string[]>([])
   const [typed, setTyped] = useState('')
-  const [article, setArticle] = useState<Art | null>(null)
   const [hinted, setHinted] = useState('')
-  const [chosen, setChosen] = useState<string | null>(null)
   const [shake, setShake] = useState(0)
   const [locked, setLocked] = useState(false)
   const [mark, setMark] = useState<Mark | null>(null)
@@ -59,12 +57,6 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
     else playFeedback(false, sound)
   }
 
-  const pick = (id: string) => {
-    if (done.current) return
-    setChosen(id)
-    finish(id === word.id ? 0 : 1, id === word.id)
-  }
-
   const submitPuzzle = () => {
     if (done.current || filled.length !== puzzle.solution.length) return
     if (puzzleAnswer(puzzle, filled) === puzzleGoal(puzzle, word.de)) finish(errorsRef.current, true)
@@ -73,9 +65,9 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
 
   const submitTyped = () => {
     if (done.current || !typed.trim()) return
-    const ok = level === 5 && direction === 'to-bridge'
+    const ok = direction === 'to-bridge'
       ? matchesGloss(word, bridge, typed)
-      : matchesDe(word, typed, article, level === 4 && word.art ? 'required' : 'optional')
+      : matchesDe(word, typed, null, 'optional')
     if (ok) finish(errorsRef.current, true)
     else miss()
   }
@@ -91,7 +83,7 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
 
   useEffect(() => {
     if (voice && showGerman) speakGerman(deLabel(word), true)
-    if (level >= 4) inputRef.current?.focus()
+    if (level === 8) inputRef.current?.focus()
   }, [word, voice, showGerman, level])
 
   useEffect(() => {
@@ -99,25 +91,19 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
       if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return
       if (event.key === 'Enter') {
         if (done.current) onNext()
-        else if (level === 3) submitPuzzle()
+        else if (level === 5) submitPuzzle()
         return
-      }
-      if (!done.current && level === 2 && /^[1-4]$/.test(event.key)) {
-        const option = task.options[Number(event.key) - 1]
-        if (option) pick(option.id)
       }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   })
 
-  const instruction = level === 3
+  const instruction = level === 5
     ? 'play.prompt.scramble'
-    : level === 4
-      ? 'play.prompt.spell'
-      : level === 5
-        ? (direction === 'to-bridge' ? 'play.prompt.recall.bridge' : 'play.prompt.recall.de')
-        : (direction === 'to-bridge' ? 'play.prompt.bridge' : 'play.prompt.de')
+    : direction === 'to-bridge'
+      ? 'play.prompt.recall.bridge'
+      : 'play.prompt.recall.de'
 
   let cursor = 0
   const slots = puzzle.mode === 'words'
@@ -165,26 +151,7 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
           </button>
         ) : null}
       </div>
-      {level === 2 ? (
-        <div className="stack">
-          {task.options.map((option, index) => (
-            <button
-              key={option.id}
-              type="button"
-              className="choice"
-              data-art={direction === 'to-de' ? option.art ?? '' : ''}
-              data-ok={locked && option.id === word.id}
-              data-bad={locked && chosen === option.id && option.id !== word.id}
-              disabled={locked}
-              onClick={() => pick(option.id)}
-            >
-              <small>{index + 1}</small>
-              {direction === 'to-de' ? deLabel(option) : gloss(option, bridge)}
-            </button>
-          ))}
-        </div>
-      ) : null}
-      {level === 3 ? (
+      {level === 5 ? (
         <>
           <div className="slots">
             {slots.map((slot) => (
@@ -212,19 +179,7 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
           </div>
         </>
       ) : null}
-      {level === 4 && word.art ? (
-        <div>
-          <p className="fine">{t(locale, 'play.article')}</p>
-          <div className="art-row">
-            {(['der', 'die', 'das'] as const).map((item) => (
-              <button key={item} type="button" className="art-btn" data-art={item} data-on={article === item} disabled={locked} onClick={() => setArticle(item)}>
-                {item}
-              </button>
-            ))}
-          </div>
-        </div>
-      ) : null}
-      {level >= 4 ? (
+      {level === 8 ? (
         <input
           ref={inputRef}
           className="write"
@@ -254,14 +209,14 @@ export function PromptGame({ task, level, bridge, locale, sound, voice, onGrade,
         </div>
       ) : null}
       <div className="row">
-        {level === 3 && !locked ? (
+        {level === 5 && !locked ? (
           <>
             <button type="button" className="ghost" onClick={() => setFilled([])}>{t(locale, 'play.clear')}</button>
             <button type="button" className="ghost" onClick={hint}>{t(locale, 'play.hint')}</button>
             <button type="button" className="primary" disabled={filled.length !== puzzle.solution.length} onClick={submitPuzzle}>{t(locale, 'play.check')}</button>
           </>
         ) : null}
-        {level >= 4 && !locked ? (
+        {level === 8 && !locked ? (
           <>
             <button type="button" className="ghost" onClick={hint}>{t(locale, 'play.hint')}</button>
             <button type="button" className="ghost" onClick={() => finish(Math.max(errorsRef.current, 1), false)}>{t(locale, 'play.show')}</button>

@@ -3,7 +3,7 @@ import { WORDS } from '../data/words'
 import { Lemma } from '../components/Bits'
 import { Mascot } from '../components/Mascot'
 import { t } from '../lib/i18n'
-import { CLEAN_NEED, categoryStats, readStat, streakOf, totals } from '../lib/progress'
+import { CLEAN_NEED, LEVELS, categoryStats, readStat, streakOf, totals } from '../lib/progress'
 import { useStore } from '../state'
 
 export function Stats() {
@@ -38,7 +38,7 @@ export function Stats() {
       <section className="panel">
         <h2>{t(locale, 'stats.shelves')}</h2>
         <div className="bars">
-          {[1, 2, 3, 4, 5].map((level) => (
+          {LEVELS.map((level) => (
             <div key={level} className="bar">
               <span>{t(locale, `level.${level}.name`)}</span>
               <i><b style={{ width: `${(picture.levels[level] / peak) * 100}%` }} /></i>

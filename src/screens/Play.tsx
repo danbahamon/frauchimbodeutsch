@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Mascot } from '../components/Mascot'
 import { t } from '../lib/i18n'
 import { roundRoute } from '../lib/launch'
-import { assignLevel, countReached, countSitting, isUnlocked, UNLOCK_AT } from '../lib/progress'
+import { assignLevel, countReached, countSitting, isUnlocked, LEVELS, UNLOCK_AT } from '../lib/progress'
 import { useStore } from '../state'
 
 export function Play() {
@@ -32,7 +32,7 @@ export function Play() {
       </div>
       <p className="muted">{t(locale, 'play.lead')}</p>
       <div className="shelves">
-        {[1, 2, 3, 4, 5].map((item) => {
+        {LEVELS.map((item) => {
           const unlocked = isUnlocked(data.words, item)
           return (
             <button

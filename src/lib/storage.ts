@@ -1,11 +1,12 @@
 import { getCategory } from '../data/categories'
 import { WORD_BY_ID } from '../data/words'
-import type { ClassSet, Locale, Profile, Route, SessionRec, StatMap, WordStat } from './types'
+import { MAX_LEVEL } from './progress'
+import type { ClassSet, Locale, Profile, Route, SessionRec, StatMap, TargetWord, WordStat } from './types'
 
 const KEY = 'frauchimbo.deutsch.v1'
 
 export interface Persisted {
-  v: 1
+  v: 2
   profile: Profile | null
   words: StatMap
   sessions: SessionRec[]
@@ -14,25 +15,42 @@ export interface Persisted {
 }
 
 export function emptyState(): Persisted {
-  return { v: 1, profile: null, words: {}, sessions: [], sets: [], route: { name: 'home' } }
+  return { v: 2, profile: null, words: {}, sessions: [], sets: [], route: { name: 'home' } }
 }
+
+const FROM_FIVE = [0, 1, 2, 5, 6, 8]
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value))
 }
 
-function cleanStat(raw: unknown): WordStat | null {
+function cleanStat(raw: unknown, migrate: boolean): WordStat | null {
   if (!raw || typeof raw !== 'object') return null
   const stat = raw as Partial<WordStat>
-  const level = clamp(Number(stat.level) || 1, 1, 5)
+  let level = clamp(Number(stat.level) || 1, 1, migrate ? 5 : MAX_LEVEL)
+  if (migrate) level = FROM_FIVE[level] ?? 1
   return {
     level,
     clean: clamp(Number(stat.clean) || 0, 0, 3),
     seen: Math.max(0, Number(stat.seen) || 0),
     cleanHits: Math.max(0, Number(stat.cleanHits) || 0),
     misses: Math.max(0, Number(stat.misses) || 0),
-    mastered: Boolean(stat.mastered) && level === 5,
+    mastered: Boolean(stat.mastered) && level === MAX_LEVEL,
   }
+}
+
+function cleanTargets(raw: unknown, fallbackIds?: unknown): TargetWord[] {
+  if (Array.isArray(raw)) {
+    const words = raw.flatMap((item) => {
+      if (!item || typeof item !== 'object') return []
+      const row = item as { id?: unknown; target?: unknown }
+      if (typeof row.id !== 'string' || !WORD_BY_ID.has(row.id)) return []
+      return [{ id: row.id, target: clamp(Number(row.target) || 3, 1, MAX_LEVEL) }]
+    })
+    if (words.length) return words
+  }
+  if (!Array.isArray(fallbackIds)) return []
+  return fallbackIds.flatMap((id) => (typeof id === 'string' && WORD_BY_ID.has(id) ? [{ id, target: 3 }] : []))
 }
 
 function cleanProfile(raw: unknown): Profile | null {
@@ -58,9 +76,10 @@ function cleanRoute(raw: unknown): Route {
   if (route.name === 'round') return { name: 'play' }
   if (route.name === 'category') return getCategory(route.cat) ? route : { name: 'words' }
   if (route.name === 'shared') {
-    const wordIds = (route.wordIds ?? []).filter((id) => WORD_BY_ID.has(id))
-    if (wordIds.length < 2) return { name: 'class' }
-    return { name: 'shared', title: route.title?.slice(0, 80) || 'Praxis', wordIds }
+    const legacy = route as { wordIds?: unknown }
+    const words = cleanTargets(route.words, legacy.wordIds)
+    if (words.length < 2) return { name: 'class' }
+    return { name: 'shared', title: route.title?.slice(0, 80) || 'Praxis', words }
   }
   if (route.name === 'home' || route.name === 'play' || route.name === 'words' || route.name === 'class' || route.name === 'stats') {
     return { name: route.name }
@@ -72,7 +91,7 @@ function cleanSession(raw: unknown): SessionRec | null {
   if (!raw || typeof raw !== 'object') return null
   const session = raw as Partial<SessionRec>
   if (typeof session.id !== 'string' || typeof session.at !== 'number') return null
-  const level = clamp(Number(session.level) || 1, 1, 5)
+  const level = clamp(Number(session.level) || 1, 1, MAX_LEVEL)
   const source = session.source === 'shelf' || session.source === 'category' || session.source === 'class' ? session.source : 'spiral'
   return {
     id: session.id,
@@ -91,27 +110,33 @@ function cleanSession(raw: unknown): SessionRec | null {
 
 function cleanSet(raw: unknown): ClassSet | null {
   if (!raw || typeof raw !== 'object') return null
-  const set = raw as Partial<ClassSet>
-  if (typeof set.id !== 'string' || typeof set.title !== 'string' || !Array.isArray(set.wordIds)) return null
-  const wordIds = set.wordIds.filter((id) => typeof id === 'string' && WORD_BY_ID.has(id))
-  if (wordIds.length < 2) return null
-  return { id: set.id, title: set.title.slice(0, 80), wordIds, createdAt: typeof set.createdAt === 'number' ? set.createdAt : Date.now() }
+  const set = raw as Partial<ClassSet> & { wordIds?: unknown }
+  if (typeof set.id !== 'string' || typeof set.title !== 'string') return null
+  const words = cleanTargets(set.words, set.wordIds)
+  if (words.length < 2) return null
+  return { id: set.id, title: set.title.slice(0, 80), words, createdAt: typeof set.createdAt === 'number' ? set.createdAt : Date.now() }
 }
 
 export function normalize(raw: unknown): Persisted | null {
   if (!raw || typeof raw !== 'object') return null
-  const data = raw as Partial<Persisted>
-  if (data.v !== 1) return null
+  const data = raw as Omit<Partial<Persisted>, 'v' | 'words' | 'sessions' | 'sets'> & {
+    v?: number
+    words?: unknown
+    sessions?: unknown
+    sets?: unknown
+  }
+  if (data.v !== 1 && data.v !== 2) return null
+  const migrate = data.v === 1
   const words: StatMap = {}
   if (data.words && typeof data.words === 'object') {
     for (const [id, stat] of Object.entries(data.words)) {
       if (!WORD_BY_ID.has(id)) continue
-      const clean = cleanStat(stat)
+      const clean = cleanStat(stat, migrate)
       if (clean) words[id] = clean
     }
   }
   return {
-    v: 1,
+    v: 2,
     profile: cleanProfile(data.profile),
     words,
     sessions: Array.isArray(data.sessions) ? data.sessions.map(cleanSession).filter((item): item is SessionRec => !!item).slice(-300) : [],

@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import { speakGerman } from '../lib/audio'
+import { MAX_LEVEL } from '../lib/progress'
 import { deLabel } from '../lib/text'
 import type { Word, WordStat } from '../lib/types'
 import { Icon } from './Icon'
@@ -16,7 +17,7 @@ export function Lemma({ word }: { word: Word }) {
 export function Pips({ stat }: { stat: WordStat }) {
   return (
     <span className="pips" aria-hidden="true">
-      {Array.from({ length: 5 }, (_, index) => (
+      {Array.from({ length: MAX_LEVEL }, (_, index) => (
         <i key={index} className={index < stat.level ? 'pip on' : 'pip'} />
       ))}
       {stat.mastered ? (

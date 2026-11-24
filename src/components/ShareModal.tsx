@@ -10,7 +10,7 @@ export function ShareModal() {
   const [qr, setQr] = useState('')
   useEffect(() => {
     if (!share) return
-    const next = shareLink(share.title, share.wordIds)
+    const next = shareLink(share.title, share.words)
     setLink(next)
     setQr('')
     let live = true

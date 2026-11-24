@@ -186,13 +186,72 @@ export function matchCards(words: readonly Word[], bridge: Bridge): MemoryCard[]
 }
 
 export function makeTask(word: Word, level: number, bridge: Bridge): Task {
-  const direction: Direction = level === 2 || level === 5 ? (Math.random() < 0.5 ? 'to-de' : 'to-bridge') : 'to-de'
+  void bridge
+  const direction: Direction = level === 8 ? (Math.random() < 0.5 ? 'to-de' : 'to-bridge') : 'to-de'
   return {
     word,
     direction,
-    options: level === 2 ? choiceOptions(word, bridge, direction) : [],
+    options: [],
     puzzle: makePuzzle(word.de),
   }
+}
+
+export interface ChoiceChip {
+  id: string
+  label: string
+}
+
+export function gapLabel(word: Word) {
+  return word.kind === 'noun' && word.art ? `${word.art} ${word.de}` : word.de
+}
+
+export function gapParts(word: Word) {
+  const punct = /[.!?]$/.test(word.de)
+  if (word.kind === 'verb') return { before: 'Ich möchte', after: '.' }
+  if (word.kind === 'adj') return { before: 'Es ist', after: '.' }
+  if (word.kind === 'num') return { before: 'Die Zahl ist', after: '.' }
+  if (word.kind === 'phrase') return { before: 'Man sagt:', after: punct ? '' : '.' }
+  return { before: 'Das ist', after: punct ? '' : '.' }
+}
+
+function takeChips(word: Word, labelOf: (item: Word) => string, pool: Word[]) {
+  const correct = labelOf(word)
+  const seen = new Set([fold(correct)])
+  const chips: ChoiceChip[] = [{ id: word.id, label: correct }]
+  for (const item of pool) {
+    const label = labelOf(item)
+    const key = fold(label)
+    if (!key || seen.has(key)) continue
+    seen.add(key)
+    chips.push({ id: item.id, label })
+    if (chips.length === 4) break
+  }
+  return shuffle(chips)
+}
+
+export function gapChips(word: Word) {
+  const sameKind = shuffle(WORDS.filter((item) => item.id !== word.id && item.cat === word.cat && item.kind === word.kind))
+  const sameCat = shuffle(WORDS.filter((item) => item.id !== word.id && item.cat === word.cat))
+  const rest = shuffle(WORDS.filter((item) => item.id !== word.id))
+  return takeChips(word, gapLabel, [...sameKind, ...sameCat, ...rest])
+}
+
+export function pluralChips(word: Word) {
+  if (word.kind !== 'noun') {
+    const same = shuffle(WORDS.filter((item) => item.id !== word.id && item.kind === word.kind))
+    const rest = shuffle(WORDS.filter((item) => item.id !== word.id))
+    return takeChips(word, (item) => item.de, [...same, ...rest])
+  }
+  const labelOf = (item: Word) => (item.pl ? `die ${item.pl}` : '')
+  const same = shuffle(WORDS.filter((item) => item.kind === 'noun' && item.id !== word.id && item.cat === word.cat && item.pl))
+  const rest = shuffle(WORDS.filter((item) => item.kind === 'noun' && item.id !== word.id && item.pl))
+  return takeChips(word, labelOf, [...same, ...rest])
+}
+
+export function matchesPlural(word: Word, typed: string) {
+  if (word.kind !== 'noun' || !word.pl) return matchesDe(word, typed, null, 'optional')
+  const got = fold(typed)
+  return got === fold(word.pl) || got === fold(`die ${word.pl}`)
 }
 
 export function firstLetter(de: string) {
