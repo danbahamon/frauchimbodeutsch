@@ -470,8 +470,25 @@ button { transition: transform .18s ease, background-color .2s ease, border-colo
 }
 .goal-row .goal { min-height: 44px; }
 .hint-line { color: var(--teal-deep); font-weight: 750; }
+.umlaut-wrap { margin-top: 8px; }
+.umlaut-bar { display: flex; flex-wrap: wrap; gap: 8px; }
+.umlaut-btn {
+  min-width: 44px;
+  min-height: 40px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 680;
+}
+.umlaut-btn:active { transform: translateY(1px); }
+.umlaut-tip { margin: 6px 0 0; }
+.end-confirm { margin-top: 8px; justify-content: center; }
 .verdict { margin-top: 12px; padding: 12px 14px; border-radius: 18px; }
 .verdict.ok { background: var(--teal-soft); }
+.verdict.helped { background: var(--gold-soft); }
 .verdict.bad, .choice[data-bad='true'] { background: #fde8e4; }
 :root[data-theme='dusk'] .verdict.bad,
 :root[data-theme='dusk'] .choice[data-bad='true'] { background: #3a221c; }

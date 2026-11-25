@@ -1,9 +1,9 @@
 import { CATEGORIES } from '../src/data/categories'
 import { WORDS } from '../src/data/words'
-import { DROP_AT, SHELF, applyStat, blankStat, buildQueue, isUnlocked, migrateShelf, nextPendingHand, orderPool, planHands, recentMissed, simTestHands } from '../src/lib/progress'
+import { DROP_AT, SHELF, UNLOCK_AT, applyStat, blankStat, buildQueue, isUnlocked, migrateShelf, nextPendingHand, orderPool, planHands, recentMissed, simTestHands, wordOfDay } from '../src/lib/progress'
 import { CEFR_LEVELS } from '../src/lib/types'
 import { decodeSet, encodeSet, encodeTest } from '../src/lib/share'
-import { fold, glossForms, matchesDe, matchesGloss } from '../src/lib/text'
+import { fold, gapParts, glossForms, matchesDe, matchesGloss } from '../src/lib/text'
 
 const problems: string[] = []
 const en = new Map<string, string>()
@@ -136,16 +136,21 @@ for (let i = 1; i < ranked.length; i++) {
 }
 if (isUnlocked({}, 2)) problems.push('level 2 unlocked too early')
 const bumped: Record<string, ReturnType<typeof blankStat>> = {}
-for (const word of WORDS.slice(0, 50)) bumped[word.id] = { ...blankStat(), level: 2 }
-if (!isUnlocked(bumped, 2)) problems.push('50 words did not unlock level 2')
+for (const word of WORDS.slice(0, UNLOCK_AT)) bumped[word.id] = { ...blankStat(), level: 2 }
+if (!isUnlocked(bumped, 2)) problems.push(`${UNLOCK_AT} words did not unlock level 2`)
+
+const starterDay = wordOfDay({}, 2026329)
+if (!starterDay || starterDay.cefr !== 'a1') problems.push(`starter word of day was not A1: ${starterDay?.de} (${starterDay?.cefr})`)
 
 const apfel = WORDS.find((word) => word.de === 'Apfel')
 if (!apfel || !matchesDe(apfel, 'apfel', 'der', 'required') || !matchesDe(apfel, 'der Apfel', null, 'required')) problems.push('apple match')
 if (!apfel || matchesDe(apfel, 'apfel', 'die', 'required')) problems.push('wrong article accepted')
 const sein = WORDS.find((word) => word.de === 'sein')
 if (!sein || !matchesGloss(sein, 'es', 'estar') || !matchesGloss(sein, 'en', 'to be')) problems.push('sein gloss')
+if (sein && gapParts(sein).before === 'Ich möchte') problems.push('sein used Ich möchte frame')
 if (fold('Straße') !== 'strasse' || fold('niña') !== 'nina') problems.push(`fold ${fold('Straße')} ${fold('niña')}`)
 if (!glossForms('la mañana').includes('manana')) problems.push('article strip')
+if (!glossForms("you're welcome").includes('youre welcome')) problems.push('apostrophe strip')
 
 if (problems.length) {
   console.error(problems.join('\n'))

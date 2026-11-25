@@ -105,14 +105,16 @@ export function Shell() {
           </div>
         </div>
       </main>
-      <nav className="dock">
-        {NAV.map((item) => (
-          <button key={item.name} type="button" className="nav-btn" data-on={tab === item.name} aria-current={tab === item.name ? 'page' : undefined} onClick={() => go(item.name)}>
-            <Icon name={item.icon} />
-            <span>{t(locale, item.key)}</span>
-          </button>
-        ))}
-      </nav>
+      {route.name !== 'round' ? (
+        <nav className="dock">
+          {NAV.map((item) => (
+            <button key={item.name} type="button" className="nav-btn" data-on={tab === item.name} aria-current={tab === item.name ? 'page' : undefined} onClick={() => go(item.name)}>
+              <Icon name={item.icon} />
+              <span>{t(locale, item.key)}</span>
+            </button>
+          ))}
+        </nav>
+      ) : null}
       {settingsOpen ? createPortal(
         <div className="modal-back" onClick={() => setSettingsOpen(false)}>
           <div className="modal settings-panel" onClick={(event) => event.stopPropagation()}>

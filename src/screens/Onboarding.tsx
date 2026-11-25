@@ -43,6 +43,7 @@ export function Onboarding() {
       {step === 0 ? (
         <>
           <h1>{t(lang, 'on.lang')}</h1>
+          <p className="muted">{t(lang, 'on.lang.sub')}</p>
           <div className="stack">
             {LOCALES.map((code) => (
               <button key={code} type="button" className="choice" data-on={lang === code} onClick={() => setLang(code)}>

@@ -28,6 +28,7 @@ export function playFeedback(ok: boolean, sound: boolean) {
   if (sound) {
     const audio = context()
     if (audio) {
+      if (audio.state === 'suspended') void audio.resume()
       const now = audio.currentTime
       if (ok) {
         tone(523.25, now, 0.12, 0.04)
@@ -38,9 +39,9 @@ export function playFeedback(ok: boolean, sound: boolean) {
         tone(233.08, now + 0.1, 0.18, 0.025)
       }
     }
-  }
-  if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
-    navigator.vibrate(ok ? [12, 30, 12] : 18)
+    if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
+      navigator.vibrate(ok ? [12, 30, 12] : 18)
+    }
   }
 }
 

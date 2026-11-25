@@ -49,6 +49,8 @@ export function Round() {
   const hands = useMemo(() => [...seedHands, ...extraHands], [seedHands, extraHands])
   const [handIndex, setHandIndex] = useState(0)
   const [step, setStep] = useState(0)
+  const [boardMatched, setBoardMatched] = useState(0)
+  const [confirmEnd, setConfirmEnd] = useState(false)
   const [phase, setPhase] = useState<'play' | 'done'>('play')
   const [live, setLive] = useState(0)
   const outcomes = useRef<Outcome[]>([])
@@ -62,8 +64,14 @@ export function Round() {
     setExtraHands([])
     setHandIndex(0)
     setStep(0)
+    setBoardMatched(0)
+    setConfirmEnd(false)
     setPhase('play')
   }, [round?.nonce])
+  useEffect(() => {
+    setBoardMatched(0)
+    setConfirmEnd(false)
+  }, [handIndex, phase])
 
   useEffect(() => () => {
     if (logged.current) return
@@ -100,7 +108,7 @@ export function Round() {
     return (
       <div>
         <p>{round.targets && !round.exam ? t(locale, 'shared.alldone') : t(locale, 'play.empty')}</p>
-        <button type="button" className="primary" onClick={() => setRoute({ name: 'play' })}>{t(locale, 'play.home')}</button>
+        <button type="button" className="primary" onClick={() => setRoute({ name: 'home' })}>{t(locale, 'play.home')}</button>
       </div>
     )
   }
@@ -212,7 +220,11 @@ export function Round() {
           {list.map((item, index) => {
             const word = WORD_BY_ID.get(item.wordId)
             if (!word) return null
+            const stat = readStat(data.words, item.wordId)
             const kind = item.correct && item.errors === 0 ? 'play.perfect' : item.correct ? 'play.helped' : 'play.missed'
+            const progressNote = !item.leveled && !item.demoted && !item.mastered && !stat.mastered && stat.level < 9 && stat.clean > 0
+              ? ` · ${t(locale, 'play.progress.clean', { n: stat.clean, next: stat.level + 1 })}`
+              : ''
             return (
               <div key={`${item.wordId}-${index}`} className="sum-row">
                 <b>{deLabel(word)}</b>
@@ -222,6 +234,7 @@ export function Round() {
                   {item.leveled ? ` · ${t(locale, 'play.moved', { level: item.level })}` : ''}
                   {item.demoted ? ` · ${t(locale, 'play.dropped', { level: item.level })}` : ''}
                   {item.mastered ? ` · ${t(locale, 'play.mastered')}` : ''}
+                  {progressNote}
                 </small>
               </div>
             )
@@ -286,11 +299,11 @@ export function Round() {
         </div>
         <div className="runner-side">
           {run > 1 ? <span className="streak-pill">{t(locale, 'play.streak', { n: run })}</span> : null}
-          <span className="runner-count">{isBoard(level) ? hand.words.length : `${Math.min(step + 1, hand.words.length)}/${hand.words.length}`}</span>
+          <span className="runner-count">{isBoard(level) ? `${boardMatched}/${hand.words.length}` : `${Math.min(step + 1, hand.words.length)}/${hand.words.length}`}</span>
         </div>
       </header>
       <div className="progress" aria-hidden="true">
-        <i style={{ width: isBoard(level) ? '12%' : `${(step / Math.max(hand.words.length, 1)) * 100}%` }} />
+        <i style={{ width: isBoard(level) ? `${(boardMatched / Math.max(hand.words.length, 1)) * 100}%` : `${(step / Math.max(hand.words.length, 1)) * 100}%` }} />
       </div>
       <div className="play-scroll">
         {isBoard(level) ? (
@@ -303,6 +316,7 @@ export function Round() {
             sound={data.profile?.sound !== false}
             voice={data.profile?.voice !== false}
             gradeIds={hand.gradeIds}
+            onProgress={(matched) => setBoardMatched(matched)}
             onGrade={grade}
             onDone={() => setPhase('done')}
           />
@@ -371,9 +385,25 @@ export function Round() {
           />
         ) : null}
       </div>
-      <button type="button" className="text-btn end-round" onClick={() => (list.length ? setPhase('done') : setRoute({ name: 'home' }))}>
-        {t(locale, 'play.end')}
-      </button>
+      {confirmEnd ? (
+        <div className="row end-confirm" role="group" aria-label={t(locale, 'play.end.confirm')}>
+          <span className="fine">{t(locale, 'play.end.confirm')}</span>
+          <button
+            type="button"
+            className="ghost danger"
+            onClick={() => (list.length ? setPhase('done') : setRoute({ name: 'home' }))}
+          >
+            {t(locale, 'play.end')}
+          </button>
+          <button type="button" className="text-btn" onClick={() => setConfirmEnd(false)}>
+            {t(locale, 'play.keep')}
+          </button>
+        </div>
+      ) : (
+        <button type="button" className="text-btn end-round" onClick={() => setConfirmEnd(true)}>
+          {t(locale, 'play.end')}
+        </button>
+      )}
     </div>
   )
 }

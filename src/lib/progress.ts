@@ -23,7 +23,7 @@ export const SHELF = {
 
 export const MAX_LEVEL = 9
 export const LEVELS = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-export const UNLOCK_AT = 50
+export const UNLOCK_AT = 12
 export const CLEAN_NEED = 3
 export const DROP_AT = 3
 
@@ -386,8 +386,12 @@ export function almostWords(stats: StatMap) {
   return best
 }
 
-export function wordOfDay(seed = daySeed()) {
-  return WORDS[seed % WORDS.length]
+export function wordOfDay(stats?: StatMap, seed = daySeed()) {
+  const reached2 = stats ? countReached(stats, 2) : 0
+  const maxRank = reached2 < UNLOCK_AT ? 0 : reached2 < 50 ? 1 : reached2 < 150 ? 2 : CEFR_LEVELS.length - 1
+  const pool = WORDS.filter((word) => cefrRank(word.cefr) <= maxRank)
+  const list = pool.length ? pool : WORDS
+  return list[seed % list.length]
 }
 
 export function dayKey(ts: number) {

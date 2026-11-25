@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Spiral } from '../components/Bits'
+import { GenderKey, Spiral } from '../components/Bits'
 import { playFeedback, speakGerman } from '../lib/audio'
 import { t } from '../lib/i18n'
 import { matchCards, type MemoryCard } from '../lib/text'
@@ -13,11 +13,12 @@ interface Props {
   sound: boolean
   voice: boolean
   gradeIds?: string[]
+  onProgress?: (matched: number, total: number) => void
   onGrade: (wordId: string, errors: number, correct: boolean) => void
   onDone: () => void
 }
 
-export function MatchGame({ words, mode, bridge, locale, sound, voice, gradeIds, onGrade, onDone }: Props) {
+export function MatchGame({ words, mode, bridge, locale, sound, voice, gradeIds, onProgress, onGrade, onDone }: Props) {
   const cards = useMemo(() => matchCards(words, bridge), [words, bridge])
   const graded = useMemo(() => (gradeIds?.length ? new Set(gradeIds) : null), [gradeIds])
   const [picked, setPicked] = useState<string[]>([])
@@ -65,6 +66,7 @@ export function MatchGame({ words, mode, bridge, locale, sound, voice, gradeIds,
       const nextMatched = [...matched, card.wordId]
       setMatched(nextMatched)
       setPicked([])
+      onProgress?.(nextMatched.length, words.length)
       playFeedback(true, sound)
       if (voice) speakGerman(card.speak, true)
       if (!graded || graded.has(card.wordId)) onGrade(card.wordId, errors, true)
@@ -122,6 +124,7 @@ export function MatchGame({ words, mode, bridge, locale, sound, voice, gradeIds,
           )
         })}
       </div>
+      <GenderKey label={t(locale, 'gender.key')} />
     </div>
   )
 }

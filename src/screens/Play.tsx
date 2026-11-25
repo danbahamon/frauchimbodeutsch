@@ -30,7 +30,7 @@ export function Play() {
           <h1>{t(locale, `level.${level}.name`)}</h1>
         </div>
       </div>
-      <p className="muted">{t(locale, 'play.lead')}</p>
+      <p className="muted">{t(locale, 'play.lead', { need: UNLOCK_AT })}</p>
       <div className="shelves">
         {LEVELS.map((item) => {
           const unlocked = isUnlocked(data.words, item)
@@ -42,13 +42,7 @@ export function Play() {
               data-open={unlocked}
               data-on={item === level}
               data-today={item === assigned}
-              onClick={() => {
-                if (!unlocked) {
-                  flash(t(locale, 'home.next', { level: item, need: UNLOCK_AT, have: countReached(data.words, item) }))
-                  return
-                }
-                setLevel(item)
-              }}
+              onClick={() => setLevel(item)}
             >
               {item === assigned ? <small>{t(locale, 'shelf.today')}</small> : <small>{t(locale, 'common.level', { n: item })}</small>}
               <b>{t(locale, `level.${item}.name`)}</b>
@@ -58,6 +52,9 @@ export function Play() {
         })}
       </div>
       <p>{t(locale, `level.${level}.blurb`)}</p>
+      {!open ? (
+        <p className="fine">{t(locale, 'home.next', { level, need: UNLOCK_AT, have: countReached(data.words, level) })}</p>
+      ) : null}
       <button type="button" className="primary wide" disabled={!open} onClick={begin}>{t(locale, 'play.begin')}</button>
     </div>
   )

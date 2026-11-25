@@ -388,7 +388,7 @@ const g15 = noun('tech', [
   ['Zero-Trust-Architektur', 'zero trust architecture', 'arquitectura de confianza cero', 'die', 'Zero-Trust-Architekturen'],
   ['Quantencomputer', 'quantum computer', 'computadora cuántica', 'der', 'Quantencomputer'],
   ['Neuronales Netz', 'neural network', 'red neuronal', 'das', 'Neuronalen Netze'],
-  ['Interopabilität', 'interoperability', 'interoperabilidad', 'die', ''],
+  ['Interoperabilität', 'interoperability', 'interoperabilidad', 'die', ''],
   ['Skalierbarkeit', 'scalability', 'escalabilidad', 'die', ''],
   ['Durchsatz', 'throughput', 'rendimiento de datos', 'der', 'Durchsätze'],
   ['Redundanz', 'redundancy', 'redundancia', 'die', 'Redundanzen'],

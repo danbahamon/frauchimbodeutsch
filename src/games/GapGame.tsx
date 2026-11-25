@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { getCategory } from '../data/categories'
+import { UmlautBar } from '../components/Bits'
 import { Icon } from '../components/Icon'
 import { playFeedback, speakGerman } from '../lib/audio'
 import { t } from '../lib/i18n'
@@ -126,24 +127,35 @@ export function GapGame({
       </p>
       <p className="muted">{gloss(word, bridge)}</p>
       {write ? (
-        <input
-          ref={inputRef}
-          className="write"
-          value={typed}
-          lang="de"
-          autoCapitalize="off"
-          autoCorrect="off"
-          spellCheck={false}
-          aria-label={t(locale, 'play.prompt.gap.write')}
-          onChange={(event) => setTyped(event.target.value)}
-          onKeyDown={(event) => {
-            if (event.key !== 'Enter') return
-            event.preventDefault()
-            event.stopPropagation()
-            if (done.current) onNext()
-            else submit()
-          }}
-        />
+        <>
+          <input
+            ref={inputRef}
+            className="write"
+            value={typed}
+            lang="de"
+            autoCapitalize="off"
+            autoCorrect="off"
+            spellCheck={false}
+            aria-label={t(locale, 'play.prompt.gap.write')}
+            onChange={(event) => setTyped(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key !== 'Enter') return
+              event.preventDefault()
+              event.stopPropagation()
+              if (done.current) onNext()
+              else submit()
+            }}
+          />
+          {!done.current ? (
+            <UmlautBar
+              onInsert={(ch) => {
+                setTyped((value) => value + ch)
+                inputRef.current?.focus()
+              }}
+              tip={t(locale, 'play.umlaut.tip')}
+            />
+          ) : null}
+        </>
       ) : (
         <div className="stack">
           {chips.map((chip, index) => (
@@ -162,10 +174,15 @@ export function GapGame({
           ))}
         </div>
       )}
-      {hinted && !done.current ? <p className="hint-line">{t(locale, 'play.starts', { letter: hinted })}</p> : null}
+      {hinted && !done.current ? (
+        <>
+          <p className="hint-line">{t(locale, 'play.starts', { letter: hinted })}</p>
+          <p className="fine">{t(locale, 'play.hint.note')}</p>
+        </>
+      ) : null}
       {done.current ? (
-        <div className={clean ? 'verdict ok' : 'verdict bad'} role="status">
-          <b>{clean ? t(locale, 'play.yes') : t(locale, 'play.no')}</b>
+        <div className={clean ? 'verdict ok' : correct ? 'verdict helped' : 'verdict bad'} role="status">
+          <b>{clean ? t(locale, 'play.yes') : correct ? t(locale, 'play.helped.verdict') : t(locale, 'play.no')}</b>
           <p>{answer} · {gloss(word, bridge)}</p>
           {mark?.leveled ? <p>{t(locale, 'play.moved', { level: mark.level })}</p> : null}
           {mark?.mastered ? <p>{t(locale, 'play.mastered')}</p> : null}
@@ -177,7 +194,7 @@ export function GapGame({
       <div className="row">
         {write && !done.current ? (
           <>
-            <button type="button" className="ghost" onClick={hint}>{t(locale, 'play.hint')}</button>
+            <button type="button" className="ghost" title={t(locale, 'play.hint.note')} onClick={hint}>{t(locale, 'play.hint')}</button>
             <button type="button" className="ghost" onClick={() => finish(Math.max(errorsRef.current, 1), false)}>{t(locale, 'play.show')}</button>
             <button type="button" className="primary" disabled={!typed.trim()} onClick={submit}>{t(locale, 'play.check')}</button>
           </>

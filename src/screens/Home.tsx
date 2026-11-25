@@ -18,7 +18,7 @@ export function Home() {
   const missed = recentMissed(data.words)
   const almost = almostWords(data.words)
   const almostReady = !!almost && collect(data.words, almost.level, { ids: almost.ids }).length >= (isBoard(almost.level) ? 2 : 1)
-  const word = wordOfDay()
+  const word = wordOfDay(data.words)
   const cat = word ? getCategory(word.cat) : undefined
   const locked = nextLocked(data.words)
   const streakLine = streak > 1 ? t(locale, 'home.streak', { n: streak }) : streak === 1 ? t(locale, 'home.streak.one') : t(locale, 'home.streak.zero')

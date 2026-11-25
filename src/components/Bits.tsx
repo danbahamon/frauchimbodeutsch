@@ -79,3 +79,26 @@ export function Burst() {
 export function deOf(word: Word) {
   return deLabel(word)
 }
+
+const UMLAUTS = ['ä', 'ö', 'ü', 'ß'] as const
+
+export function UmlautBar({ onInsert, tip }: { onInsert: (ch: string) => void; tip: string }) {
+  return (
+    <div className="umlaut-wrap">
+      <div className="umlaut-bar">
+        {UMLAUTS.map((ch) => (
+          <button
+            key={ch}
+            type="button"
+            className="umlaut-btn"
+            onMouseDown={(event) => event.preventDefault()}
+            onClick={() => onInsert(ch)}
+          >
+            {ch}
+          </button>
+        ))}
+      </div>
+      <p className="fine umlaut-tip">{tip}</p>
+    </div>
+  )
+}

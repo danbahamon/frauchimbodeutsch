@@ -6,7 +6,7 @@ import { Icon } from '../components/Icon'
 import { saveResultCard } from '../lib/card'
 import { t } from '../lib/i18n'
 import { testRoute } from '../lib/launch'
-import { CLEAN_NEED, LEVELS, SHELF, pendingSummary, readStat } from '../lib/progress'
+import { CLEAN_NEED, LEVELS, SHELF, cefrRank, pendingSummary, readStat } from '../lib/progress'
 import { deLabel, gloss, matchesQuery, uid } from '../lib/text'
 import type { Locale, TargetWord, Word, WordStat } from '../lib/types'
 import { useStore } from '../state'
@@ -153,7 +153,7 @@ function Builder() {
     if (cat && word.cat !== cat) return false
     if (query.trim() && !matchesQuery(word, query)) return false
     return true
-  }), [cat, query])
+  }).sort((a, b) => cefrRank(a.cefr) - cefrRank(b.cefr) || a.de.localeCompare(b.de, 'de')), [cat, query])
   const shown = filtered.slice(0, 60)
   const canAddShelf = Boolean((cat || query.trim()) && filtered.length >= 1 && filtered.length <= 120)
   const chosen = picked.flatMap((item) => {
@@ -253,6 +253,9 @@ function Builder() {
             </button>
           )
         })}
+        {filtered.length > shown.length ? (
+          <p className="fine">{t(locale, 'class.more', { shown: shown.length, total: filtered.length })}</p>
+        ) : null}
       </div>
       <button type="button" className="primary wide" disabled={picked.length < 4} onClick={make}>{t(locale, 'class.make')}</button>
       <h2 style={{ marginTop: 28 }}>{t(locale, 'class.saved')}</h2>

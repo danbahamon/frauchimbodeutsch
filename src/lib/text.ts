@@ -78,10 +78,12 @@ export function glossForms(text: string) {
   const parts = stripped.split(/[/,]/).map((part) => part.trim()).filter(Boolean)
   const forms = new Set<string>()
   for (const chunk of [text, stripped, ...parts]) {
-    const folded = fold(chunk)
-    if (folded) forms.add(folded)
-    const bare = folded.replace(/^(the|el|la|los|las) /, '')
-    if (bare) forms.add(bare)
+    for (const variant of [chunk, chunk.replace(/['’]/g, '')]) {
+      const folded = fold(variant)
+      if (folded) forms.add(folded)
+      const bare = folded.replace(/^(the|el|la|los|las) /, '')
+      if (bare) forms.add(bare)
+    }
   }
   return [...forms]
 }
@@ -205,12 +207,33 @@ export function gapLabel(word: Word) {
   return word.kind === 'noun' && word.art ? `${word.art} ${word.de}` : word.de
 }
 
+const NON_MOECHTE_VERBS = new Set([
+  'sein', 'haben', 'werden', 'können', 'müssen', 'dürfen', 'sollen', 'wollen', 'mögen',
+  'wissen', 'bleiben', 'heißen', 'passieren', 'regnen', 'schneien', 'kosten', 'gehören',
+  'fehlen', 'stimmen', 'brauchen', 'kennen', 'bedeuten', 'scheinen', 'gelingen',
+])
+
+const OPEN_PHRASES = new Set(['ich heiße', 'ich möchte'])
+
 export function gapParts(word: Word) {
   const punct = /[.!?]$/.test(word.de)
-  if (word.kind === 'verb') return { before: 'Ich möchte', after: '.' }
-  if (word.kind === 'adj') return { before: 'Es ist', after: '.' }
+  const lower = word.de.trim().toLowerCase()
+  if (word.kind === 'verb') {
+    if (NON_MOECHTE_VERBS.has(lower) || lower.includes(' ')) {
+      return { before: 'Auf Deutsch heißt es:', after: '.' }
+    }
+    return { before: 'Ich möchte', after: '.' }
+  }
+  if (word.kind === 'adj') {
+    if (word.cat === 'feelings') return { before: 'Ich bin', after: '.' }
+    if (word.cat === 'colors') return { before: 'Die Farbe ist', after: '.' }
+    return { before: 'Es ist', after: '.' }
+  }
   if (word.kind === 'num') return { before: 'Die Zahl ist', after: '.' }
-  if (word.kind === 'phrase') return { before: 'Man sagt:', after: punct ? '' : '.' }
+  if (word.kind === 'phrase') {
+    if (OPEN_PHRASES.has(lower)) return { before: 'Man sagt:', after: ' …' }
+    return { before: 'Man sagt:', after: punct ? '' : '.' }
+  }
   return { before: 'Das ist', after: punct ? '' : '.' }
 }
 
