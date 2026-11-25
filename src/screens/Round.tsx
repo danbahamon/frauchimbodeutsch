@@ -10,7 +10,8 @@ import { PluralGame } from '../games/PluralGame'
 import { PromptGame } from '../games/PromptGame'
 import { saveResultCard } from '../lib/card'
 import { t } from '../lib/i18n'
-import { SHELF, buildQueue, isBoard, openLevels, readStat, testHands, type PlayHand } from '../lib/progress'
+import { testRoute } from '../lib/launch'
+import { SHELF, buildQueue, isBoard, nextPendingHand, openLevels, pendingSummary, readStat, testHands, type PlayHand } from '../lib/progress'
 import { deLabel, gloss, makeTask, uid } from '../lib/text'
 import type { Source } from '../lib/types'
 import { useStore } from '../state'
@@ -20,6 +21,7 @@ interface Outcome {
   errors: number
   correct: boolean
   leveled: boolean
+  demoted: boolean
   mastered: boolean
   level: number
 }
@@ -37,12 +39,14 @@ export function Round() {
   const route = data.route
   const round = route.name === 'round' ? route : null
   const wordsRef = useRef(data.words)
-  const hands = useMemo(() => {
-    if (!round) return [] as PlayHand[]
+  const seedHands = useMemo((): PlayHand[] => {
+    if (!round) return []
     if (round.targets?.length) return testHands(wordsRef.current, round.targets, Boolean(round.exam))
     const queue = buildQueue(wordsRef.current, round.level, round.source, { cat: round.cat, ids: round.wordIds })
     return queue.hands.map((words) => ({ level: round.level, words }))
   }, [round])
+  const [extraHands, setExtraHands] = useState<PlayHand[]>([])
+  const hands = useMemo(() => [...seedHands, ...extraHands], [seedHands, extraHands])
   const [handIndex, setHandIndex] = useState(0)
   const [step, setStep] = useState(0)
   const [phase, setPhase] = useState<'play' | 'done'>('play')
@@ -54,6 +58,12 @@ export function Round() {
   const meta = useRef({ level: round?.level ?? 1, source: (round?.source ?? 'spiral') as Source, title: round?.title, cat: round?.cat })
   if (round) meta.current = { level: round.level, source: round.source, title: round.title, cat: round.cat }
   const openedAtStart = useRef(openLevels(wordsRef.current))
+  useEffect(() => {
+    setExtraHands([])
+    setHandIndex(0)
+    setStep(0)
+    setPhase('play')
+  }, [round?.nonce])
 
   useEffect(() => () => {
     if (logged.current) return
@@ -97,9 +107,34 @@ export function Round() {
 
   const grade = (wordId: string, errors: number, correct: boolean) => {
     const info = recordWord(wordId, level, errors, correct)
-    outcomes.current.push({ wordId, errors, correct, leveled: info.leveled, mastered: info.mastered, level: info.level })
+    outcomes.current.push({
+      wordId,
+      errors,
+      correct,
+      leveled: info.leveled,
+      demoted: info.demoted,
+      mastered: info.mastered,
+      level: info.level,
+    })
     setLive((value) => value + 1)
     return info
+  }
+
+  const practiceLeft = round.targets?.length && !round.exam
+    ? pendingSummary(data.words, round.targets)
+    : { count: 0, nextLevel: null as number | null }
+
+  const continuePractice = () => {
+    if (!round.targets?.length) return
+    const next = nextPendingHand(data.words, round.targets)
+    if (!next) {
+      setPhase('done')
+      return
+    }
+    setExtraHands((current) => [...current, next])
+    setHandIndex(hands.length)
+    setStep(0)
+    setPhase('play')
   }
 
   const list = outcomes.current
@@ -185,6 +220,7 @@ export function Round() {
                 <small>
                   {t(locale, kind)}
                   {item.leveled ? ` · ${t(locale, 'play.moved', { level: item.level })}` : ''}
+                  {item.demoted ? ` · ${t(locale, 'play.dropped', { level: item.level })}` : ''}
                   {item.mastered ? ` · ${t(locale, 'play.mastered')}` : ''}
                 </small>
               </div>
@@ -196,14 +232,47 @@ export function Round() {
             <button type="button" className="primary" onClick={() => { setHandIndex((value) => value + 1); setStep(0); setPhase('play') }}>
               {t(locale, 'play.more')}
             </button>
+          ) : practiceLeft.count && practiceLeft.nextLevel ? (
+            <button type="button" className="primary" onClick={continuePractice}>
+              {t(locale, 'play.continue', {
+                level: practiceLeft.nextLevel,
+                name: t(locale, `level.${practiceLeft.nextLevel}.name`),
+              })}
+            </button>
           ) : null}
-          <button type="button" className="ghost" onClick={() => setRoute({ ...round, nonce: Date.now() })}>{t(locale, 'play.again')}</button>
+          <button
+            type="button"
+            className="ghost"
+            onClick={() => setRoute(round.targets?.length
+              ? testRoute(round.title || title, round.targets, Boolean(round.exam))
+              : { ...round, nonce: Date.now() })}
+          >
+            {t(locale, 'play.again')}
+          </button>
           {round.targets?.length ? (
-            <button type="button" className="ghost" onClick={() => void save()}>{t(locale, 'play.save')}</button>
+            <>
+              <button type="button" className="ghost" onClick={() => void save()}>{t(locale, 'play.save')}</button>
+              <button
+                type="button"
+                className="ghost"
+                onClick={() => setRoute({ name: 'shared', title: round.title || title, words: round.targets ?? [] })}
+              >
+                {t(locale, 'shared.back')}
+              </button>
+            </>
           ) : null}
           <button type="button" className="text-btn" onClick={() => setRoute({ name: 'home' })}>{t(locale, 'play.home')}</button>
         </div>
         {left > 0 ? <p className="fine">{t(locale, 'play.left', { n: left })}</p> : null}
+        {!left && practiceLeft.count ? (
+          <p className="fine">
+            {t(locale, 'shared.next.shelf', {
+              n: practiceLeft.count,
+              level: practiceLeft.nextLevel ?? 1,
+              name: t(locale, `level.${practiceLeft.nextLevel ?? 1}.name`),
+            })}
+          </p>
+        ) : null}
       </div>
     )
   }
@@ -226,13 +295,14 @@ export function Round() {
       <div className="play-scroll">
         {isBoard(level) ? (
           <MatchGame
-            key={handIndex}
+            key={`${round.nonce}-${handIndex}`}
             words={hand.words}
             mode={level === SHELF.memory ? 'memory' : 'open'}
             bridge={bridge}
             locale={locale}
             sound={data.profile?.sound !== false}
             voice={data.profile?.voice !== false}
+            gradeIds={hand.gradeIds}
             onGrade={grade}
             onDone={() => setPhase('done')}
           />

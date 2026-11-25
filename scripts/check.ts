@@ -1,6 +1,7 @@
 import { CATEGORIES } from '../src/data/categories'
 import { WORDS } from '../src/data/words'
-import { SHELF, applyStat, blankStat, buildQueue, isUnlocked, migrateShelf, planHands } from '../src/lib/progress'
+import { DROP_AT, SHELF, applyStat, blankStat, buildQueue, isUnlocked, migrateShelf, nextPendingHand, orderPool, planHands, recentMissed, simTestHands } from '../src/lib/progress'
+import { CEFR_LEVELS } from '../src/lib/types'
 import { decodeSet, encodeSet, encodeTest } from '../src/lib/share'
 import { fold, glossForms, matchesDe, matchesGloss } from '../src/lib/text'
 
@@ -9,7 +10,7 @@ const en = new Map<string, string>()
 const es = new Map<string, string>()
 const de = new Map<string, string>()
 
-if (WORDS.length < 1700) problems.push(`only ${WORDS.length} words`)
+if (WORDS.length < 3500) problems.push(`only ${WORDS.length} words`)
 
 for (const cat of CATEGORIES) {
   const count = WORDS.filter((word) => word.cat === cat.id).length
@@ -21,8 +22,10 @@ for (const cat of seenCat) {
   if (!CATEGORIES.some((item) => item.id === cat)) problems.push(`unknown category ${cat}`)
 }
 
+const cefrOk = new Set(['a1', 'a2', 'b1', 'b2', 'c1', 'c2'])
 for (const word of WORDS) {
   if (!word.de || !word.en || !word.es) problems.push(`empty field ${word.id}`)
+  if (!cefrOk.has(word.cefr)) problems.push(`bad cefr ${word.id} ${word.cefr}`)
   if (word.kind === 'noun' && !word.art) problems.push(`noun missing article ${word.de}`)
   const deKey = `${word.art ?? ''}:${word.de.toLowerCase()}`
   const prevDe = de.get(deKey)
@@ -74,6 +77,49 @@ let face = blankStat()
 face = applyStat({ stat: face, gameLevel: SHELF.open, errors: 1, correct: true }).stat
 if (face.clean !== 0 || face.correct !== 1 || face.misses !== 1) problems.push('open board ignored the first try')
 
+let sitting = { ...blankStat(), level: 3 }
+for (let i = 0; i < DROP_AT - 1; i++) {
+  sitting = applyStat({ stat: sitting, gameLevel: 3, errors: 1, correct: false }).stat
+}
+if (sitting.level !== 3 || sitting.shelfMisses !== DROP_AT - 1) problems.push('shelf misses did not stack')
+const dropped = applyStat({ stat: sitting, gameLevel: 3, errors: 1, correct: false })
+if (!dropped.demoted || dropped.stat.level !== 2 || dropped.stat.shelfMisses !== 0) problems.push('three misses did not demote')
+const helped = applyStat({
+  stat: { ...blankStat(), level: 2, shelfMisses: DROP_AT - 1 },
+  gameLevel: 2,
+  errors: 1,
+  correct: true,
+})
+if (helped.demoted || helped.stat.level !== 2) problems.push('helped answer should not demote')
+
+const sheet = [
+  { id: WORDS[0]?.id ?? '', target: 4 },
+  { id: WORDS[1]?.id ?? '', target: 2 },
+  { id: WORDS[2]?.id ?? '', target: 1 },
+]
+const sheetStats = {
+  [sheet[0].id]: { ...blankStat(), level: 1 },
+  [sheet[1].id]: { ...blankStat(), level: 2 },
+  [sheet[2].id]: { ...blankStat(), level: 1 },
+}
+const pendingHand = nextPendingHand(sheetStats, sheet)
+const gradedIds = pendingHand?.gradeIds ?? pendingHand?.words.map((word) => word.id) ?? []
+if (!pendingHand || pendingHand.level !== 1 || !gradedIds.includes(sheet[0].id)) {
+  problems.push('practice did not start on the lowest pending shelf')
+}
+if (gradedIds.includes(sheet[1].id) || gradedIds.includes(sheet[2].id)) problems.push('target-met word entered practice')
+const exam = simTestHands(sheet)
+if (exam.length < 2 || !exam.every((hand) => hand.words.every((word) => {
+  const goal = sheet.find((item) => item.id === word.id)?.target
+  return !goal || hand.level === goal || Boolean(hand.gradeIds && !hand.gradeIds.includes(word.id))
+}))) problems.push('sim test did not mix target shelves')
+const missMap = {
+  [WORDS[10]?.id ?? '']: { ...blankStat(), level: 2, lastMissedAt: 100, misses: 1 },
+  [WORDS[11]?.id ?? '']: { ...blankStat(), level: 2, lastMissedAt: 200, misses: 1 },
+}
+const missed = recentMissed(missMap)
+if (!missed || missed.level !== 2 || missed.count < 2) problems.push('recent misses missing from home')
+
 const hands = planHands(WORDS.slice(0, 7), 1)
 if (hands.length !== 2 || hands[0].length + hands[1].length !== 7) problems.push(`planHands ${hands.map((hand) => hand.length).join('+')}`)
 const one = planHands(WORDS.slice(0, 4), 1)
@@ -81,6 +127,13 @@ if (one.length !== 1 || one[0].length !== 4) problems.push('planHands short')
 
 const queue = buildQueue({}, 1, 'spiral')
 if (!queue.hands.length) problems.push('level 1 queue empty')
+const ranked = orderPool(WORDS.slice(0, 40), {}, 1, false)
+for (let i = 1; i < ranked.length; i++) {
+  if (CEFR_LEVELS.indexOf(ranked[i].cefr) < CEFR_LEVELS.indexOf(ranked[i - 1].cefr)) {
+    problems.push(`cefr order broke at ${ranked[i - 1].de} → ${ranked[i].de}`)
+    break
+  }
+}
 if (isUnlocked({}, 2)) problems.push('level 2 unlocked too early')
 const bumped: Record<string, ReturnType<typeof blankStat>> = {}
 for (const word of WORDS.slice(0, 50)) bumped[word.id] = { ...blankStat(), level: 2 }

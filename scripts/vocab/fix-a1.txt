@@ -1,0 +1,366 @@
+a1|hello|phrase|Schön dich zu sehen|nice to see you|qué gusto verte
+a1|hello|phrase|Bis später|see you later|hasta luego
+a1|hello|phrase|Gute Reise|have a good trip|buen viaje
+a1|hello|phrase|Viel Glück|good luck|buena suerte
+a1|hello|phrase|Prost|cheers|salud
+a1|hello|phrase|Wie bitte?|pardon|¿cómo dijo?
+a1|hello|phrase|Natürlich|of course|por supuesto
+a1|hello|phrase|Genau|exactly|exacto
+a1|hello|phrase|Alles klar|all clear|todo claro
+a1|hello|phrase|Kein Stress|no stress|sin estrés
+a1|hello|phrase|Mit Vergnügen|with pleasure|con gusto
+a1|hello|phrase|Herzlich willkommen|warm welcome|bienvenido cordialmente
+a1|hello|noun|Gast|guest|huésped|der|Gäste
+a1|hello|noun|Besuch|visit|visita|der|Besuche
+a1|hello|noun|Nachbar|neighbor|vecino|der|Nachbarn
+a1|hello|noun|Nachbarin|female neighbor|vecina|die|Nachbarinnen
+a1|numbers|other|erste|first|primero
+a1|numbers|other|zweite|second|segundo
+a1|numbers|other|dritte|third|tercero
+a1|numbers|other|letzte|last|último
+a1|numbers|other|halb|half|medio
+a1|numbers|other|beide|both|ambos
+a1|numbers|other|viele|many|muchos
+a1|numbers|other|wenige|few|pocos
+a1|numbers|num|Million|million|millón
+a1|numbers|num|Milliarde|billion|mil millones
+a1|colors|adj|hell|light-colored|claro
+a1|colors|adj|dunkel|dark-colored|oscuro
+a1|colors|adj|bunt|colorful|colorido
+a1|colors|noun|Farbe|color|color|die|Farben
+a1|colors|adj|beige|beige|beige
+a1|colors|adj|türkis|turquoise|turquesa
+a1|family|noun|Zwilling|twin|gemelo|der|Zwillinge
+a1|family|noun|Enkel|grandson|nieto|der|Enkel
+a1|family|noun|Enkelin|granddaughter|nieta|die|Enkelinnen
+a1|family|noun|Schwiegermutter|mother-in-law|suegra|die|Schwiegermütter
+a1|family|noun|Schwiegervater|father-in-law|suegro|der|Schwiegerväter
+a1|family|noun|Stiefmutter|stepmother|madrastra|die|Stiefmütter
+a1|family|noun|Stiefvater|stepfather|padrastro|der|Stiefväter
+a1|family|noun|Verwandte|relative|pariente|der|Verwandten
+a1|family|noun|Nichte|niece|sobrina|die|Nichten
+a1|family|noun|Neffe|nephew|sobrino|der|Neffen
+a1|body|noun|Wange|cheek|mejilla|die|Wangen
+a1|body|noun|Stirn|forehead|frente|die|Stirnen
+a1|body|noun|Kinn|chin|barbilla|das|Kinne
+a1|body|noun|Nacken|nape|nuca|der|Nacken
+a1|body|noun|Schulter|shoulder|hombro|die|Schultern
+a1|body|noun|Ellbogen|elbow|codo|der|Ellbogen
+a1|body|noun|Handgelenk|wrist|muñeca|das|Handgelenke
+a1|body|noun|Knöchel|ankle|tobillo|der|Knöchel
+a1|body|noun|Ferse|heel|talón|die|Fersen
+a1|body|noun|Zeh|toe|dedo del pie|der|Zehen
+a1|body|noun|Rippe|rib|costilla|die|Rippen
+a1|body|noun|Hüfte|hip|cadera|die|Hüften
+a1|clothes|noun|Mütze|beanie|gorro|die|Mützen
+a1|clothes|noun|Schal|scarf|bufanda|der|Schals
+a1|clothes|noun|Handschuh|glove|guante|der|Handschuhe
+a1|clothes|noun|Socke|sock|calcetín|die|Socken
+a1|clothes|noun|Unterhose|underpants|calzoncillo|die|Unterhosen
+a1|clothes|noun|BH|bra|sujetador|der|BHs
+a1|clothes|noun|Pyjama|pajamas|pijama|der|Pyjamas
+a1|clothes|noun|Bademantel|bathrobe|bata|der|Bademäntel
+a1|clothes|noun|Hausschuh|slipper|pantufla|der|Hausschuhe
+a1|clothes|noun|Gürtel|belt|cinturón|der|Gürtel
+a1|clothes|noun|Krawatte|necktie|corbata|die|Krawatten
+a1|food|noun|Brötchen|bread roll|panecillo|das|Brötchen
+a1|food|noun|Croissant|croissant|cruasan|das|Croissants
+a1|food|noun|Marmelade|jam|mermelada|die|Marmeladen
+a1|food|noun|Honig|honey|miel|der|Honige
+a1|food|noun|Joghurt|yogurt|yogur|der|Joghurts
+a1|food|noun|Quark|quark cheese|requesón|der|Quarks
+a1|food|noun|Schinken|ham|jamón|der|Schinken
+a1|food|noun|Wurst|sausage|salchicha|die|Würste
+a1|food|noun|Schnitzel|schnitzel|escalope|das|Schnitzel
+a1|food|noun|Pommes|fries|papas fritas|die|Pommes
+a1|food|noun|Reis|rice|arroz|der|
+a1|food|noun|Nudel|noodle|fideo|die|Nudeln
+a1|food|noun|Suppe|soup|sopa|die|Suppen
+a1|food|noun|Salat|salad|ensalada|der|Salate
+a1|fruit|noun|Kirsche|cherry|cereza|die|Kirschen
+a1|fruit|noun|Pfirsich|peach|melocotón|der|Pfirsiche
+a1|fruit|noun|Aprikose|apricot|albaricoque|die|Aprikosen
+a1|fruit|noun|Pflaume|plum|ciruela|die|Pflaumen
+a1|fruit|noun|Melone|melon|melón|die|Melonen
+a1|fruit|noun|Wassermelone|watermelon|sandía|die|Wassermelonen
+a1|fruit|noun|Ananas|pineapple|piña|die|Ananas
+a1|fruit|noun|Mango|mango fruit|mango|die|Mangos
+a1|fruit|noun|Kiwi|kiwi fruit|kiwi|die|Kiwis
+a1|fruit|noun|Feige|fig|higo|die|Feigen
+a1|veg|noun|Zucchini|zucchini|calabacín|die|Zucchini
+a1|veg|noun|Aubergine|eggplant|berenjena|die|Auberginen
+a1|veg|noun|Paprika|bell pepper|pimiento|die|Paprikas
+a1|veg|noun|Brokkoli|broccoli|brócoli|der|Brokkoli
+a1|veg|noun|Blumenkohl|cauliflower|coliflor|der|Blumenköhle
+a1|veg|noun|Mais|corn|maíz|der|
+a1|veg|noun|Erbse|pea|guisante|die|Erbsen
+a1|veg|noun|Bohne|bean|frijol|die|Bohnen
+a1|veg|noun|Spinat|spinach|espinaca|der|
+a1|veg|noun|Salatgurke|cucumber|pepino|die|Salatgurken
+a1|drinks|noun|Limonade|lemonade|limonada|die|Limonaden
+a1|drinks|noun|Apfelsaft|apple juice|jugo de manzana|der|Apfelsäfte
+a1|drinks|noun|Orangensaft|orange juice|jugo de naranja|der|Orangensäfte
+a1|drinks|noun|Kakao|cocoa drink|cacao|der|Kakaos
+a1|drinks|noun|Cappuccino|cappuccino|capuchino|der|Cappuccini
+a1|drinks|noun|Espresso|espresso|espresso|der|Espressi
+a1|drinks|noun|Sprudel|sparkling water|agua con gas|der|Sprudel
+a1|drinks|noun|Cola|cola|cola|die|Colas
+a1|drinks|noun|Bier|beer|cerveza|das|Biere
+a1|drinks|noun|Wein|wine|vino|der|Weine
+a1|animals|noun|Ente|duck|pato|die|Enten
+a1|animals|noun|Gans|goose|ganso|die|Gänse
+a1|animals|noun|Truthahn|turkey|pavo|der|Truthähne
+a1|animals|noun|Maus|mouse|ratón|die|Mäuse
+a1|animals|noun|Ratte|rat|rata|die|Ratten
+a1|animals|noun|Fuchs|fox|zorro|der|Füchse
+a1|animals|noun|Wolf|wolf|lobo|der|Wölfe
+a1|animals|noun|Bär|bear|oso|der|Bären
+a1|animals|noun|Hase|hare|liebre|der|Hasen
+a1|animals|noun|Igel|hedgehog|erizo|der|Igel
+a1|house|noun|Dachboden|attic|ático|der|Dachböden
+a1|house|noun|Keller|basement|sótano|der|Keller
+a1|house|noun|Garage|garage|garaje|die|Garagen
+a1|house|noun|Balkon|balcony|balcón|der|Balkone
+a1|house|noun|Terrasse|terrace|terraza|die|Terrassen
+a1|house|noun|Zaun|fence|cerca|der|Zäune
+a1|house|noun|Briefkasten|mailbox|buzón|der|Briefkästen
+a1|house|noun|Treppe|stairs|escalera|die|Treppen
+a1|house|noun|Flur|hallway|pasillo|der|Flure
+a1|house|noun|Dach|roof|techo|das|Dächer
+a1|furniture|noun|Kommode|dresser|cómoda|die|Kommoden
+a1|furniture|noun|Regal|shelf unit|estantería|das|Regale
+a1|furniture|noun|Nachttisch|nightstand|mesita de noche|der|Nachttische
+a1|furniture|noun|Schreibtisch|desk|escritorio|der|Schreibtische
+a1|furniture|noun|Hocker|stool|taburete|der|Hocker
+a1|furniture|noun|Vorhang|curtain|cortina|der|Vorhänge
+a1|furniture|noun|Teppich|carpet|alfombra|der|Teppiche
+a1|furniture|noun|Spiegel|mirror|espejo|der|Spiegel
+a1|kitchen|noun|Herd|stove|estufa|der|Herde
+a1|kitchen|noun|Backofen|oven|horno|der|Backöfen
+a1|kitchen|noun|Mikrowelle|microwave|microondas|die|Mikrowellen
+a1|kitchen|noun|Toaster|toaster|tostadora|der|Toaster
+a1|kitchen|noun|Wasserkocher|kettle|hervidor|der|Wasserkocher
+a1|kitchen|noun|Pfanne|frying pan|sartén|die|Pfannen
+a1|kitchen|noun|Topf|pot|olla|der|Töpfe
+a1|kitchen|noun|Deckel|lid|tapa|der|Deckel
+a1|kitchen|noun|Spüle|sink|fregadero|die|Spülen
+a1|kitchen|noun|Geschirrtuch|dish towel|paño de cocina|das|Geschirrtücher
+a1|city|noun|Markt|market|mercado|der|Märkte
+a1|city|noun|Platz|town square|plaza|der|Plätze
+a1|city|noun|Brücke|bridge|puente|die|Brücken
+a1|city|noun|Kirche|church|iglesia|die|Kirchen
+a1|city|noun|Museum|museum|museo|das|Museen
+a1|city|noun|Kino|cinema|cine|das|Kinos
+a1|city|noun|Theater|theater|teatro|das|Theater
+a1|city|noun|Bibliothek|library|biblioteca|die|Bibliotheken
+a1|city|noun|Rathaus|city hall|ayuntamiento|das|Rathäuser
+a1|city|noun|Bank|bank|banco|die|Banken
+a1|transport|noun|Haltestelle|stop|parada|die|Haltestellen
+a1|transport|noun|Fahrkarte|ticket|boleto|die|Fahrkarten
+a1|transport|noun|Fahrschein|fare ticket|billete|der|Fahrscheine
+a1|transport|noun|Gleis|track|vía|das|Gleise
+a1|transport|noun|Bahnsteig|platform|andén|der|Bahnsteige
+a1|transport|noun|Ampel|traffic light|semáforo|die|Ampeln
+a1|transport|noun|Kreuzung|intersection|cruce|die|Kreuzungen
+a1|transport|noun|Parkplatz|parking lot|estacionamiento|der|Parkplätze
+a1|transport|noun|Tankstelle|gas station|gasolinera|die|Tankstellen
+a1|transport|noun|Fahrstuhl|elevator|ascensor|der|Fahrstühle
+a1|school|noun|Heft|notebook|cuaderno|das|Hefte
+a1|school|noun|Bleistift|pencil|lápiz|der|Bleistifte
+a1|school|noun|Kugelschreiber|ballpoint pen|bolígrafo|der|Kugelschreiber
+a1|school|noun|Radiergummi|eraser|borrador|der|Radiergummis
+a1|school|noun|Lineal|ruler|regla|das|Lineale
+a1|school|noun|Schultasche|school bag|mochila escolar|die|Schultaschen
+a1|school|noun|Pause|break|recreo|die|Pausen
+a1|school|noun|Hausaufgabe|homework|tarea|die|Hausaufgaben
+a1|school|noun|Tafel|blackboard|pizarra|die|Tafeln
+a1|school|noun|Kreide|chalk|tiza|die|Kreiden
+a1|jobs|noun|Arzt|doctor|médico|der|Ärzte
+a1|jobs|noun|Ärztin|female doctor|médica|die|Ärztinnen
+a1|jobs|noun|Lehrer|teacher|profesor|der|Lehrer
+a1|jobs|noun|Lehrerin|female teacher|profesora|die|Lehrerinnen
+a1|jobs|noun|Koch|cook|cocinero|der|Köche
+a1|jobs|noun|Köchin|female cook|cocinera|die|Köchinnen
+a1|jobs|noun|Kellner|waiter|mesero|der|Kellner
+a1|jobs|noun|Kellnerin|waitress|mesera|die|Kellnerinnen
+a1|jobs|noun|Polizist|police officer|policía|der|Polizisten
+a1|jobs|noun|Polizistin|female police officer|mujer policía|die|Polizistinnen
+a1|nature|noun|Berg|mountain|montaña|der|Berge
+a1|nature|noun|See|lake|lago|der|Seen
+a1|nature|noun|Fluss|river|río|der|Flüsse
+a1|nature|noun|Meer|sea|mar|das|Meere
+a1|nature|noun|Wald|forest|bosque|der|Wälder
+a1|nature|noun|Wiese|meadow|prado|die|Wiesen
+a1|nature|noun|Strand|beach|playa|der|Strände
+a1|nature|noun|Insel|island|isla|die|Inseln
+a1|nature|noun|Feld|field|campo|das|Felder
+a1|nature|noun|Hügel|hill|colina|der|Hügel
+a1|weather|noun|Sonne|sun|sol|die|Sonnen
+a1|weather|noun|Mond|moon|luna|der|Monde
+a1|weather|noun|Stern|star|estrella|der|Sterne
+a1|weather|noun|Wolke|cloud|nube|die|Wolken
+a1|weather|noun|Regen|rain|lluvia|der|Regen
+a1|weather|noun|Schnee|snow|nieve|der|
+a1|weather|noun|Wind|wind|viento|der|Winde
+a1|weather|phrase|Es regnet|it is raining|está lloviendo
+a1|weather|phrase|Es schneit|it is snowing|está nevando
+a1|weather|phrase|Die Sonne scheint|the sun is shining|el sol brilla
+a1|time|noun|Sekunde|second|segundo|die|Sekunden
+a1|time|noun|Minute|minute|minuto|die|Minuten
+a1|time|noun|Stunde|hour|hora|die|Stunden
+a1|time|noun|Woche|week|semana|die|Wochen
+a1|time|noun|Monat|month|mes|der|Monate
+a1|time|noun|Jahr|year|año|das|Jahre
+a1|time|noun|Jahrhundert|century|siglo|das|Jahrhunderte
+a1|time|other|gestern|yesterday|ayer
+a1|time|other|heute|today|hoy
+a1|time|other|morgen|tomorrow|mañana
+a1|time|other|jetzt|now|ahora
+a1|time|other|später|later|más tarde
+a1|feelings|adj|glücklich|happy|feliz
+a1|feelings|adj|traurig|sad|triste
+a1|feelings|adj|müde|tired|cansado
+a1|feelings|adj|hungrig|hungry|hambriento
+a1|feelings|adj|durstig|thirsty|sediento
+a1|feelings|adj|krank|sick|enfermo
+a1|feelings|adj|gesund|healthy|sano
+a1|feelings|adj|nervös|nervous|nervioso
+a1|feelings|adj|wütend|angry|enojado
+a1|feelings|adj|ruhig|calm|tranquilo
+a1|verbs|verb|öffnen|to open|abrir
+a1|verbs|verb|schließen|to close|cerrar
+a1|verbs|verb|beginnen|to begin|empezar
+a1|verbs|verb|enden|to end|terminar
+a1|verbs|verb|warten|to wait|esperar
+a1|verbs|verb|suchen|to search|buscar
+a1|verbs|verb|finden|to find|encontrar
+a1|verbs|verb|zeigen|to show|mostrar
+a1|verbs|verb|erklären|to explain|explicar
+a1|verbs|verb|fragen|to ask|preguntar
+a1|verbs|verb|antworten|to answer|responder
+a1|verbs|verb|erzählen|to tell|contar
+a1|verbs|verb|helfen|to help|ayudar
+a1|verbs|verb|brauchen|to need|necesitar
+a1|verbs|verb|kaufen|to buy|comprar
+a1|verbs|verb|verkaufen|to sell|vender
+a1|adjectives|adj|neu|new|nuevo
+a1|adjectives|adj|alt|old|viejo
+a1|adjectives|adj|jung|young|joven
+a1|adjectives|adj|groß|big|grande
+a1|adjectives|adj|klein|small|pequeño
+a1|adjectives|adj|lang|long|largo
+a1|adjectives|adj|kurz|short|corto
+a1|adjectives|adj|schnell|fast|rápido
+a1|adjectives|adj|langsam|slow|lento
+a1|adjectives|adj|leicht|easy|fácil
+a1|adjectives|adj|schwer|difficult|difícil
+a1|adjectives|adj|teuer|expensive|caro
+a1|adjectives|adj|billig|cheap|barato
+a1|adjectives|adj|schön|beautiful|bonito
+a1|adjectives|adj|hässlich|ugly|feo
+a1|adjectives|adj|sauber|clean|limpio
+a1|adjectives|adj|schmutzig|dirty|sucio
+a1|travel|noun|Koffer|suitcase|maleta|der|Koffer
+a1|travel|noun|Rucksack|backpack|mochila|der|Rucksäcke
+a1|travel|noun|Pass|passport|pasaporte|der|Pässe
+a1|travel|noun|Visum|visa|visa|das|Visa
+a1|travel|noun|Hotel|hotel|hotel|das|Hotels
+a1|travel|noun|Hostel|hostel|hostal|das|Hostels
+a1|travel|noun|Reise|trip|viaje|die|Reisen
+a1|travel|noun|Flughafen|airport|aeropuerto|der|Flughäfen
+a1|travel|noun|Bahnhof|train station|estación de tren|der|Bahnhöfe
+a1|shop|noun|Supermarkt|supermarket|supermercado|der|Supermärkte
+a1|shop|noun|Bäckerei|bakery|panadería|die|Bäckereien
+a1|shop|noun|Metzgerei|butcher shop|carnicería|die|Metzgereien
+a1|shop|noun|Apotheke|pharmacy|farmacia|die|Apotheken
+a1|shop|noun|Kasse|checkout|caja|die|Kassen
+a1|shop|noun|Einkaufswagen|shopping cart|carrito|der|Einkaufswagen
+a1|shop|noun|Tüte|shopping bag|bolsa|die|Tüten
+a1|shop|noun|Rabatt|discount|descuento|der|Rabatte
+a1|hobbies|noun|Hobby|hobby|pasatiempo|das|Hobbys
+a1|hobbies|noun|Spiel|game|juego|das|Spiele
+a1|hobbies|noun|Buch|book|libro|das|Bücher
+a1|hobbies|noun|Zeitung|newspaper|periódico|die|Zeitungen
+a1|hobbies|noun|Zeitschrift|magazine|revista|die|Zeitschriften
+a1|hobbies|noun|Foto|photo|foto|das|Fotos
+a1|hobbies|noun|Film|movie|película|der|Filme
+a1|tech|noun|Handy|cell phone|celular|das|Handys
+a1|tech|noun|Laptop|laptop|portátil|der|Laptops
+a1|tech|noun|Tablet|tablet|tableta|das|Tablets
+a1|tech|noun|Bildschirm|screen|pantalla|der|Bildschirme
+a1|tech|noun|Tastatur|keyboard|teclado|die|Tastaturen
+a1|tech|noun|Computermaus|computer mouse|ratón de computadora|die|Computermäuse
+a1|tech|noun|Kabel|cable|cable|das|Kabel
+a1|lands|other|Deutschland|Germany|Alemania
+a1|lands|other|Österreich|Austria|Austria
+a1|lands|other|Schweiz|Switzerland|Suiza
+a1|lands|other|Spanien|Spain|España
+a1|lands|other|Frankreich|France|Francia
+a1|lands|other|Italien|Italy|Italia
+a1|lands|other|England|England|Inglaterra
+a1|lands|other|Portugal|Portugal|Portugal
+a1|lands|other|Polen|Poland|Polonia
+a1|bath|noun|Seife|soap|jabón|die|Seifen
+a1|bath|noun|Shampoo|shampoo|champú|das|Shampoos
+a1|bath|noun|Handtuch|towel|toalla|das|Handtücher
+a1|bath|noun|Zahnbürste|toothbrush|cepillo de dientes|die|Zahnbürsten
+a1|bath|noun|Zahnpasta|toothpaste|pasta de dientes|die|Zahnpasten
+a1|bath|noun|Dusche|shower|ducha|die|Duschen
+a1|bath|noun|Badewanne|bathtub|bañera|die|Badewannen
+a1|office|noun|Büro|office|oficina|das|Büros
+a1|office|noun|Termin|appointment|cita|der|Termine
+a1|office|noun|Besprechung|meeting|reunión|die|Besprechungen
+a1|office|noun|Brief|letter|carta|der|Briefe
+a1|office|noun|E-Mail|email|correo|die|E-Mails
+a1|office|noun|Ordner|folder|carpeta|der|Ordner
+a1|music|noun|Lied|song|canción|das|Lieder
+a1|music|noun|Musik|music|música|die|
+a1|music|noun|Gitarre|guitar|guitarra|die|Gitarren
+a1|music|noun|Klavier|piano|piano|das|Klaviere
+a1|music|noun|Trommel|drum|tambor|die|Trommeln
+a1|music|noun|Geige|violin|violín|die|Geigen
+a1|sport|noun|Ball|ball|pelota|der|Bälle
+a1|sport|noun|Fußball|soccer|fútbol|der|Fußbälle
+a1|sport|noun|Tennis|tennis|tenis|das|
+a1|sport|noun|Schwimmen|swimming|natación|das|
+a1|sport|noun|Radfahren|cycling|ciclismo|das|
+a1|sport|noun|Team|team|equipo|das|Teams
+a1|health|noun|Krankenhaus|hospital|hospital|das|Krankenhäuser
+a1|health|noun|Medikament|medicine|medicamento|das|Medikamente
+a1|health|noun|Tablette|pill|pastilla|die|Tabletten
+a1|health|noun|Fieber|fever|fiebre|das|
+a1|health|noun|Husten|cough|tos|der|
+a1|health|noun|Schnupfen|cold|resfriado|der|Schnupfen
+a1|tools|noun|Hammer|hammer|martillo|der|Hämmer
+a1|tools|noun|Nagel|nail|clavo|der|Nägel
+a1|tools|noun|Schraube|screw|tornillo|die|Schrauben
+a1|tools|noun|Schere|scissors|tijeras|die|Scheren
+a1|tools|noun|Schlüssel|key|llave|der|Schlüssel
+a1|tools|noun|Leiter|ladder|escalera de mano|die|Leitern
+a1|garden|noun|Blume|flower|flor|die|Blumen
+a1|garden|noun|Baum|tree|árbol|der|Bäume
+a1|garden|noun|Gras|grass|césped|das|Gräser
+a1|garden|noun|Blatt|leaf|hoja|das|Blätter
+a1|garden|noun|Samen|seed|semilla|der|Samen
+a1|garden|noun|Wurzel|root|raíz|die|Wurzeln
+a1|money|noun|Geld|money|dinero|das|Gelder
+a1|money|noun|Euro|euro|euro|der|Euros
+a1|money|noun|Cent|cent|céntimo|der|Cents
+a1|money|noun|Münze|coin|moneda|die|Münzen
+a1|money|noun|Schein|banknote|billete de banco|der|Scheine
+a1|money|noun|Preis|price|precio|der|Preise
+a1|money|noun|Rechnung|bill|factura|die|Rechnungen
+a1|materials|noun|Holz|wood|madera|das|Hölzer
+a1|materials|noun|Metall|metal|metal|das|Metalle
+a1|materials|noun|Glas|glass material|vidrio|das|Gläser
+a1|materials|noun|Papier|paper|papel|das|Papiere
+a1|materials|noun|Plastik|plastic|plástico|das|
+a1|materials|noun|Stoff|fabric|tela|der|Stoffe
+a1|shapes|noun|Kreis|circle|círculo|der|Kreise
+a1|shapes|noun|Quadrat|square shape|cuadrado|das|Quadrate
+a1|shapes|noun|Dreieck|triangle|triángulo|das|Dreiecke
+a1|shapes|noun|Rechteck|rectangle|rectángulo|das|Rechtecke
+a1|shapes|noun|Linie|line|línea|die|Linien
+a1|shapes|noun|Punkt|dot|punto|der|Punkte
+a1|shapes|noun|Kugel|sphere|esfera|die|Kugeln
+a1|shapes|noun|Würfel|cube|cubo|der|Würfel

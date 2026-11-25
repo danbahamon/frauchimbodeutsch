@@ -1,0 +1,84 @@
+﻿b1|verbs|verb|nachholen|to make up for|recuperar lo perdido
+b1|verbs|verb|vorholen|to bring forward|adelantar una tarea
+b1|verbs|verb|abholen lassen|to have picked up|hacer recoger
+b1|verbs|verb|einholen|to catch up with|alcanzar a alguien
+b1|verbs|verb|überholen|to overtake|adelantar en tráfico
+b1|adjectives|adj|nachhaltig gedacht|sustainably conceived|pensado de forma sostenible
+b1|adjectives|adj|zukunftsfähig|future-proof|apto para el futuro
+b1|adjectives|adj|alltagstauglich|everyday-ready|apto para el día a día
+b1|adjectives|adj|praxistauglich|fit for practice|apto para la práctica
+b1|adjectives|adj|schulgerecht|school-appropriate|adecuado para la escuela
+b2|verbs|verb|vorausschauen|to look ahead|mirar hacia delante
+b2|verbs|verb|zurückblicken|to look back|mirar hacia atrás
+b2|verbs|verb|hineinblicken|to look into|mirar hacia dentro
+b2|verbs|verb|hinausblicken|to look outward|mirar hacia fuera
+b2|verbs|verb|herumblicken|to look around|mirar alrededor
+b2|adjectives|adj|weitblickend|far-sighted|con visión de futuro
+b2|adjectives|adj|kurzsichtig handelnd|short-sightedly acting|actuando con cortoplacismo
+b2|adjectives|adj|strategisch klug|strategically smart|estratégicamente inteligente
+b2|adjectives|adj|taktisch geschickt|tactically skilled|hábil tácticamente
+b2|adjectives|adj|operativ stark|operationally strong|fuerte operativamente
+c1|verbs|verb|rekonstruieren|to reconstruct|reconstruir
+c1|verbs|verb|dekonstruieren weiter|to deconstruct further|deconstruir más
+c1|verbs|verb|rekonfigurieren weiter|to reconfigure further|reconfigurar más
+c1|verbs|verb|transformieren|to transform|transformar
+c1|verbs|verb|reformulieren|to reformulate|reformular
+c1|adjectives|adj|theoriebildend|theory-building|generador de teoría
+c1|adjectives|adj|erkenntnisfördernd|knowledge-promoting|promotor de conocimiento
+c1|adjectives|adj|diskursprägend|discourse-shaping|que marca el discurso
+c1|adjectives|adj|paradigmenwechselnd|paradigm-shifting|que cambia el paradigma
+c1|adjectives|adj|anschlussfähig gedacht|connectably conceived|pensado de forma conectable
+c2|verbs|verb|vergegenwärtigen|to make present|hacer presente mentalmente
+c2|verbs|verb|verewigen|to eternalize|eternizar
+c2|verbs|verb|verflüchtigen|to volatilize|volatilizar
+c2|verbs|verb|verklären|to transfigure|transfigurar
+c2|verbs|verb|verfremden|to alienate artistically|extrañar artísticamente
+c2|adjectives|adj|zeitentrückt|removed from time|ajeno al tiempo
+c2|adjectives|adj|raumentrückt|removed from space|ajeno al espacio
+c2|adjectives|adj|welthaltig|world-containing|rico en mundo
+c2|adjectives|adj|sinnstiftend|meaning-making|generador de sentido
+c2|adjectives|adj|sinnentleert|emptied of meaning|vacío de sentido
+a2|kitchen|noun|Gemüseschäler|vegetable peeler|pelador de verduras|der|Gemüseschäler
+a2|kitchen|noun|Kartoffelstampfer|potato masher|machacapatatas|der|Kartoffelstampfer
+a2|kitchen|noun|Teigschaber|dough scraper|espátula de masa|der|Teigschaber
+a2|kitchen|noun|Messbecher|measuring cup|vaso medidor|der|Messbecher
+a2|kitchen|noun|Backblech|baking sheet|bandeja de horno|das|Backbleche
+a2|furniture|noun|Kleiderständer|clothes rack|perchero de pie|der|Kleiderständer
+a2|furniture|noun|Schuhregal|shoe rack|zapatero|das|Schuhregale
+a2|furniture|noun|Hutablage|hat shelf|estante para sombreros|die|Hutablagen
+a2|furniture|noun|Garderobe|coat rack|guardarropa|die|Garderoben
+a2|furniture|noun|Wandregal|wall shelf|estante de pared|das|Wandregale
+a2|office|noun|Whiteboard|whiteboard|pizarra blanca|das|Whiteboards
+a2|office|noun|Flipchart|flip chart|rotafolios|das|Flipcharts
+a2|office|noun|Beamer|projector|proyector|der|Beamer
+a2|office|noun|Laserpointer|laser pointer|puntero láser|der|Laserpointer
+a2|office|noun|Moderationskarten|facilitation cards|tarjetas de moderación|die|Moderationskarten
+b1|music|noun|Schlagzeug|drum kit|batería musical|das|Schlagzeuge
+b1|music|noun|Saxophon|saxophone|saxofón|das|Saxophone
+b1|music|noun|Trompete|trumpet|trompeta|die|Trompeten
+b1|music|noun|Posaune|trombone|trombón|die|Posaunen
+b1|music|noun|Klarinette|clarinet|clarinete|die|Klarinetten
+b1|health|noun|Blutbild|blood count|hemograma|das|Blutbilder
+b1|health|noun|Röntgenbild|x-ray image|radiografía|das|Röntgenbilder
+b1|health|noun|Ultraschall|ultrasound|ecografía|der|Ultraschalle
+b1|health|noun|Kernspin|MRI scan|resonancia magnética|das|Kernspin
+b1|health|noun|Computertomografie|CT scan|tomografía computarizada|die|Computertomografien
+b2|school|noun|Exposé|research exposé|exposé de investigación|das|Exposés
+b2|school|noun|Abstract|research abstract|resumen científico|das|Abstracts
+b2|school|noun|Peer Group|peer group|grupo de pares|die|Peer Groups
+b2|school|noun|Fachtagung|specialist conference|congreso especializado|die|Fachtagungen
+b2|school|noun|Kolloquium|colloquium|coloquio académico|das|Kolloquien
+c1|money|noun|Private Equity|private equity|capital privado|das|
+c1|money|noun|Venture Capital|venture capital|capital riesgo|das|
+c1|money|noun|Crowdfunding|crowdfunding|financiación colectiva|das|
+c1|money|noun|Mikrokredit|microcredit|microcrédito|der|Mikrokredite
+c1|money|noun|Sozialanleihe|social bond|bono social|die|Sozialanleihen
+c2|nature|noun|Gaia-Hypothese|Gaia hypothesis|hipótesis Gaia|die|
+c2|nature|noun|Tiefengeologie|deep geology|geología profunda|die|
+c2|nature|noun|Kryosphäre|cryosphere|criosfera|die|Kryosphären
+c2|nature|noun|Pedosphäre|pedosphere|pedosfera|die|Pedosphären
+c2|nature|noun|Noosphäre|noosphere|noosfera|die|Noosphären
+a2|animals|noun|Okapi|okapi|okapi|das|Okapis
+a2|animals|noun|Tapir|tapir|tapir|der|Tapire
+b1|shapes|noun|Ikosaeder|icosahedron|icosaedro|das|Ikosaeder
+b1|shapes|noun|Dodekaeder|dodecahedron|dodecaedro|das|Dodekaeder

@@ -1,0 +1,200 @@
+c2|verbs|verb|durchdeklinieren|to cover exhaustively|recorrer exhaustivamente
+c2|verbs|verb|herausmodulieren|to tune out subtly|modular hacia fuera
+c2|verbs|verb|zurechtrücken|to set straight mentally|enderezar mentalmente
+c2|verbs|verb|durchkreuzen|to thwart thoroughly|frustrar totalmente
+c2|verbs|verb|vorausahnen|to anticipate beforehand|anticipar de antemano
+c2|verbs|verb|mitspielen lassen|to allow to play along|dejar participar
+c2|verbs|verb|nachvollziehbar machen|to make comprehensible|hacer comprensible
+c2|verbs|verb|unterfüttern|to underpin rhetorically|sustentar retóricamente
+c2|verbs|verb|ausbuchstabieren|to spell out clearly|deletrear con claridad
+c2|verbs|verb|herunterbrechen|to break down for audience|desglosar para el público
+c2|verbs|verb|anschlussfähig machen|to make connectable|hacer conectable
+c2|verbs|verb|sich festbeißen|to get fixated|obsesionarse
+c2|verbs|verb|sich rausreden|to talk one's way out|escabullirse con palabras
+c2|verbs|verb|schönreden|to gloss over|pintar bonito
+c2|verbs|verb|herunterspielen|to downplay|minimizar
+c2|verbs|verb|hochspielen|to dramatize|dramatizar
+c2|verbs|verb|durchwühlen|to rummage thoroughly|hurgar a fondo
+c2|verbs|verb|durchforsten|to scour thoroughly|rebuscar a fondo
+c2|verbs|verb|abhandenkommen|to go missing|extraviarse
+c2|verbs|verb|beiseitelegen|to set aside|apartar
+c2|verbs|verb|hinzukommen|to come on top of that|sumarse
+c2|verbs|verb|wegfallen|to drop out|caer en saco roto
+c2|verbs|verb|nachreichen|to submit subsequently|entregar posteriormente
+c2|verbs|verb|nachschieben|to push back informally|aplazar informalmente
+c2|verbs|verb|verschlanken|to streamline|agilizar
+c2|verbs|verb|verstauben|to gather dust|empolvarse
+c2|verbs|verb|veralten|to become outdated|quedar obsoleto
+c2|verbs|verb|umdenken|to rethink|repensar
+c2|verbs|verb|nachjustieren|to fine-tune|ajustar finamente
+c2|adjectives|adj|schwammig|vague fluffy|impreciso
+c2|adjectives|adj|holzschnittartig|blunt simplistic|tosco y simplista
+c2|adjectives|adj|rundheraus|bluntly direct|directo y sin rodeos
+c2|adjectives|adj|unverblümt|unvarnished frank|franco sin rodeos
+c2|adjectives|adj|salbungsvoll|unctuous|adulatorio
+c2|adjectives|adj|weltfremd|out of touch|desconectado del mundo
+c2|adjectives|adj|praxisfern|far from practice|alejado de la práctica
+c2|adjectives|adj|praxistauglich|practically viable|viable en la práctica
+c2|adjectives|adj|stilsicher|stylistically confident|con dominio del estilo
+c2|adjectives|adj|wortgewandt|eloquent|elocuente
+c2|adjectives|adj|treffend formuliert|aptly worded|bien formulado
+c2|adjectives|adj|zutiefst irritierend|deeply irritating|profundamente irritante
+c2|adjectives|adj|selbstverständlich wirkend|deceptively obvious|obvio de manera engañosa
+c2|adjectives|adj|überzeichnet|overdrawn exaggerated|exagerado
+c2|adjectives|adj|unterkühlt|coolly detached|fríamente distante
+c2|adjectives|adj|wortkarg|terse|lacónico
+c2|adjectives|adj|ausschweifend|long-winded|prolijo
+c2|adjectives|adj|schwerfällig|ponderous|pesado
+c2|adjectives|adj|schlagfertig|quick-witted|ágil mentalmente
+c2|adjectives|adj|einsilbig|monosyllabic terse|monosilábico
+c2|adjectives|adj|weit hergeholt|far-fetched|forzado
+c2|adjectives|adj|schlüssig|coherent convincing|coherente y convincente
+c2|adjectives|adj|schlüssig argumentiert|convincingly argued|argumentado con solidez
+c2|hello|phrase|Das ist ein zweischneidiges Schwert|it is a double-edged sword|es una espada de dos filos
+c2|hello|phrase|Das geht an die Substanz|that cuts to the core|eso toca lo esencial
+c2|hello|phrase|Das ist nicht in Stein gemeißelt|not set in stone|no está grabado en piedra
+c2|hello|phrase|Da beißt die Maus keinen Faden ab|there is no way around it|ahí no hay vuelta de hoja
+c2|hello|phrase|Ins Schwarze treffen|to hit the bullseye|dar en el blanco
+c2|hello|phrase|Den Nagel auf den Kopf treffen|to hit the nail on the head|clavar el clavo
+c2|hello|phrase|Die Kirche im Dorf lassen|not exaggerate|no exagerar
+c2|hello|phrase|Mit dem Schiff nach der Hochzeit kommen|too little too late|llegar tarde
+c2|hello|phrase|Zwei Fliegen mit einer Klappe schlagen|kill two birds with one stone|matar dos pájaros de un tiro
+c2|hello|phrase|Honig um den Mund schmieren|to butter someone up|adular
+c2|hello|phrase|Jemandem die Zähne zeigen|to show teeth|mostrar los dientes
+c2|hello|phrase|Auf dem Holzweg sein|to be on the wrong track|estar en el camino equivocado
+c2|hello|phrase|Das Fass zum Überlaufen bringen|to be the last straw|ser la gota que colma el vaso
+c2|hello|phrase|Am seidenen Faden hängen|to hang by a thread|colgar de un hilo
+c2|hello|phrase|Die Flinte ins Korn werfen|to throw in the towel|tirar la toalla
+c2|hello|phrase|Kleinvieh macht auch Mist|small things add up|muchas cosas pequeñas suman
+c2|hello|phrase|Etwas auf die lange Bank schieben|to shelve something|postergar algo
+c2|hello|phrase|Den Ball flach halten|keep expectations realistic|mantener expectativas realistas
+c2|hello|phrase|Aus der Haut fahren|to blow one's top|salirse de sus casillas
+c2|feelings|noun|Grübelzwang|compulsive rumination|rumiación compulsiva|der|
+c2|feelings|noun|Schadenfreude|pleasure in others' misfortune|schadenfreude|die|
+c2|feelings|noun|Weltschmerz|world-weariness|melancolía existencial|der|
+c2|feelings|noun|Fernweh|longing for faraway places|ansia de lejanía|das|
+c2|feelings|noun|Heimweh|homesickness|nostalgia del hogar|das|
+c2|feelings|adj|bockig|stubborn mood|obstinado
+c2|feelings|adj|verschnupft|petulantly offended|ofendido y hosco
+c2|feelings|adj|verzagt|disheartened|desanimado
+c2|feelings|verb|sich vergaloppieren|to rush ahead foolishly|precipitarse
+c2|feelings|verb|sich einmischen|to meddle|entrometerse
+c2|jobs|noun|Feinmechaniker|precision mechanic|mecánico de precisión|der|Feinmechaniker
+c2|jobs|noun|Kulturmanager|cultural manager|gestor cultural|der|Kulturmanager
+c2|jobs|noun|Mediationsbeauftragter|mediation officer|mediador designado|der|Mediationsbeauftragten
+c2|jobs|phrase|Zwischen den Stühlen sitzen|to fall between two stools|quedar entre dos aguas
+c2|office|noun|Grauzone|gray area|zona gris|die|Grauzonen
+c2|office|noun|Schmutzige Wäsche|dirty laundry to air|ropa sucia|die|
+c2|office|phrase|Den roten Faden verlieren|to lose the thread|perder el hilo
+c2|office|phrase|Die Verantwortung auf andere abwälzen|to shift responsibility|trasladar la responsabilidad
+c2|money|noun|Schwarzgeld|black money|dinero negro|das|
+c2|money|noun|Steuerschlupfloch|tax loophole|laguna fiscal|das|Steuerschlupflöcher
+c2|money|phrase|Das Geld locker sitzen haben|to be flush with money|tener dinero holgado
+c2|health|noun|Hausarztpraxis|general practice clinic|consultorio de médico general|die|Hausarztpraxen
+c2|health|phrase|Auf eigenen Nacken behandeln|to treat at own risk|tratar por cuenta propia
+c2|nature|noun|Frühjahrsputz|spring cleanup|limpieza de primavera|der|
+c2|nature|phrase|Wie Pilze aus dem Boden schießen|to mushroom everywhere|brotar como hongos
+c2|materials|noun|Schindeln|roof shingles|tejas de madera|die|
+c2|materials|adj|brüchig|brittle crumbly|quebradizo
+c2|tech|noun|Funkloch|coverage dead zone|zona sin cobertura|das|Funklöcher
+c2|tech|phrase|Offline gehen|to go offline|desconectarse
+c2|school|noun|Blaupause|blueprint master copy|plano maestro|die|Blaupausen
+c2|school|phrase|Mit spitzen Fingern anfassen|to handle with kid gloves|tratar con sumo cuidado
+c2|hello|phrase|Gerade noch so|just barely|apenas
+c2|hello|phrase|So mittel|so-so lukewarm|regular
+c2|hello|phrase|Völlig aus dem Rahmen|completely out of line|totalmente fuera de lugar
+c2|hello|phrase|Knapp zusammenhängend|loosely connected|conexión tenue
+c2|hello|phrase|Damit ist das gesagt|that said it all|con eso está dicho
+c2|hello|other|sozusagen|so to speak|por así decirlo
+c2|hello|other|gewissermaßen|in a certain sense|en cierto sentido
+c2|hello|other|gleichsam|as it were|como quien dice
+c2|hello|other|wohlwollend|benevolently|benevolentemente
+c2|verbs|verb|dazwischenfunken|to chip in conversation|intervenir de repente
+c2|verbs|verb|einwerfen|to interject|intercalar
+c2|verbs|verb|überreagieren|to overreact|sobre-reaccionar
+c2|verbs|verb|untertreiben|to understate|quedarse corto
+c2|verbs|verb|überinterpretieren|to overinterpret|sobreinterpretar
+c2|verbs|verb|herumlavieren|to hedge evasively|vacilar evasivamente
+c2|verbs|verb|herumeiern|to waffle evasively|divagar
+c2|verbs|verb|vorgeben|to pretend feign|fingir
+c2|verbs|verb|vorspielen|to feign act|simular
+c2|verbs|verb|durchhalten|to hold out endure|aguantar
+c2|verbs|verb|nachlassen|to let up weaken|ceder
+c2|verbs|verb|nachgeben|to give in concede|ceder
+c2|adjectives|adj|unverhofft|unexpected welcome|inesperado
+c2|adjectives|adj|pikiert|miffed|picado
+c2|adjectives|adj|schnoddrig|cheeky casual|descarado informal
+c2|adjectives|adj|ruppig|brusque rough|brusco
+c2|adjectives|adj|galant|gallant courteous|galante
+c2|adjectives|adj|pfiffig|clever crafty|astuto
+c2|adjectives|adj|tiefsinnig|profound thoughtful|profundo
+c2|adjectives|adj|weltgewandt|worldly sophisticated|cosmopolita
+c2|feelings|phrase|Mir fällt ein Stein vom Herzen|a weight off my shoulders|me cae una losa del corazón
+c2|travel|noun|Ankunftshalle|arrival hall|sala de llegadas|die|Ankunftshallen
+c2|city|noun|Hinterhof|back courtyard|patio trasero|der|Hinterhöfe
+c2|transport|noun|Scharte|dent in timetables|hueco en horarios|die|Scharten
+c2|weather|noun|Schneetreiben|blowing snow|ventisca de nieve|das|
+c2|time|other|gelegentlich mal|every now and then|de vez en cuando
+c2|shop|noun|Schnäppchenjäger|bargain hunter|cazador de gangas|der|Schnäppchenjäger
+c2|hobbies|phrase|Aus dem Stehgreif vortragen|to speak off the cuff|improvisar al hablar
+c2|music|noun|Gehörbildung|ear training|entrenamiento auditivo|die|
+c2|sport|phrase|Auf der Zielgeraden sein|on the home stretch|en la recta final
+c2|garden|noun|Laube|arbor garden house|glorieta|die|Lauben
+c2|tools|noun|Schraubstock|vise|tornillo de banco|der|Schraubstöcke
+c2|money|noun|Pfennigfuchser|penny pincher|tacaño extremo|der|Pfennigfuchser
+c2|health|adj|schlapp|weak sluggish|flojo
+c2|tech|noun|Datenmüll|data junk|basura digital|der|
+c2|nature|noun|Aprilwetter|April weather|cambios de clima de abril|das|
+c2|office|adj|bürokratisch|bureaucratic|burocrático
+c2|jobs|noun|Quereinsteiger|career changer|profesional reconvertido|der|Quereinsteiger
+c2|school|adj|stofflich dense|content-dense|denso en contenido
+c2|materials|noun|Mörtel|mortar binding|mortero|der|Mörtel
+c2|family|phrase|Kind vor die Wand fahren|to clash with one's child|chocar con el hijo
+c2|body|noun|Nackenverspannung|neck tension|tensión cervical|die|Nackenverspannungen
+c2|house|phrase|Alles unter einem Dach|all under one roof|todo bajo un mismo techo
+c2|food|phrase|Bauch voll Kopf leer|stuffed belly empty head|barriga llena cabeza vacía
+c2|drinks|phrase|Einen kurzen trinken|to have a quick drink|tomar un traguito
+c2|hello|phrase|Mach's gut|take care informal|cuídate
+c2|lands|noun|Heimatgefühl|sense of homeland|sentido de hogar|das|
+c2|bath|noun|Kalkablagerung|limescale buildup|acumulación de cal|die|Kalkablagerungen
+c2|clothes|adj|schickimicki|flashy pretentious|pijo
+c2|animals|phrase|Da liegt der Hund begraben|that is the crux|ahí está el meollo
+c2|numbers|other|auf den Cent genau|down to the cent|al céntimo
+c2|colors|phrase|In Schwarz-Weiß denken|to think in black and white|pensar en blanco y negro
+c2|kitchen|phrase|Mit der Gabel auf den Teller trommeln|to drum on plate impatiently|golpear el plato impaciente
+c2|furniture|noun|Sitzecke|cozy seating nook|rincón de estar|die|Sitzecke
+c2|shapes|other|rundherum|all around everywhere|por todas partes
+c2|feelings|other|müde bis auf die Knochen|bone tired|muerto de cansancio
+c2|verbs|verb|sich verhaspeln|to fumble slip up|lío
+c2|verbs|verb|verzetteln|to get sidetracked scatter|distraerse
+c2|verbs|verb|sich austoben|to let off steam|desahogarse
+c2|verbs|verb|sich breitmachen|to spread out take space|extenderse
+c2|verbs|verb|sich versprechen|to misspeak|equivocarse al hablar
+c2|adjectives|adj|abberanzig|outlandishly odd|estrafalario
+c2|adjectives|adj|schräg|quirky offbeat|raro
+c2|adjectives|adj|unerschrocken|undaunted|intrépido
+c2|adjectives|adj|unerschütterlich|unshakable|inquebrantable
+c2|feelings|noun|Bedrängnis|distress|angustia|die|Bedrängnisse
+c2|feelings|noun|Erleichterung|relief|alivio|die|Erleichterungen
+c2|jobs|noun|Quotenregelung|quota regulation|regulación de cuotas|die|Quotenregelungen
+c2|office|noun|Sachverhalt|state of facts|situación fáctica|der|Sachverhalte
+c2|money|noun|Pfändung|garnishment|embargo salarial|die|Pfändungen
+c2|health|noun|Belastungsgrenze|stress limit|límite de carga|die|Belastungsgrenzen
+c2|nature|noun|Moorlandschaft|moor landscape|paisaje de turbera|die|Moorlandschaften
+c2|materials|noun|Dämmstoff|insulation material|material aislante|der|Dämmstoffe
+c2|tech|noun|Firmware|firmware|firmware|die|
+c2|tech|noun|Endgerät|end device|dispositivo final|das|Endgeräte
+c2|school|noun|Semesterarbeit|semester paper|trabajo semestral|die|Semesterarbeiten
+c2|school|phrase|Das bleibt abzuwarten|that remains to be seen|eso queda por ver
+c2|hello|phrase|Alles paletti|all sorted colloquial|todo en orden
+c2|hello|phrase|Na dann mal los|well then let's go|pues allá vamos
+c2|travel|noun|Zeitzonenwechsel|time zone change|cambio de huso horario|der|Zeitzonenwechsel
+c2|city|noun|Bezirk|borough district|distrito|der|Bezirke
+c2|transport|noun|Pendlerstrecke|commute route|trayecto de desplazamiento|die|Pendlerstrecken
+c2|shop|noun|Filialnetz|store chain network|red de tiendas|das|Filialnetze
+c2|hobbies|noun|Modellbauclub|model building club|club de modelismo|der|Modellbauclubs
+c2|sport|noun|Trainingspensum|training load|carga de entrenamiento|das|Trainingspensum
+c2|garden|noun|Rasenkante|lawn edge|borde del césped|die|Rasenkanten
+c2|tools|noun|Meißel|chisel|cincel|der|Meißel
+c2|house|noun|Dachboden|attic|ático|der|Dachböden
+c2|body|noun|Augenringe|dark under-eye circles|ojeras|die|

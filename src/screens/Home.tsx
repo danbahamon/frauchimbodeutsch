@@ -4,7 +4,7 @@ import { Icon } from '../components/Icon'
 import { Mascot } from '../components/Mascot'
 import { t, greetKey } from '../lib/i18n'
 import { roundRoute } from '../lib/launch'
-import { assignLevel, collect, countReached, countSitting, isBoard, isUnlocked, nextLocked, streakOf, almostWords, wordOfDay, LEVELS, UNLOCK_AT } from '../lib/progress'
+import { assignLevel, collect, countReached, countSitting, isBoard, isUnlocked, nextLocked, recentMissed, streakOf, almostWords, wordOfDay, LEVELS, UNLOCK_AT } from '../lib/progress'
 import { deLabel, gloss } from '../lib/text'
 import { useStore } from '../state'
 
@@ -15,6 +15,7 @@ export function Home() {
   if (!profile) return null
   const today = assignLevel(data.words)
   const streak = streakOf(data.sessions.map((session) => session.at))
+  const missed = recentMissed(data.words)
   const almost = almostWords(data.words)
   const almostReady = !!almost && collect(data.words, almost.level, { ids: almost.ids }).length >= (isBoard(almost.level) ? 2 : 1)
   const word = wordOfDay()
@@ -74,6 +75,23 @@ export function Home() {
           <span>{t(locale, 'home.today.sub', { level: today, name: t(locale, `level.${today}.name`), n: countSitting(data.words, today) })}</span>
         </span>
       </button>
+      {missed ? (
+        <button
+          type="button"
+          className="suggest coral"
+          onClick={() => begin(missed.level, 'shelf', { ids: missed.ids, title: t(locale, 'home.missed.title') })}
+        >
+          <span>
+            <small className="kicker">{t(locale, 'home.missed.kicker')}</small>
+            <b>{t(locale, `level.${missed.level}.name`)}</b>
+            <span>
+              {missed.count === 1
+                ? t(locale, 'home.missed.one', { level: missed.level })
+                : t(locale, 'home.missed.sub', { level: missed.level, n: missed.count })}
+            </span>
+          </span>
+        </button>
+      ) : null}
       {almost && almostReady ? (
         <button
           type="button"
@@ -108,7 +126,7 @@ export function Home() {
             <div>
               <Lemma word={word} />
               <p>{gloss(word, 'en')} · {gloss(word, 'es')}</p>
-              {word.pl ? <p className="fine">{t(locale, 'common.plural')}: die {word.pl}</p> : null}
+              <p className="fine">{t(locale, 'common.cefr', { level: word.cefr.toUpperCase() })}{word.pl ? ` · ${t(locale, 'common.plural')}: die ${word.pl}` : ''}</p>
             </div>
             <SpeakButton text={deLabel(word)} label={t(locale, 'play.listen')} />
           </div>

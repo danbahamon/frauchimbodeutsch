@@ -1,0 +1,185 @@
+b1|verbs|verb|abwägen|to weigh options|sopesar opciones
+b1|verbs|verb|einwägen|to weigh in|pesar una dosis
+b1|verbs|verb|nachweisen lassen|to have proven|hacer acreditar
+b1|verbs|verb|durchsetzen|to enforce|imponer
+b1|verbs|verb|umsetzen|to put into practice|poner en práctica
+b1|verbs|verb|fortsetzen|to continue|proseguir
+b1|verbs|verb|aussetzten|to expose|exponer a
+b1|verbs|verb|einsetzen|to deploy|emplear
+b1|verbs|verb|versetzen|to transfer someone|trasladar a alguien
+b1|verbs|verb|ersetzen|to replace|reemplazar
+b1|verbs|verb|übersetzen|to translate|traducir
+b1|verbs|verb|beiseitelegen|to set aside|dejar de lado
+b1|verbs|verb|nahelegen|to suggest strongly|sugerir con fuerza
+b1|verbs|verb|darlegen|to set forth|exponer argumentos
+b1|verbs|verb|beilegen|to enclose or settle|adjuntar o zanjar
+b2|verbs|verb|hinterlegen|to deposit|depositar en custodia
+b2|verbs|verb|vorlegen|to present formally|presentar formalmente
+b2|verbs|verb|nachlegen|to add more|añadir más
+b2|verbs|verb|widerlegen|to refute|refutar
+b2|verbs|verb|beilegen lassen|to have enclosed|hacer adjuntar
+b2|verbs|verb|auflegen|to publish or hang up|publicar o colgar
+b2|verbs|verb|auslegen|to interpret text|interpretar un texto
+b2|verbs|verb|umlegen|to apportion costs|repartir costos
+b2|verbs|verb|zerlegen|to disassemble|desmontar
+b2|verbs|verb|verlegen|to misplace or relocate|extraviar o trasladar
+c1|verbs|verb|dekonstruieren lassen|to have deconstructed|hacer deconstruir
+c1|verbs|verb|rekontextualisieren|to recontextualize|recontextualizar
+c1|verbs|verb|deterritorialisieren|to deterritorialize|desterritorializar
+c1|verbs|verb|reterritorialisieren|to reterritorialize|reterritorializar
+c1|verbs|verb|hybridisieren lassen|to have hybridized|hacer hibridizar
+c1|verbs|verb|pluralisieren lassen|to have pluralized|hacer pluralizar
+c1|verbs|verb|subjektivieren|to subjectivate|subjetivar
+c1|verbs|verb|objektivieren|to objectify|objetivar
+c1|verbs|verb|aktualisieren|to update|actualizar
+c1|verbs|verb|historisieren lassen|to have historicized|hacer historizar
+c2|verbs|verb|poetisieren|to poeticize|poetizar
+c2|verbs|verb|prosaisieren|to prosaicize|hacer prosaico
+c2|verbs|verb|dramatisieren|to dramatize|dramatizar
+c2|verbs|verb|episieren|to epicize|epizar
+c2|verbs|verb|lyrisieren|to lyricize|lirizar
+b1|adjectives|adj|nachvollziehbar|comprehensible logic|comprensible lógicamente
+b1|adjectives|adj|unverständlich|incomprehensible|incomprensible
+b1|adjectives|adj|überzeugend|convincing|convincente
+b1|adjectives|adj|unüberzeugend|unconvincing|poco convincente
+b1|adjectives|adj|aussagekräftig|meaningful data|significativo en datos
+b1|adjectives|adj|aussageschwach|weakly informative|poco informativo
+b1|adjectives|adj|pünktlich|punctual|puntual
+b1|adjectives|adj|unpünktlich|unpunctual|impuntual
+b1|adjectives|adj|sorgfältig|careful|cuidadoso
+b1|adjectives|adj|nachlässig|careless|descuidado
+b2|adjectives|adj|interdisziplinär|interdisciplinary|interdisciplinario
+b2|adjectives|adj|multidisziplinär|multidisciplinary|multidisciplinario
+b2|adjectives|adj|transdisziplinär|transdisciplinary|transdisciplinario
+b2|adjectives|adj|empirisch fundiert|empirically grounded|fundamentado empíricamente
+b2|adjectives|adj|theoriegeleitet|theory-driven|guiado por teoría
+b2|adjectives|adj|praxisnah|practice-oriented|cercano a la práctica
+b2|adjectives|adj|praxisfern|far from practice|alejado de la práctica
+b2|adjectives|adj|ergebnisorientiert|results-oriented|orientado a resultados
+b2|adjectives|adj|prozessorientiert|process-oriented|orientado a procesos
+b2|adjectives|adj|kundenorientiert|customer-oriented|orientado al cliente
+c1|adjectives|adj|selbstreflexiv|self-reflexive|autorreflexivo
+c1|adjectives|adj|metareflexiv|meta-reflexive|metarreflexivo
+c1|adjectives|adj|kritisch-rational|critically rational|crítico-racional
+c1|adjectives|adj|hermeneutisch|hermeneutic|hermenéutico
+c1|adjectives|adj|phänomenologisch|phenomenological|fenomenológico
+c1|adjectives|adj|strukturalistisch|structuralist|estructuralista
+c1|adjectives|adj|poststrukturalistisch|poststructuralist|postestructuralista
+c1|adjectives|adj|dekonstruktiv|deconstructive|deconstructivo
+c1|adjectives|adj|systemtheoretisch|systems-theoretical|de teoría de sistemas
+c1|adjectives|adj|gesellschaftskritisch|socially critical|crítico social
+c2|adjectives|adj|aporethisch angelegt|aporetic in design|aporético en diseño
+c2|adjectives|adj|palimpsestartig|palimpsest-like|como un palimpsesto
+c2|adjectives|adj|rhizomatisch|rhizomatic|rizomático
+c2|adjectives|adj|chaotisch geordnet|chaotically ordered|ordenado caóticamente
+c2|adjectives|adj|fragil stabil|fragilely stable|frágilmente estable
+b1|office|noun|Dienstweg|official channels|vía oficial|der|Dienstwege
+b1|office|noun|Sachverhalt|facts of case|hecho del caso|der|Sachverhalte
+b1|office|noun|Sachlage|situation facts|situación de hechos|die|Sachlagen
+b1|office|noun|Sachkunde|subject expertise|pericia temática|die|
+b1|office|noun|Fachwissen|specialist knowledge|saber especializado|das|
+b1|money|noun|Sparrate|savings rate|tasa de ahorro|die|Sparraten
+b1|money|noun|Ausgaben|expenses|gastos|die|Ausgaben
+b1|money|noun|Einnahmen|revenue income|ingresos|die|Einnahmen
+b1|money|noun|Haushaltsplan|budget plan|presupuesto|der|Haushaltspläne
+b1|money|noun|Kostenstelle|cost center|centro de costos|die|Kostenstellen
+b1|health|noun|Befund|medical finding|hallazgo clínico|der|Befunde
+b1|health|noun|Überweisungsschein|referral slip|volante de remisión|der|Überweisungsscheine
+b1|health|noun|Krankschreibung|sick note|baja médica|die|Krankschreibungen
+b1|health|noun|Arbeitsunfähigkeit|inability to work|incapacidad laboral|die|Arbeitsunfähigkeiten
+b1|health|noun|Genesung|recovery from illness|recuperación|die|Genesungen
+b1|school|noun|Nachhilfe|tutoring|clases particulares|die|
+b1|school|noun|Wiederholung|review lesson|repaso|die|Wiederholungen
+b1|school|noun|Vertiefung|deepening study|profundización|die|Vertiefungen
+b1|school|noun|Grundlagenkurs|foundations course|curso básico|der|Grundlagenkurse
+b1|school|noun|Aufbaukurs|advanced course|curso avanzado|der|Aufbaukurse
+b2|office|noun|Entscheidungsvorlage|decision memo|memorando de decisión|die|Entscheidungsvorlagen
+b2|office|noun|Sachstandsbericht|status report|informe de situación|der|Sachstandsberichte
+b2|office|noun|Maßnahmenkatalog|catalog of measures|catálogo de medidas|der|Maßnahmenkataloge
+b2|office|noun|Zielvereinbarung|target agreement|acuerdo de objetivos|die|Zielvereinbarungen
+b2|office|noun|Leistungsbeurteilung|performance review|evaluación de desempeño|die|Leistungsbeurteilungen
+b2|money|noun|Eigenkapital|equity capital|capital propio|das|
+b2|money|noun|Fremdkapital|debt capital|capital ajeno|das|
+b2|money|noun|Cashflow|cash flow|flujo de caja|der|Cashflows
+b2|money|noun|Bilanz|balance sheet|balance general|die|Bilanzen
+b2|money|noun|Gewinn-und-Verlust-Rechnung|income statement|cuenta de resultados|die|Gewinn-und-Verlust-Rechnungen
+c1|school|noun|Forschungsdesign|research design|diseño de investigación|das|Forschungsdesigns
+c1|school|noun|Stichprobe|sample group|muestra estadística|die|Stichproben
+c1|school|noun|Grundgesamtheit|population stats|población estadística|die|Grundgesamtheiten
+c1|school|noun|Validität|validity research|validez|die|Validitäten
+c1|school|noun|Reliabilität|reliability research|fiabilidad científica|die|Reliabilitäten
+c1|feelings|noun|Affektregulation|affect regulation|regulación afectiva|die|
+c1|feelings|noun|Emotionsarbeit|emotional labor|trabajo emocional|die|
+c1|feelings|noun|Burnout|burnout|agotamiento profesional|das|Burnouts
+c1|feelings|noun|Boreout|boreout|aburrimiento laboral|das|Boreouts
+c1|feelings|noun|Flow-Erleben|flow experience|experiencia de flow|das|Flow-Erleben
+c2|school|noun|Ideengeschichte|history of ideas|historia de las ideas|die|
+c2|school|noun|Begriffsgeschichte|conceptual history|historia conceptual|die|
+c2|school|noun|Mentalitätsgeschichte|history of mentalities|historia de mentalidades|die|
+c2|school|noun|Alltagsgeschichte|history of everyday life|historia de lo cotidiano|die|
+c2|school|noun|Mikrogeschichte|microhistory|microhistoria|die|Mikrogeschichten
+c2|feelings|noun|Existenzangst|existential anxiety|angustia existencial|die|Existenzängste
+c2|feelings|noun|Todesangst|fear of death|miedo a la muerte|die|Todesängste
+c2|feelings|noun|Freiheitsdrang|urge for freedom|ansia de libertad|der|
+c2|feelings|noun|Geborgenheitsgefühl|sense of security|sentimiento de amparo|das|Geborgenheitsgefühle
+c2|feelings|noun|Unbehaustheit|unhousedness|desamparo existencial|die|
+a2|clothes|noun|Regenmantel|raincoat|impermeable|der|Regenmäntel
+a2|clothes|noun|Windjacke|windbreaker|cortavientos|die|Windjacken
+a2|clothes|noun|Fleecejacke|fleece jacket|chaqueta polar|die|Fleecejacken
+a2|clothes|noun|Steppjacke|quilted jacket|chaqueta acolchada|die|Steppjacken
+a2|clothes|noun|Daunenjacke|down jacket|chaqueta de plumas|die|Daunenjacken
+a2|food|noun|Müsli|muesli|muesli|das|
+a2|food|noun|Haferflocken|oat flakes|copos de avena|die|Haferflocken
+a2|food|noun|Vollkornbrot|wholegrain bread|pan integral|das|Vollkornbrote
+a2|food|noun|Sauerteig|sourdough|masa madre|der|Sauerteige
+a2|food|noun|Knäckebrot|crispbread|pan crujiente|das|Knäckebrote
+a2|fruit|noun|Granatapfel|pomegranate|granada fruta|der|Granatäpfel
+a2|fruit|noun|Passionsfrucht|passion fruit|maracuyá|die|Passionsfrüchte
+a2|fruit|noun|Dattel|date fruit|dátil|die|Datteln
+a2|fruit|noun|Kokosnuss|coconut|coco|die|Kokosnüsse
+a2|fruit|noun|Avocado|avocado|aguacate|die|Avocados
+a2|veg|noun|Süßkartoffel|sweet potato|batata|die|Süßkartoffeln
+a2|veg|noun|Kürbis|pumpkin|calabaza|der|Kürbisse
+a2|veg|noun|Artischocke|artichoke|alcachofa|die|Artischocken
+a2|veg|noun|Spargel|asparagus|espárrago|der|Spargel
+a2|veg|noun|Lauch|leek|puerro|der|Lauche
+a2|animals|noun|Faultier|sloth|perezoso animal|das|Faultiere
+a2|animals|noun|Gürteltier|armadillo|armadillo|das|Gürteltiere
+a2|animals|noun|Schnabeltier|platypus|ornitorrinco|das|Schnabeltiere
+a2|animals|noun|Ameisenbär|anteater|oso hormiguero|der|Ameisenbären
+a2|animals|noun|Seelöwe|sea lion|león marino|der|Seelöwen
+a2|garden|noun|Tulpe|tulip|tulipán|die|Tulpen
+a2|garden|noun|Narzisse|daffodil|narciso|die|Narzissen
+a2|garden|noun|Hyazinthe|hyacinth|jacinto|die|Hyazinthen
+a2|garden|noun|Krokus|crocus|azafrán silvestre|der|Krokusse
+a2|garden|noun|Schneeglöckchen|snowdrop|campanilla de invierno|das|Schneeglöckchen
+b1|music|noun|Streichquartett|string quartet|cuarteto de cuerda|das|Streichquartette
+b1|music|noun|Sinfonie|symphony|sinfonía|die|Sinfonien
+b1|music|noun|Sonate|sonata|sonata|die|Sonaten
+b1|music|noun|Ouvertüre|overture|obertura|die|Ouvertüren
+b1|music|noun|Arie|aria|aria|die|Arien
+b1|sport|noun|Weitsprung|long jump|salto de longitud|der|
+b1|sport|noun|Hochsprung|high jump|salto de altura|der|
+b1|sport|noun|Kugelstoßen|shot put|lanzamiento de peso|das|
+b1|sport|noun|Speerwurf|javelin throw|lanzamiento de jabalina|der|Speerwürfe
+b1|sport|noun|Diskuswurf|discus throw|lanzamiento de disco|der|Diskuswürfe
+b1|tools|noun|Maurerkelle|trowel|llana|die|Maurerkellen
+b1|tools|noun|Wasserwaage|spirit level|nivel de burbuja|die|Wasserwaagen
+b1|tools|noun|Maurerschnur|mason line|cuerda de albañil|die|Maurerschnüre
+b1|tools|noun|Schraubstock|vise|tornillo de banco|der|Schraubstöcke
+b1|tools|noun|Feile|file tool|lima herramienta|die|Feilen
+b1|shapes|noun|Parallelogramm|parallelogram|paralelogramo|das|Parallelogramme
+b1|shapes|noun|Fünfeck|pentagon|pentágono|das|Fünfecke
+b1|shapes|noun|Sechseck|hexagon|hexágono|das|Sechsecke
+b1|shapes|noun|Achteck|octagon|octágono|das|Achtecke
+b1|shapes|noun|Ellipse|ellipse|elipse|die|Ellipsen
+b1|lands|other|Ungarn|Hungary country|Hungría
+b1|lands|other|Tschechien|Czechia|Chequia
+b1|lands|other|Slowakei|Slovakia|Eslovaquia
+b1|lands|other|Slowenien|Slovenia|Eslovenia
+b1|lands|other|Kroatien|Croatia|Croacia
+b1|lands|other|Serbien|Serbia|Serbia
+b1|lands|other|Bulgarien|Bulgaria|Bulgaria
+b1|lands|other|Rumänien|Romania|Rumanía
+b1|lands|other|Griechenland|Greece|Grecia
+b1|lands|other|Türkei|Turkey|Turquía

@@ -2,8 +2,11 @@ export type Locale = 'en' | 'es' | 'de'
 export type Bridge = 'en' | 'es'
 export type Art = 'der' | 'die' | 'das'
 export type Kind = 'noun' | 'verb' | 'adj' | 'phrase' | 'num' | 'other'
+export type Cefr = 'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2'
 export type Theme = 'day' | 'dusk'
 export type Source = 'spiral' | 'shelf' | 'category' | 'class'
+
+export const CEFR_LEVELS: readonly Cefr[] = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2']
 
 export interface Word {
   id: string
@@ -13,6 +16,7 @@ export interface Word {
   de: string
   en: string
   es: string
+  cefr: Cefr
   art?: Art
   pl?: string
 }
@@ -24,6 +28,8 @@ export interface WordStat {
   correct: number
   cleanHits: number
   misses: number
+  shelfMisses: number
+  lastMissedAt?: number
   mastered: boolean
 }
 

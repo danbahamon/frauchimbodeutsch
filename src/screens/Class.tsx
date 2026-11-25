@@ -6,10 +6,18 @@ import { Icon } from '../components/Icon'
 import { saveResultCard } from '../lib/card'
 import { t } from '../lib/i18n'
 import { testRoute } from '../lib/launch'
-import { LEVELS, SHELF, readStat } from '../lib/progress'
+import { CLEAN_NEED, LEVELS, SHELF, pendingSummary, readStat } from '../lib/progress'
 import { deLabel, gloss, matchesQuery, uid } from '../lib/text'
-import type { TargetWord, Word } from '../lib/types'
+import type { Locale, TargetWord, Word, WordStat } from '../lib/types'
 import { useStore } from '../state'
+
+function distanceLine(locale: Locale, stat: WordStat, target: number) {
+  const gap = Math.max(0, target - stat.level)
+  if (gap <= 0) return t(locale, 'shared.complete')
+  const shelves = gap === 1 ? t(locale, 'shared.left.one') : t(locale, 'shared.left', { n: gap })
+  const need = Math.max(1, CLEAN_NEED - stat.clean)
+  return `${shelves} · ${t(locale, 'shared.clean.left', { n: need, level: stat.level })}`
+}
 
 function GoalSelect({ value, onChange, label }: { value: number; onChange: (level: number) => void; label: string }) {
   const { locale } = useStore()
@@ -28,8 +36,19 @@ function Shared({ title, words }: { title: string; words: TargetWord[] }) {
     .map((item) => ({ ...item, word: WORD_BY_ID.get(item.id) }))
     .filter((item): item is TargetWord & { word: Word } => !!item.word)
     .slice()
-    .sort((a, b) => a.word.de.localeCompare(b.word.de, 'de'))
-  const missing = rows.filter((item) => readStat(data.words, item.id).level < item.target)
+    .sort((a, b) => {
+      const aStat = readStat(data.words, a.id)
+      const bStat = readStat(data.words, b.id)
+      const aGap = a.target - aStat.level
+      const bGap = b.target - bStat.level
+      if ((aGap > 0) !== (bGap > 0)) return aGap > 0 ? -1 : 1
+      if (aGap !== bGap) return bGap - aGap
+      if (aStat.level !== bStat.level) return aStat.level - bStat.level
+      return a.word.de.localeCompare(b.word.de, 'de')
+    })
+  const pending = rows.filter((item) => readStat(data.words, item.id).level < item.target)
+  const met = rows.filter((item) => readStat(data.words, item.id).level >= item.target)
+  const summary = pendingSummary(data.words, words)
   const save = async () => {
     const tag = locale === 'de' ? 'de-DE' : locale === 'es' ? 'es-ES' : 'en-US'
     const cardRows = rows.map((item) => ({
@@ -56,45 +75,67 @@ function Shared({ title, words }: { title: string; words: TargetWord[] }) {
     })
     if (saved) flash(t(locale, 'shared.saved'))
   }
+  const renderRow = (item: TargetWord & { word: Word }, done: boolean) => {
+    const stat = readStat(data.words, item.id)
+    return (
+      <article key={item.id} className="word-row" data-done={done}>
+        <div>
+          <Lemma word={item.word} />
+          <p>{item.word.en} · {item.word.es}</p>
+          <p className="fine">
+            {t(locale, 'shared.now', { level: stat.level, name: t(locale, `level.${stat.level}.name`) })}
+            {' · '}
+            {t(locale, 'shared.goal', { level: item.target, name: t(locale, `level.${item.target}.name`) })}
+          </p>
+          <p className="fine">{distanceLine(locale, stat, item.target)}</p>
+          <p className="fine">{t(locale, 'stats.record', { seen: stat.seen, correct: stat.correct, misses: stat.misses })}</p>
+        </div>
+        <Pips stat={stat} />
+        <SpeakButton text={deLabel(item.word)} label={t(locale, 'play.listen')} />
+      </article>
+    )
+  }
   return (
     <div className="print-sheet">
       <p className="kicker">{t(locale, 'shared.kicker')}</p>
       <h1>{title}</h1>
-      <p className="muted">{t(locale, 'shared.done', { n: rows.length - missing.length, total: rows.length })}</p>
+      <p className="muted">{t(locale, 'shared.done', { n: met.length, total: rows.length })}</p>
+      {summary.count && summary.nextLevel ? (
+        <p className="fine">
+          {t(locale, 'shared.next.shelf', {
+            n: summary.count,
+            level: summary.nextLevel,
+            name: t(locale, `level.${summary.nextLevel}.name`),
+          })}
+        </p>
+      ) : null}
       <p>{t(locale, 'shared.note')}</p>
       <div className="row no-print">
-        <button type="button" className="primary" disabled={!missing.length} onClick={() => setRoute(testRoute(title, words, false))}>
-          {t(locale, 'shared.missing', { n: missing.length })}
+        <button type="button" className="primary" disabled={!pending.length} onClick={() => setRoute(testRoute(title, words, false))}>
+          {t(locale, 'shared.missing', { n: pending.length })}
         </button>
         <button type="button" className="ghost" disabled={rows.length < 1} onClick={() => setRoute(testRoute(title, words, true))}>
-          {t(locale, 'shared.retest')}
+          {t(locale, 'shared.sim', { n: rows.length })}
         </button>
         <button type="button" className="ghost" onClick={() => void save()}>{t(locale, 'shared.save')}</button>
         <button type="button" className="ghost" onClick={() => window.print()}>{t(locale, 'shared.print')}</button>
       </div>
-      <div className="stack" style={{ marginTop: 16 }}>
-        {rows.map((item) => {
-          const stat = readStat(data.words, item.id)
-          const done = stat.level >= item.target
-          return (
-            <article key={item.id} className="word-row">
-              <div>
-                <Lemma word={item.word} />
-                <p>{item.word.en} · {item.word.es}</p>
-                <p className="fine">
-                  {t(locale, 'shared.now', { level: stat.level, name: t(locale, `level.${stat.level}.name`) })}
-                  {' · '}
-                  {t(locale, 'shared.goal', { level: item.target, name: t(locale, `level.${item.target}.name`) })}
-                  {done ? ` · ${t(locale, 'shared.complete')}` : ''}
-                </p>
-                <p className="fine">{t(locale, 'stats.record', { seen: stat.seen, correct: stat.correct, misses: stat.misses })}</p>
-              </div>
-              <Pips stat={stat} />
-              <SpeakButton text={deLabel(item.word)} label={t(locale, 'play.listen')} />
-            </article>
-          )
-        })}
-      </div>
+      {pending.length ? (
+        <>
+          <div className="group-head">
+            <h2>{t(locale, 'shared.pending', { n: pending.length })}</h2>
+          </div>
+          <div className="stack">{pending.map((item) => renderRow(item, false))}</div>
+        </>
+      ) : null}
+      {met.length ? (
+        <>
+          <div className="group-head">
+            <h2>{t(locale, 'shared.met', { n: met.length })}</h2>
+          </div>
+          <div className="stack">{met.map((item) => renderRow(item, true))}</div>
+        </>
+      ) : null}
       <GenderKey label={t(locale, 'gender.key')} />
     </div>
   )

@@ -1,0 +1,685 @@
+a2|hello|phrase|Lass es dir schmecken|enjoy your meal|que te aproveche
+a2|hello|phrase|Recht schönen Dank|many thanks indeed|muchísimas gracias
+a2|hello|phrase|Darf ich bitten|may I ask politely|¿puedo pedir?
+a2|hello|noun|Gastgeber|host|anfitrión|der|Gastgeber
+a2|hello|noun|Gastgeberin|female host|anfitriona|die|Gastgeberinnen
+a2|hello|noun|Bekanntschaft|acquaintanceship|conocimiento social|die|Bekanntschaften
+a2|numbers|other|anderthalb|one and a half|uno y medio
+a2|numbers|other|doppelt|double amount|el doble
+a2|numbers|other|einfach|single amount|simple cantidad
+a2|numbers|num|Nullpunkt|zero point|punto cero
+a2|colors|adj|ocker|ochre|ocre
+a2|colors|adj|fliederfarben|lilac-colored|color lila
+a2|colors|adj|kastanienbraun|chestnut brown|castaño
+a2|colors|noun|Farbton|shade of color|tono de color|der|Farbtöne
+a2|family|noun|Urgroßvater|great-grandfather|bisabuelo|der|Urgroßväter
+a2|family|noun|Urgroßmutter|great-grandmother|bisabuela|die|Urgroßmütter
+a2|family|noun|Halbbruder|half-brother|hermanastro|der|Halbbrüder
+a2|family|noun|Halbschwester|half-sister|hermanastra|die|Halbschwestern
+a2|family|noun|Pate|godfather|padrino|der|Paten
+a2|family|noun|Patin|godmother|madrina|die|Patinnen
+a2|body|noun|Augenlid|eyelid|párpado|das|Augenlider
+a2|body|noun|Augenbraue|eyebrow|ceja|die|Augenbrauen
+a2|body|noun|Wimper|eyelash|pestaña|die|Wimpern
+a2|body|noun|Pupille|pupil of eye|pupila|die|Pupillen
+a2|body|noun|Kehlkopf|larynx|laringe|der|Kehlköpfe
+a2|body|noun|Speiseröhre|esophagus|esófago|die|Speiseröhren
+a2|clothes|noun|Strumpfhose|tights|medias pantimedias|die|Strumpfhosen
+a2|clothes|noun|Overall|overalls|mono de trabajo|der|Overalls
+a2|clothes|noun|Kapuze|hood|capucha|die|Kapuzen
+a2|clothes|noun|Hosenträger|suspenders|tirantes|die|Hosenträger
+a2|clothes|noun|Manschette|cuff|puño de camisa|die|Manschetten
+a2|food|noun|Knödel|dumpling|albóndiga de masa|der|Knödel
+a2|food|noun|Spätzle|spaetzle|spätzle|die|Spätzle
+a2|food|noun|Brezel|pretzel|pretzel|die|Brezeln
+a2|food|noun|Leberwurst|liverwurst|salchicha de hígado|die|Leberwürste
+a2|food|noun|Aufschnitt|cold cuts|fiambres|der|Aufschnitte
+a2|food|noun|Beilage|side dish|guarnición|die|Beilagen
+a2|fruit|noun|Stachelbeere|gooseberry|grosella espinosa|die|Stachelbeeren
+a2|fruit|noun|Johannisbeere|currant berry|grosella|die|Johannisbeeren
+a2|fruit|noun|Brombeere|blackberry|mora|die|Brombeeren
+a2|fruit|noun|Preiselbeere|lingonberry|arándano rojo|die|Preiselbeeren
+a2|fruit|noun|Holunderbeere|elderberry|baya de saúco|die|Holunderbeeren
+a2|veg|noun|Sellerie|celery|apio|der|Sellerie
+a2|veg|noun|Fenchel|fennel|hinojo|der|Fenchel
+a2|veg|noun|Pastinake|parsnip|chirivía|die|Pastinaken
+a2|veg|noun|Rote Bete|beetroot|remolacha|die|Rote Beten
+a2|veg|noun|Kohlrabi|kohlrabi|colinabo|der|Kohlrabis
+a2|drinks|noun|Glühwein|mulled wine|vino caliente|der|Glühweine
+a2|drinks|noun|Most|cider must|mosto|der|Moste
+a2|drinks|noun|Schorle|spritzer drink|spritz|die|Schorlen
+a2|drinks|noun|Buttermilch|buttermilk|suero de mantequilla|die|Buttermilche
+a2|drinks|noun|Molke|whey|lactosuero|die|Molken
+a2|animals|noun|Hermelin|stoat|armiño|das|Hermeline
+a2|animals|noun|Marder|marten|marta|der|Marder
+a2|animals|noun|Wiesel|weasel|comadreja|das|Wiesel
+a2|animals|noun|Elch|moose|alce|der|Elche
+a2|animals|noun|Bison|bison|bisonte|der|Bisons
+a2|house|noun|Dachrinne|gutter|canalón|die|Dachrinnen
+a2|house|noun|Fallrohr|downspout|bajante|das|Fallrohre
+a2|house|noun|Rollladen|roller shutter|persiana enrollable|der|Rollläden
+a2|house|noun|Klingelknopf|doorbell button|botón del timbre|der|Klingelknöpfe
+a2|house|noun|Türklingel|door chime|timbre de puerta|die|Türklingeln
+a2|furniture|noun|Schaukelstuhl|rocking chair|mecedora|der|Schaukelstühle
+a2|furniture|noun|Liege|daybed|diván|die|Liegen
+a2|furniture|noun|Hängematte|hammock|hamaca|die|Hängematten
+a2|furniture|noun|Beistelltisch|side table|mesa auxiliar|der|Beistelltische
+a2|furniture|noun|Gardinenstange|curtain rod|barra de cortina|die|Gardinenstangen
+a2|kitchen|noun|Schneebesen|whisk|batidor|der|Schneebesen
+a2|kitchen|noun|Nudelholz|rolling pin|rodillo de cocina|das|Nudelhölzer
+a2|kitchen|noun|Sieb|sieve|colador|das|Siebe
+a2|kitchen|noun|Reibe|grater|rallador|die|Reiben
+a2|kitchen|noun|Dosenöffner|can opener|abrelatas|der|Dosenöffner
+a2|city|noun|Fußgängerzone|pedestrian zone|zona peatonal|die|Fußgängerzonen
+a2|city|noun|Einkaufsstraße|shopping street|calle comercial|die|Einkaufsstraßen
+a2|city|noun|Hochhaus|skyscraper|rascacielos|das|Hochhäuser|undefined|undefined|undefined|
+a2|city|noun|Vorort|suburb|suburbio|der|Vororte
+a2|city|noun|Kreisverkehr|roundabout|rotonda|der|Kreisverkehre
+a2|city|noun|Bürgersteig|sidewalk|acera|der|Bürgersteige
+a2|city|noun|Straßenlaterne|streetlamp|farola|die|Straßenlaternen
+a2|transport|noun|Oberleitung|overhead wire|catenaria|die|Oberleitungen
+a2|transport|noun|Fahrplan|timetable|horario|der|Fahrpläne
+a2|transport|noun|Umsteigen|transfer ride|transbordo|das|
+a2|transport|noun|Anschluss|connection|conexión de viaje|der|Anschlüsse
+a2|transport|noun|Verspätung|delay|retraso|die|Verspätungen
+a2|school|noun|Stundenplan|class schedule|horario escolar|der|Stundenpläne
+a2|school|noun|Klassenarbeit|class test|examen de clase|die|Klassenarbeiten
+a2|school|noun|Zeugnis|report card|boleta|das|Zeugnisse
+a2|school|noun|Schultag|school day|día escolar|der|Schultage
+a2|school|noun|Klassenraum|classroom|aula|der|Klassenräume
+a2|jobs|noun|Bäcker|baker|panadero|der|Bäcker
+a2|jobs|noun|Bäckerin|female baker|panadera|die|Bäckerinnen
+a2|jobs|noun|Friseur|hairdresser|peluquero|der|Friseure
+a2|jobs|noun|Friseurin|female hairdresser|peluquera|die|Friseurinnen
+a2|jobs|noun|Mechaniker|mechanic|mecánico|der|Mechaniker
+a2|nature|noun|Wasserfall|waterfall|cascada|der|Wasserfälle
+a2|nature|noun|Geysir|geyser|géiser|der|Geysire
+a2|nature|noun|Gletscher|glacier|glaciar|der|Gletscher
+a2|nature|noun|Vulkan|volcano|volcán|der|Vulkane
+a2|nature|noun|Höhle|cave|cueva|die|Höhlen
+a2|weather|noun|Nebel|fog|niebla|der|Nebel
+a2|weather|noun|Hagel|hail|granizo|der|
+a2|weather|noun|Gewitter|thunderstorm|tormenta eléctrica|das|Gewitter
+a2|weather|noun|Regenbogen|rainbow|arcoíris|der|Regenbögen
+a2|weather|noun|Tau|dew|rocío|der|
+a2|time|noun|Viertelstunde|quarter hour|cuarto de hora|die|Viertelstunden
+a2|time|noun|Halbjahr|half year|semestre|das|Halbjahre
+a2|time|noun|Jahrzehnt|decade|década|das|Jahrzehnte
+a2|time|noun|Jahrtausend|millennium|milenio|das|Jahrtausende
+a2|time|other|vorgestern|day before yesterday|anteayer
+a2|time|other|übermorgen|day after tomorrow|pasado mañana
+a2|feelings|adj|überrascht|surprised|sorprendido
+a2|feelings|adj|enttäuscht|disappointed|decepcionado
+a2|feelings|adj|stolz|proud|orgulloso
+a2|feelings|adj|neidisch|envious|envidioso
+a2|feelings|adj|gelangweilt|bored|aburrido
+a2|verbs|verb|einpacken|to pack up|empaquetar
+a2|verbs|verb|auspacken|to unpack|desempaquetar
+a2|verbs|verb|umziehen|to move house|mudarse
+a2|verbs|verb|einziehen|to move in|mudarse a
+a2|verbs|verb|ausziehen|to move out|mudarse de
+a2|verbs|verb|anprobieren|to try on|probarse
+a2|verbs|verb|bestellen|to order|pedir un pedido
+a2|verbs|verb|abholen|to pick up|recoger
+a2|adjectives|adj|gemütlich|cozy|acogedor
+a2|adjectives|adj|praktisch|practical|práctico
+a2|adjectives|adj|praktisch sinnvoll|sensibly practical|práctico útil
+a2|adjectives|adj|bequem|comfortable|cómodo
+a2|adjectives|adj|unbequem|uncomfortable|incómodo
+a2|adjectives|adj|zuverlässig|reliable|fiable
+a2|adjectives|adj|unzuverlässig|unreliable|poco fiable
+a2|travel|noun|Reiseführer|guidebook|guía turística|der|Reiseführer
+a2|travel|noun|Sehenswürdigkeit|sight|lugar de interés|die|Sehenswürdigkeiten
+a2|travel|noun|Ausflug|excursion|excursión|der|Ausflüge
+a2|travel|noun|Rundreise|tour|gira|die|Rundreisen
+a2|travel|noun|Zwischenstopp|stopover|escala|der|Zwischenstopps
+a2|shop|noun|Sonderangebot|special offer|oferta especial|das|Sonderangebote
+a2|shop|noun|Ausverkauf|clearance sale|liquidación|der|Ausverkäufe
+a2|shop|noun|Preisschild|price tag|etiqueta de precio|das|Preisschilder
+a2|shop|noun|Umtausch|exchange of goods|cambio de producto|der|Umtäusche
+a2|shop|noun|Quittung|receipt|recibo|die|Quittungen
+a2|hobbies|noun|Basteln|crafting|manualidades|das|
+a2|hobbies|noun|Sammeln|collecting|coleccionismo|das|
+a2|hobbies|noun|Briefmarke|postage stamp|estampilla|die|Briefmarken
+a2|hobbies|noun|Münzsammlung|coin collection|colección de monedas|die|Münzsammlungen
+a2|hobbies|noun|Modellbau|model building|modelismo|der|
+a2|tech|noun|Ladegerät|charger|cargador|das|Ladegeräte
+a2|tech|noun|Kopfhörer|headphones|auriculares|der|Kopfhörer
+a2|tech|noun|Lautsprecher|loudspeaker|altavoz|der|Lautsprecher
+a2|tech|noun|Steckdose|power outlet|enchufe de pared|die|Steckdosen
+a2|tech|noun|Akku|rechargeable battery|batería recargable|der|Akkus
+a2|lands|other|Niederlande|Netherlands|Países Bajos
+a2|lands|other|Belgien|Belgium|Bélgica
+a2|lands|other|Dänemark|Denmark|Dinamarca
+a2|lands|other|Schweden|Sweden|Suecia
+a2|lands|other|Norwegen|Norway|Noruega
+a2|bath|noun|Mundspülung|mouthwash|enjuague bucal|die|Mundspülungen
+a2|bath|noun|Zahnseide|dental floss|hilo dental|die|
+a2|bath|noun|Rasierer|razor|rasuradora|der|Rasierer
+a2|bath|noun|Rasiercreme|shaving cream|crema de afeitar|die|Rasiercremes
+a2|bath|noun|Bürste|brush|cepillo|die|Bürsten
+a2|office|noun|Locher|hole punch|perforadora|der|Locher
+a2|office|noun|Hefter|stapler|engrampadora|der|Hefter
+a2|office|noun|Büroklammer|paper clip|clip|die|Büroklammern
+a2|office|noun|Notizblock|notepad|bloc de notas|der|Notizblöcke
+a2|office|noun|Aktenordner|ring binder|archivador|der|Aktenordner
+a2|music|noun|Notenblatt|sheet music|partitura|das|Notenblätter
+a2|music|noun|Chor|choir|coro|der|Chöre
+a2|music|noun|Orchester|orchestra|orquesta|das|Orchester
+a2|music|noun|Konzert|concert|concierto|das|Konzerte
+a2|music|noun|Refrain|chorus of song|estribillo|der|Refrains
+a2|sport|noun|Schiedsrichter|referee|árbitro|der|Schiedsrichter
+a2|sport|noun|Torwart|goalkeeper|portero|der|Torwarte
+a2|sport|noun|Mannschaft|sports team|equipo deportivo|die|Mannschaften
+a2|sport|noun|Training|training session|entrenamiento|das|Trainings
+a2|sport|noun|Wettkampf|competition|competición|der|Wettkämpfe
+a2|health|noun|Verband|bandage|vendaje|der|Verbände
+a2|health|noun|Pflaster|adhesive bandage|curita|das|Pflaster
+a2|health|noun|Impfung|vaccination|vacuna|die|Impfungen
+a2|health|noun|Rezept|prescription|receta médica|das|Rezepte
+a2|health|noun|Untersuchung|medical exam|revisión médica|die|Untersuchungen
+a2|tools|noun|Schraubenzieher|screwdriver|destornillador|der|Schraubenzieher
+a2|tools|noun|Zange|pliers|alicates|die|Zangen
+a2|tools|noun|Säge|saw|sierra|die|Sägen
+a2|tools|noun|Bohrer|drill bit|broca|der|Bohrer
+a2|tools|noun|Maßband|measuring tape|cinta métrica|das|Maßbänder
+a2|garden|noun|Gießkanne|watering can|regadera|die|Gießkannen
+a2|garden|noun|Harke|rake|rastrillo|die|Harken
+a2|garden|noun|Spaten|spade|pala de jardín|der|Spaten
+a2|garden|noun|Schubkarre|wheelbarrow|carretilla|die|Schubkarren
+a2|garden|noun|Kompost|compost|compost|der|Komposte
+a2|money|noun|Wechselgeld|change money|cambio en efectivo|das|
+a2|money|noun|Geldbeutel|wallet|billetera|der|Geldbeutel
+a2|money|noun|Sparschwein|piggy bank|alcancía|das|Sparschweine
+a2|money|noun|Konto|bank account|cuenta bancaria|das|Konten
+a2|money|noun|Überweisung|bank transfer|transferencia|die|Überweisungen
+a2|materials|noun|Beton|concrete|hormigón|der|
+a2|materials|noun|Ziegel|brick|ladrillo|der|Ziegel
+a2|materials|noun|Asphalt|asphalt|asfalto|der|
+a2|materials|noun|Gummi|rubber|caucho|der|Gummis
+a2|materials|noun|Leder|leather|cuero|das|Leder
+a2|shapes|noun|Oval|oval|óvalo|das|Ovale
+a2|shapes|noun|Raute|rhombus|rombo|die|Rauten
+a2|shapes|noun|Trapez|trapezoid|trapecio|das|Trapeze
+a2|shapes|noun|Zylinder|cylinder|cilindro|der|Zylinder
+a2|shapes|noun|Kegel|cone|cono|der|Kegel
+b1|office|noun|Formular|form sheet|formulario|das|Formulare
+b1|office|noun|Protokoll|minutes of meeting|acta|das|Protokolle
+b1|office|noun|Frist|deadline|plazo|die|Fristen
+b1|office|noun|Zuständigkeit|responsibility area|competencia|die|Zuständigkeiten
+b1|money|noun|Zinsen|interest rates|intereses|die|Zinsen
+b1|money|noun|Gebühr|fee|tarifa|die|Gebühren
+b1|money|noun|Steuer|tax|impuesto|die|Steuern
+b1|money|noun|Gehalt|salary|sueldo|das|Gehälter
+b1|money|noun|Lohn|wage|salario|der|Löhne
+b1|money|noun|Bonus|bonus pay|bono salarial|der|Boni
+b1|money|noun|Rückerstattung|refund|reembolso|die|Rückerstattungen
+b1|money|noun|Schuld|debt|deuda|die|Schulden
+b1|health|noun|Diagnose|diagnosis|diagnóstico|die|Diagnosen
+b1|health|noun|Therapie|therapy|terapia|die|Therapien
+b1|health|noun|Nebenwirkung|side effect|efecto secundario|die|Nebenwirkungen
+b1|health|noun|Allergie|allergy|alergia|die|Allergien
+b1|health|noun|Blutdruck|blood pressure|presión arterial|der|Blutdrücke
+b1|health|noun|Impfpass|vaccination record|cartilla de vacunación|der|Impfpässe
+b1|school|noun|Abschluss|degree completion|titulación|der|Abschlüsse
+b1|school|noun|Studiengang|degree program|carrera universitaria|der|Studiengänge
+b1|school|noun|Vorlesung|lecture|clase magistral|die|Vorlesungen
+b1|school|noun|Seminar|seminar|seminario|das|Seminare
+b1|school|noun|Stipendium|scholarship|beca|das|Stipendien
+b1|school|noun|Prüfung|exam|examen|die|Prüfungen
+b1|jobs|noun|Bewerbung|job application|candidatura|die|Bewerbungen
+b1|jobs|noun|Lebenslauf|resume|currículum|der|Lebensläufe
+b1|jobs|noun|Vorstellungsgespräch|job interview|entrevista de trabajo|das|Vorstellungsgespräche
+b1|jobs|noun|Arbeitsvertrag|employment contract|contrato laboral|der|Arbeitsverträge
+b1|jobs|noun|Probezeit|probation period|periodo de prueba|die|Probezeiten
+b1|jobs|noun|Kündigung|dismissal notice|despido|die|Kündigungen
+b1|tech|noun|Passwort|password|contraseña|das|Passwörter
+b1|tech|noun|Benutzername|username|nombre de usuario|der|Benutzernamen
+b1|tech|noun|Datenbank|database|base de datos|die|Datenbanken
+b1|tech|noun|Cloud|cloud storage|nube informática|die|Clouds
+b1|tech|noun|Backup|backup copy|copia de seguridad|das|Backups
+b1|tech|noun|Software|software|software|die|
+b1|tech|noun|Hardware|hardware|hardware|die|
+b1|travel|noun|Mietwagen|rental car|coche de alquiler|der|Mietwagen
+b1|travel|noun|Fahrgemeinschaft|carpool|viaje compartido|die|Fahrgemeinschaften
+b1|travel|noun|Unterkunft|accommodation|alojamiento|die|Unterkünfte
+b1|travel|noun|Buchung|booking|reserva|die|Buchungen
+b1|travel|noun|Stornierung|cancellation|cancelación|die|Stornierungen
+b1|city|noun|Wohngegend|residential area|zona residencial|die|Wohngegenden
+b1|city|noun|Industriegebiet|industrial area|zona industrial|das|Industriegebiete
+b1|city|noun|Stadtviertel|city district|barrio|das|Stadtviertel
+b1|city|noun|Hauptbahnhof|main station|estación central|der|Hauptbahnhöfe
+b1|nature|noun|Umwelt|environment|medio ambiente|die|Umwelten
+b1|nature|noun|Klimawandel|climate change|cambio climático|der|
+b1|nature|noun|Naturschutz|nature conservation|protección de la naturaleza|der|
+b1|nature|noun|Recycling|recycling|reciclaje|das|
+b1|nature|noun|Mülltrennung|waste sorting|separación de residuos|die|Mülltrennungen
+b1|weather|noun|Hitze|heat wave weather|calor intenso|die|
+b1|weather|noun|Kälte|cold weather|frío intenso|die|
+b1|weather|noun|Luftfeuchtigkeit|humidity|humedad del aire|die|Luftfeuchtigkeiten
+b1|weather|noun|Wettervorhersage|weather forecast|pronóstico del tiempo|die|Wettervorhersagen
+b1|time|noun|Zeitraum|time span|periodo|der|Zeiträume
+b1|time|noun|Zeitpunkt|point in time|momento puntual|der|Zeitpunkte
+b1|time|noun|Dauer|duration|duración|die|Dauern
+b1|time|noun|Verzögerung|delay period|demora|die|Verzögerungen
+b1|adjectives|adj|umfangreich|extensive|extenso
+b1|adjectives|adj|knapp|scarce|escaso
+b1|adjectives|adj|reichlich|abundant|abundante
+b1|adjectives|adj|angemessen|appropriate|adecuado
+b1|adjectives|adj|ungeeignet|unsuitable|inadecuado
+b1|adjectives|adj|geeignet|suitable|adecuado para
+b1|adjectives|adj|erfolgreich|successful|exitoso
+b1|adjectives|adj|erfolglos|unsuccessful|fracasado
+b1|adjectives|adj|möglich|possible|posible
+b1|adjectives|adj|unmöglich|impossible|imposible
+b1|verbs|verb|erreichen|to achieve|lograr
+b1|verbs|verb|vermeiden|to avoid|evitar
+b1|verbs|verb|verursachen|to cause|causar
+b1|verbs|verb|bedeuten|to mean|significar
+b1|verbs|verb|enthalten|to contain|contener
+b1|verbs|verb|bestehen|to consist|consistir
+b1|verbs|verb|handeln|to act|actuar
+b1|verbs|verb|entscheiden|to decide|decidir
+b1|verbs|verb|wählen|to choose|elegir
+b1|verbs|verb|prüfen|to check|comprobar
+b2|verbs|verb|erörtern|to discuss thoroughly|debatir a fondo
+b2|verbs|verb|hinterfragen|to question critically|cuestionar críticamente
+b2|verbs|verb|rechtfertigen|to justify|justificar
+b2|verbs|verb|relativieren|to relativize|relativizar
+b2|verbs|verb|differenzieren|to differentiate|diferenciar con matices
+b2|verbs|verb|spezifizieren|to specify|especificar
+b2|verbs|verb|generalisieren|to generalize|generalizar
+b2|verbs|verb|interpretieren|to interpret|interpretar
+b2|verbs|verb|konstruieren|to construct|construir conceptualmente
+b2|verbs|verb|dekonstruieren|to deconstruct|deconstruir
+b2|verbs|verb|implementieren|to implement|implementar
+b2|verbs|verb|optimieren|to optimize|optimizar
+b2|verbs|verb|standardisieren|to standardize|estandarizar
+b2|verbs|verb|priorisieren|to prioritize|priorizar
+b2|verbs|verb|koordinieren|to coordinate|coordinar
+b2|verbs|verb|delegieren|to delegate|delegar
+b2|verbs|verb|moderieren|to moderate|moderar
+b2|verbs|verb|vermitteln|to mediate|mediar
+b2|verbs|verb|schlichten|to settle a dispute|conciliar
+b2|verbs|verb|einklagen|to sue for|demandar judicialmente
+b2|adjectives|adj|kontrovers|controversial|controvertido
+b2|adjectives|adj|ambivalent|ambivalent|ambivalente
+b2|adjectives|adj|paradox|paradoxical|paradójico
+b2|adjectives|adj|komplex|complex|complejo
+b2|adjectives|adj|subtil|subtle|sutil
+b2|adjectives|adj|implizit|implicit|implícito
+b2|adjectives|adj|explizit|explicit|explícito
+b2|adjectives|adj|relevant|relevant|relevante
+b2|adjectives|adj|irrelevant|irrelevant|irrelevante
+b2|adjectives|adj|plausibel|plausible|plausible
+b2|adjectives|adj|fragwürdig|questionable|cuestionable
+b2|adjectives|adj|zweifelhaft|doubtful|dudoso
+b2|adjectives|adj|nachhaltig|sustainable|sostenible
+b2|adjectives|adj|effizient|efficient|eficiente
+b2|adjectives|adj|effektiv|effective|efectivo
+b2|feelings|noun|Ambivalenz|ambivalence|ambivalencia|die|Ambivalenzen
+b2|feelings|noun|Empathie|empathy|empatía|die|Empathien
+b2|feelings|noun|Resilienz|resilience|resiliencia|die|Resilienzen
+b2|feelings|noun|Apathie|apathy|apatía|die|Apathien
+b2|feelings|noun|Euphorie|euphoria|euforia|die|Euphorien
+b2|feelings|adj|empathisch|empathic|empático
+b2|feelings|adj|apatisch|apathetic|apático
+b2|feelings|adj|euphorisch|euphoric|eufórico
+b2|feelings|adj|resigniert|resigned|resignado
+b2|feelings|adj|motiviert|motivated|motivado
+b2|office|noun|Hierarchie|hierarchy|jerarquía|die|Hierarchien
+b2|office|noun|Kompetenz|competence|competencia profesional|die|Kompetenzen
+b2|office|noun|Ressource|resource|recurso|die|Ressourcen
+b2|office|noun|Kapazität|capacity|capacidad|die|Kapazitäten
+b2|office|noun|Benchmark|benchmark|referencia comparativa|die|Benchmarks
+b2|office|noun|Meilenstein|milestone|hito|der|Meilensteine
+b2|office|noun|Roadmap|roadmap|hoja de ruta|die|Roadmaps
+b2|money|noun|Inflation|inflation|inflación|die|Inflationen
+b2|money|noun|Deflation|deflation|deflación|die|Deflationen
+b2|money|noun|Rendite|return on investment|rentabilidad|die|Renditen
+b2|money|noun|Aktie|share of stock|acción bursátil|die|Aktien
+b2|money|noun|Anleihe|bond|bono financiero|die|Anleihen
+b2|money|noun|Dividende|dividend|dividendo|die|Dividenden
+b2|money|noun|Portfolio|investment portfolio|cartera de inversión|das|Portfolios
+b2|money|noun|Liquidität|liquidity|liquidez|die|Liquiditäten
+b2|school|noun|Dissertation|dissertation|tesis doctoral|die|Dissertationen
+b2|school|noun|Facharbeit|term paper|trabajo de asignatura|die|Facharbeiten
+b2|school|noun|Quellenangabe|citation|cita bibliográfica|die|Quellenangaben
+b2|school|noun|Literaturverzeichnis|bibliography|bibliografía|das|Literaturverzeichnisse
+b2|school|noun|Hypothese|hypothesis|hipótesis|die|Hypothesen
+b2|school|noun|Methode|method|método|die|Methoden
+b2|school|noun|Empirie|empirical research|empirismo aplicado|die|
+b2|health|noun|Prävention|prevention|prevención|die|Präventionen
+b2|health|noun|Rehabilitation|rehabilitation|rehabilitación|die|Rehabilitationen
+b2|health|noun|Chronifizierung|chronification|cronificación|die|Chronifizierungen
+b2|health|noun|Prognose|prognosis|pronóstico médico|die|Prognosen
+b2|health|noun|Symptom|symptom|síntoma|das|Symptome
+b2|tech|noun|Algorithmus|algorithm|algoritmo|der|Algorithmen
+b2|tech|noun|Schnittstelle|interface|interfaz|die|Schnittstellen
+b2|tech|noun|Verschlüsselung|encryption|cifrado|die|Verschlüsselungen
+b2|tech|noun|Datenschutz|data protection|protección de datos|der|
+b2|tech|noun|Künstliche Intelligenz|artificial intelligence|inteligencia artificial|die|
+b2|tech|noun|Maschinelles Lernen|machine learning|aprendizaje automático|das|
+b2|nature|noun|Biodiversität|biodiversity|biodiversidad|die|Biodiversitäten
+b2|nature|noun|Ökosystem|ecosystem|ecosistema|das|Ökosysteme
+b2|nature|noun|Emission|emission|emisión|die|Emissionen
+b2|nature|noun|Fußabdruck|carbon footprint|huella ecológica|der|Fußabdrücke
+b2|nature|noun|Erneuerbare Energie|renewable energy|energía renovable|die|Erneuerbaren Energien
+b2|jobs|noun|Führungskraft|executive|directivo|die|Führungskräfte
+b2|jobs|noun|Fachkraft|skilled worker|trabajador cualificado|die|Fachkräfte
+b2|jobs|noun|Quereinsteiger|career changer|persona de otro sector|der|Quereinsteiger
+b2|jobs|noun|Praktikant|intern|becario|der|Praktikanten
+b2|jobs|noun|Freiberufler|freelancer|autónomo|der|Freiberufler
+c1|verbs|verb|postulieren|to postulate|postular
+c1|verbs|verb|implizieren|to imply|implicar
+c1|verbs|verb|induzieren|to induce|inducir
+c1|verbs|verb|deduzieren|to deduce|deducir
+c1|verbs|verb|konstituieren|to constitute|constituir
+c1|verbs|verb|legitimieren|to legitimize|legitimar
+c1|verbs|verb|problematisieren|to problematize|problematizar
+c1|verbs|verb|thematisieren|to address as topic|tematizar
+c1|verbs|verb|operationalisieren|to operationalize|operacionalizar
+c1|verbs|verb|systematisieren|to systematize|sistematizar
+c1|verbs|verb|historisieren|to historicize|historizar
+c1|verbs|verb|kontextualisieren|to contextualize|contextualizar
+c1|verbs|verb|abstrahieren|to abstract|abstraer
+c1|verbs|verb|synthetisieren|to synthesize|sintetizar
+c1|verbs|verb|kritisieren|to criticize|criticar
+c1|adjectives|adj|epistemisch|epistemic|epistémico
+c1|adjectives|adj|ontologisch|ontological|ontológico
+c1|adjectives|adj|heuristisch|heuristic|heurístico
+c1|adjectives|adj|diskursiv|discursive|discursivo
+c1|adjectives|adj|normativ|normative|normativo
+c1|adjectives|adj|deskriptiv|descriptive|descriptivo
+c1|adjectives|adj|präskriptiv|prescriptive|prescriptivo
+c1|adjectives|adj|dialektisch|dialectical|dialéctico
+c1|adjectives|adj|paradigmatisch|paradigmatic|paradigmático
+c1|adjectives|adj|syntagmatisch|syntagmatic|sintagmático
+c1|adjectives|adj|kohärent|coherent|coherente
+c1|adjectives|adj|inkohärent|incoherent|incoherente
+c1|adjectives|adj|konsistent|consistent|consistente
+c1|adjectives|adj|inkonsistent|inconsistent|inconsistente
+c1|adjectives|adj|valid|valid|válido
+c1|school|noun|Erkenntnistheorie|epistemology|epistemología|die|Erkenntnistheorien
+c1|school|noun|Methodologie|methodology|metodología|die|Methodologien
+c1|school|noun|Paradigma|paradigm|paradigma|das|Paradigmen
+c1|school|noun|Diskurs|discourse|discurso académico|der|Diskurse
+c1|school|noun|Narrativ|narrative frame|narrativa|das|Narrative
+c1|school|noun|Interdisziplinarität|interdisciplinarity|interdisciplinariedad|die|
+c1|school|noun|Peer-Review|peer review|revisión por pares|das|Peer-Reviews
+c1|school|noun|Publikation|publication|publicación|die|Publikationen
+c1|office|noun|Governance|governance|gobernanza|die|
+c1|office|noun|Compliance|compliance|cumplimiento normativo|die|
+c1|office|noun|Due Diligence|due diligence|diligencia debida|die|
+c1|office|noun|Stakeholder|stakeholder|parte interesada|der|Stakeholder
+c1|office|noun|Synergie|synergy|sinergia|die|Synergien
+c1|money|noun|Derivat|derivative instrument|derivado financiero|das|Derivate
+c1|money|noun|Hedgefonds|hedge fund|fondo de cobertura|der|Hedgefonds
+c1|money|noun|Volatilität|volatility|volatilidad|die|Volatilitäten
+c1|money|noun|Solvenz|solvency|solvencia|die|Solvenzen
+c1|money|noun|Insolvenz|insolvency|insolvencia|die|Insolvenzen
+c1|health|noun|Ätiologie|etiology|etiología|die|Ätiologien
+c1|health|noun|Pathogenese|pathogenesis|patogenia|die|Pathogenesen
+c1|health|noun|Komorbidität|comorbidity|comorbilidad|die|Komorbiditäten
+c1|health|noun|Mortalität|mortality|mortalidad|die|Mortalitäten
+c1|health|noun|Morbidität|morbidity|morbilidad|die|Morbiditäten
+c1|feelings|noun|Melancholie|melancholy|melancolía|die|Melancholien
+c1|feelings|noun|Nostalgie|nostalgia|nostalgia|die|Nostalgien
+c1|feelings|noun|Sehnsucht|yearning|añoranza|die|Sehnsüchte
+c1|feelings|noun|Wehmut|wistfulness|tristeza suave|die|
+c1|feelings|adj|melancholisch|melancholic|melancólico
+c1|feelings|adj|nostalgisch|nostalgic|nostálgico
+c1|feelings|adj|wehmütig|wistful|nostálgico suave
+c1|nature|noun|Anthropozän|Anthropocene|antropoceno|das|
+c1|nature|noun|Biosphäre|biosphere|biosfera|die|Biosphären
+c1|nature|noun|Hydrosphäre|hydrosphere|hidrosfera|die|Hydrosphären
+c1|nature|noun|Atmosphäre|atmosphere|atmósfera|die|Atmosphären
+c1|tech|noun|Quantencomputer|quantum computer|computadora cuántica|der|Quantencomputer
+c1|tech|noun|Neuronales Netz|neural network|red neuronal|das|Neuronalen Netze
+c1|tech|noun|Big Data|big data|macrodatos|das|
+c1|tech|noun|Blockchain|blockchain|cadena de bloques|die|Blockchains
+c1|adjectives|adj|innovativ|innovative|innovador
+c1|adjectives|adj|disruptiv|disruptive|disruptivo
+c1|adjectives|adj|transformativ|transformative|transformador
+c1|adjectives|adj|iterativ|iterative|iterativo
+c1|adjectives|adj|inklusiv|inclusive|inclusivo
+c2|verbs|verb|sublimieren|to sublimate|sublimar
+c2|verbs|verb|transzendieren|to transcend|trascender
+c2|verbs|verb|kontemplieren|to contemplate|contemplar
+c2|verbs|verb|ruminieren|to ruminate|rumiar pensamientos
+c2|verbs|verb|präfigurieren|to prefigure|prefigurar
+c2|verbs|verb|rekapitulieren|to recapitulate|recapitular
+c2|verbs|verb|akzentuieren|to accentuate|acentuar
+c2|verbs|verb|nuancieren|to nuance|matizar
+c2|verbs|verb|modulieren|to modulate|modular
+c2|verbs|verb|oszillieren|to oscillate|oscilar
+c2|adjectives|adj|ephemer|ephemeral|efímero
+c2|adjectives|adj|evaneszent|evanescent|evanescente
+c2|adjectives|adj|immanent|immanent|inmanente
+c2|adjectives|adj|transzendent|transcendent|trascendente
+c2|adjectives|adj|enigmatisch|enigmatic|enigmático
+c2|adjectives|adj|hermetisch|hermetic|hermético
+c2|adjectives|adj|esoterisch|esoteric|esotérico
+c2|adjectives|adj|exoterisch|exoteric|exotérico
+c2|adjectives|adj|idiosynkratisch|idiosyncratic|idiosincrásico
+c2|adjectives|adj|quintessentiell|quintessential|quintaesencial
+c2|feelings|noun|Weltschmerz|world-weariness|dolor del mundo|der|
+c2|feelings|noun|Fernweh|wanderlust ache|ansia de lejos|das|
+c2|feelings|noun|Heimweh|homesickness|morriña|das|
+c2|feelings|noun|Lebensmüdigkeit|weariness of life|cansancio vital|die|
+c2|feelings|noun|Todessehnsucht|longing for death|ansia de muerte|die|
+c2|feelings|adj|weltschmerzlich|world-weary|lleno de hastío
+c2|feelings|adj|fernwehkrank|sick with wanderlust|enfermo de lejanía
+c2|school|noun|Hermeneutik|hermeneutics|hermenéutica|die|Hermeneutiken
+c2|school|noun|Phänomenologie|phenomenology|fenomenología|die|Phänomenologien
+c2|school|noun|Semiotik|semiotics|semiótica|die|Semiotiken
+c2|school|noun|Ästhetik|aesthetics|estética|die|Ästhetiken
+c2|school|noun|Poetik|poetics|poética|die|Poetiken
+c2|school|noun|Rhetorik|rhetoric|retórica|die|Rhetoriken
+c2|office|noun|Leitbild|guiding vision|visión institucional|das|Leitbilder
+c2|office|noun|Habitus|habitus|habitus|der|Habitus
+c2|office|noun|Doxa|doxa|doxa|die|
+c2|office|noun|Praxis|praxis|praxis|die|Praxen
+c2|money|noun|Finanzialisierung|financialization|financierización|die|
+c2|money|noun|Prekarisierung|precarization|precarización|die|
+c2|money|noun|Akkumulation|accumulation|acumulación|die|Akkumulationen
+c2|nature|noun|Entropie|entropy|entropía|die|Entropien
+c2|nature|noun|Emergenz|emergence|emergencia sistémica|die|Emergenzen
+c2|nature|noun|Autopoiesis|autopoiesis|autopoyesis|die|
+c2|tech|noun|Singularität|singularity|singularidad tecnológica|die|Singularitäten
+c2|tech|noun|Kybernetik|cybernetics|cibernética|die|
+c2|tech|noun|Telematik|telematics|telemática|die|
+c2|adjectives|adj|aporethisch|aporetic|aporético
+c2|adjectives|adj|performativ|performative|performativo
+c2|adjectives|adj|autoreferentiell|self-referential|autorreferencial
+c2|adjectives|adj|intertextuell|intertextual|intertextual
+c2|adjectives|adj|metaphorisch|metaphorical|metafórico
+c2|adjectives|adj|metonymisch|metonymic|metonímico
+c2|adjectives|adj|allegorisch|allegorical|alegórico
+c2|adjectives|adj|ironisch|ironic|irónico
+c2|adjectives|adj|sarkastisch|sarcastic|sarcástico
+c2|adjectives|adj|zynisch|cynical|cínico
+c2|verbs|verb|allegorisieren|to allegorize|alegorizar
+c2|verbs|verb|ironisieren|to ironize|ironizar
+c2|verbs|verb|parodieren|to parody|parodiar
+c2|verbs|verb|satirisieren|to satirize|satirizar
+c2|verbs|verb|mystifizieren|to mystify|mistificar
+c2|verbs|verb|demystifizieren|to demystify|desmitificar
+c2|hello|phrase|Man muss die Kirche im Dorf lassen|don't exaggerate|no exagerar las cosas
+c2|hello|phrase|Das ist nicht mein Bier|that's not my problem|eso no es asunto mío
+c2|hello|phrase|Da steppt der Bär|that's a lively party|ahí hay fiesta
+c2|hello|phrase|Ich verstehe nur Bahnhof|I don't understand a thing|no entiendo nada
+c2|hello|phrase|Das ist Schnee von gestern|that's old news|eso es agua pasada
+b1|jobs|noun|Projektleiter|project lead|líder de proyecto|der|Projektleiter
+b1|jobs|noun|Abteilungsleiter|department head|jefe de departamento|der|Abteilungsleiter
+b1|jobs|noun|Sachbearbeiter|case worker|gestor administrativo|der|Sachbearbeiter
+b1|jobs|noun|Dolmetscher|interpreter|intérprete|der|Dolmetscher
+b1|jobs|noun|Übersetzer|translator|traductor|der|Übersetzer
+b1|jobs|noun|Journalist|journalist|periodista|der|Journalisten
+b1|jobs|noun|Redakteur|editor|redactor|der|Redakteure
+b1|jobs|noun|Fotograf|photographer|fotógrafo|der|Fotografen
+b1|jobs|noun|Architekt|architect|arquitecto|der|Architekten
+b1|jobs|noun|Ingenieur|engineer|ingeniero|der|Ingenieure
+b1|jobs|noun|Chemiker|chemist|químico|der|Chemiker
+b1|jobs|noun|Physiker|physicist|físico|der|Physiker
+b1|jobs|noun|Biologe|biologist|biólogo|der|Biologen
+b1|jobs|noun|Psychologe|psychologist|psicólogo|der|Psychologen
+b1|jobs|noun|Soziologe|sociologist|sociólogo|der|Soziologen
+b1|jobs|noun|Historiker|historian|historiador|der|Historiker
+b1|jobs|noun|Philosoph|philosopher|filósofo|der|Philosophen
+b1|jobs|noun|Theologe|theologian|teólogo|der|Theologen
+b1|jobs|noun|Jurist|legal scholar|jurista|der|Juristen
+b1|jobs|noun|Notar|notary|notario|der|Notare
+b1|jobs|noun|Anwalt|lawyer|abogado|der|Anwälte
+b1|jobs|noun|Richter|judge|juez|der|Richter
+b1|jobs|noun|Staatsanwalt|prosecutor|fiscal|der|Staatsanwälte
+b1|jobs|noun|Diplomat|diplomat|diplomático|der|Diplomaten
+b1|jobs|noun|Botschafter|ambassador|embajador|der|Botschafter
+b1|office|noun|Geschäftsführung|management board|dirección general|die|Geschäftsführungen
+b1|office|noun|Personalabteilung|HR department|departamento de personal|die|Personalabteilungen
+b1|office|noun|Buchhaltung|bookkeeping|contabilidad|die|Buchhaltungen
+b1|office|noun|Controlling|controlling|control de gestión|das|
+b1|office|noun|Qualitätsmanagement|quality management|gestión de calidad|das|
+b1|office|noun|Risikomanagement|risk management|gestión de riesgos|das|
+b1|office|noun|Kundenbetreuung|customer care|atención al cliente|die|
+b1|office|noun|Öffentlichkeitsarbeit|public relations|relaciones públicas|die|
+b1|health|noun|Hausarzt|family doctor|médico de cabecera|der|Hausärzte
+b1|health|noun|Facharzt|specialist doctor|médico especialista|der|Fachärzte
+b1|health|noun|Chirurgen|surgeons group|cirujanos|die|Chirurgen
+b1|health|noun|Chirurg|surgeon|cirujano|der|Chirurgen
+b1|health|noun|Zahnarzt|dentist|dentista|der|Zahnärzte
+b1|health|noun|Apotheker|pharmacist|farmacéutico|der|Apotheker
+b1|health|noun|Pfleger|male nurse|enfermero|der|Pfleger
+b1|health|noun|Pflegerin|female nurse|enfermera|die|Pflegerinnen
+b1|health|noun|Hebamme|midwife|matrona|die|Hebammen
+b1|health|noun|Physiotherapeut|physiotherapist|fisioterapeuta|der|Physiotherapeuten
+b1|materials|noun|Kohlenstoff|carbon|carbono|der|
+b1|materials|noun|Stickstoff|nitrogen|nitrógeno|der|
+b1|materials|noun|Sauerstoff|oxygen|oxígeno|der|
+b1|materials|noun|Wasserstoff|hydrogen|hidrógeno|der|
+b1|materials|noun|Helium|helium|helio|das|
+b1|materials|noun|Kupfer|copper|cobre|das|
+b1|materials|noun|Zinn|tin metal|estaño|das|
+b1|materials|noun|Blei|lead metal|plomo|das|
+b1|materials|noun|Quecksilber|mercury metal|mercurio|das|
+b1|materials|noun|Nickel|nickel|níquel|das|
+b1|verbs|verb|abschließen|to conclude|concluir
+b1|verbs|verb|aufschließen|to unlock insight|abrir con llave
+b1|verbs|verb|einschließen|to include enclosed|incluir encerrado
+b1|verbs|verb|ausschließen|to exclude|excluir
+b1|verbs|verb|anschließen|to connect up|conectar
+b1|verbs|verb|anschließen lassen|to have connected|hacer conectar
+b1|verbs|verb|umschließen|to enclose|cercar
+b1|verbs|verb|verschließen|to seal shut|cerrar herméticamente
+b1|verbs|verb|aufbrechen|to break open|forzar apertura
+b1|verbs|verb|einbrechen|to break in|entrar a robar
+b1|verbs|verb|ausbrechen|to break out|escapar
+b1|verbs|verb|durchbrechen|to break through|atravesar
+b1|verbs|verb|zusammenbrechen|to collapse|derrumbarse
+b1|verbs|verb|zerbrechen|to shatter|hacer pedazos
+b1|verbs|verb|aufbauen|to build up|construir algo
+b1|verbs|verb|abbauen|to dismantle|desmantelar
+b1|verbs|verb|umbauen|to remodel|remodelar
+b1|verbs|verb|ausbauen|to expand structure|ampliar
+b1|verbs|verb|einbauen|to install in|instalar dentro
+b1|verbs|verb|zusammenbauen|to assemble|ensamblar
+b1|verbs|verb|aufstellen|to set up|colocar de pie
+b1|verbs|verb|umstellen|to rearrange|reordenar
+b1|verbs|verb|einstellen|to hire or adjust|contratar o ajustar
+b1|verbs|verb|vorstellen|to introduce|presentar a alguien
+b1|verbs|verb|darstellen|to depict|representar
+b1|verbs|verb|herstellen|to manufacture|fabricar
+b1|verbs|verb|wiederherstellen|to restore|restaurar
+b1|verbs|verb|feststellen|to ascertain|constatar
+b1|verbs|verb|sicherstellen|to ensure|asegurar
+b1|verbs|verb|bereitstellen|to provide|poner a disposición
+b2|adjectives|adj|ambitiös|ambitious|ambicioso
+b2|adjectives|adj|aspirativ|aspirational|aspiracional
+b2|adjectives|adj|visionär|visionary|visionario
+b2|adjectives|adj|pragmatisch|pragmatic|pragmático
+b2|adjectives|adj|ideologisch|ideological|ideológico
+b2|adjectives|adj|dogmatisch|dogmatic|dogmático
+b2|adjectives|adj|orthodox|orthodox|ortodoxo
+b2|adjectives|adj|heterodox|heterodox|heterodoxo
+b2|adjectives|adj|progressiv|progressive|progresista
+b2|adjectives|adj|konservativ|conservative|conservador
+b2|adjectives|adj|liberal|liberal|liberal
+b2|adjectives|adj|autoritär|authoritarian|autoritario
+b2|adjectives|adj|totalitär|totalitarian|totalitario
+b2|adjectives|adj|demokratisch|democratic|democrático
+b2|adjectives|adj|oligarchisch|oligarchic|oligárquico
+b2|adjectives|adj|bürokratisch|bureaucratic|burocrático
+b2|adjectives|adj|meritokratisch|meritocratic|meritocrático
+b2|adjectives|adj|egalitär|egalitarian|igualitario
+b2|adjectives|adj|elitär|elitist|elitista
+b2|adjectives|adj|populistisch|populist|populista
+c1|school|noun|Metakognition|metacognition|metacognición|die|Metakognitionen
+c1|school|noun|Heuristik|heuristic rule|heurística|die|Heuristiken
+c1|school|noun|Taxonomie|taxonomy|taxonomía|die|Taxonomien
+c1|school|noun|Ontologie|ontology|ontología|die|Ontologien
+c1|school|noun|Teleologie|teleology|teleología|die|Teleologien
+c1|school|noun|Axiologie|axiology|axiología|die|Axiologien
+c1|school|noun|Deontologie|deontology|deontología|die|Deontologien
+c1|school|noun|Utilitarismus|utilitarianism|utilitarismo|der|
+c1|school|noun|Konstruktivismus|constructivism|constructivismo|der|
+c1|school|noun|Positivismus|positivism|positivismo|der|
+c1|feelings|noun|Katharsis|catharsis|catarsis|die|Katharses
+c1|feelings|noun|Anomie|anomie|anomia|die|Anomien
+c1|feelings|noun|Entfremdung|alienation|alienación|die|Entfremdungen
+c1|feelings|noun|Selbstwirksamkeit|self-efficacy|autoeficacia|die|
+c1|feelings|noun|Selbstwertgefühl|self-esteem|autoestima|das|Selbstwertgefühle
+c1|money|noun|Arbitrage|arbitrage|arbitraje|die|
+c1|money|noun|Hebelwirkung|leverage effect|efecto apalancamiento|die|Hebelwirkungen
+c1|money|noun|Risikoprämie|risk premium|prima de riesgo|die|Risikoprämien
+c1|money|noun|Kreditausfall|credit default|impago crediticio|der|Kreditausfälle
+c1|money|noun|Systemrisiko|systemic risk|riesgo sistémico|das|Systemrisiken
+c1|tech|noun|Interopabilität|interoperability|interoperabilidad|die|
+c1|tech|noun|Skalierbarkeit|scalability|escalabilidad|die|
+c1|tech|noun|Latenz|latency|latencia|die|Latenzen
+c1|tech|noun|Durchsatz|throughput|rendimiento de datos|der|Durchsätze
+c1|tech|noun|Redundanz|redundancy|redundancia|die|Redundanzen
+c1|nature|noun|Permafrost|permafrost|permafrost|der|
+c1|nature|noun|Treibhauseffekt|greenhouse effect|efecto invernadero|der|Treibhauseffekte
+c1|nature|noun|Ozonloch|ozone hole|agujero de ozono|das|Ozonlöcher
+c1|nature|noun|Versauerung|acidification|acidificación|die|Versauerungen
+c1|nature|noun|Desertifikation|desertification|desertificación|die|
+c2|adjectives|adj|labyrinthisch|labyrinthine|laberíntico
+c2|adjectives|adj|kaleidoskopisch|kaleidoscopic|caleidoscópico
+c2|adjectives|adj|prismatisch|prismatic|prismático
+c2|adjectives|adj|barock|baroque|barroco
+c2|adjectives|adj|rokokoartig|rococo-like|de estilo rococó
+c2|adjectives|adj|gotisch|gothic|gótico
+c2|adjectives|adj|klassizistisch|classicist|clasicista
+c2|adjectives|adj|romantisch verklärt|romantically idealized|románticamente idealizado
+c2|adjectives|adj|manieristisch|mannerist|manierista
+c2|adjectives|adj|expressionistisch|expressionist|expresionista
+c2|verbs|verb|fragmentieren|to fragment|fragmentar
+c2|verbs|verb|rekonfigurieren|to reconfigure|reconfigurar
+c2|verbs|verb|hybridisieren|to hybridize|hibridizar
+c2|verbs|verb|pluralisieren|to pluralize|pluralizar
+c2|verbs|verb|singularisieren|to singularize|singularizar
+c2|feelings|noun|Welterschöpfung|world exhaustion|agotamiento del mundo|die|
+c2|feelings|noun|Zeitlosigkeit|timelessness|atemporalidad|die|
+c2|feelings|noun|Raumlosigkeit|spacelessness|falta de espacio|die|
+c2|school|noun|Aporetik|aporetics|aporética|die|
+c2|school|noun|Dialektik|dialectic|dialéctica|die|Dialektiken
+b1|city|noun|Fußgängerampel|pedestrian signal|semáforo peatonal|die|Fußgängerampeln
+b1|city|noun|Fahrradweg|bike path|carril bici|der|Fahrradwege
+b1|city|noun|Bushaltestelle|bus stop|parada de autobús|die|Bushaltestellen
+b1|city|noun|Straßenbahn|tram|tranvía|die|Straßenbahnen
+b1|city|noun|U-Bahn|subway|metro|die|U-Bahnen
+b1|city|noun|S-Bahn|commuter train|tren de cercanías|die|S-Bahnen
+b1|transport|noun|Kennzeichen|license plate|matrícula|das|Kennzeichen
+b1|transport|noun|Stoßstange|bumper|parachoques|die|Stoßstangen
+b1|transport|noun|Scheibenwischer|windshield wiper|limpiaparabrisas|der|Scheibenwischer
+b1|transport|noun|Tankdeckel|fuel cap|tapa del tanque|der|Tankdeckel
+b1|house|noun|Waschmaschine|washing machine|lavadora|die|Waschmaschinen
+b1|house|noun|Trockner|dryer|secadora|der|Trockner
+b1|house|noun|Geschirrspüler|dishwasher|lavavajillas|der|Geschirrspüler
+b1|house|noun|Staubsauger|vacuum cleaner|aspiradora|der|Staubsauger
+b1|house|noun|Klimaanlage|air conditioner|aire acondicionado|die|Klimaanlagen
+b1|kitchen|noun|Küchenwaage|kitchen scale|báscula de cocina|die|Küchenwaagen
+b1|kitchen|noun|Mixer|blender|licuadora|der|Mixer
+b1|kitchen|noun|Entsafter|juicer|extractor de jugo|der|Entsafter
+b1|kitchen|noun|Kaffeemühle|coffee grinder|molinillo de café|die|Kaffeemühlen
+b1|kitchen|noun|Brotbackautomat|bread machine|panificadora|der|Brotbackautomaten

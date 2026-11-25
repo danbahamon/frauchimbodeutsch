@@ -1,0 +1,300 @@
+c1|verbs|verb|herausstellen|to reveal as significant|destacar
+c1|verbs|verb|voraussetzen|to presume|presuponer
+c1|verbs|verb|unterstreichen|to emphasize|subrayar
+c1|verbs|verb|nahelegen|to suggest subtly|sugerir
+c1|verbs|verb|belegen|to substantiate|fundamentar
+c1|verbs|verb|widerlegen|to refute|refutar
+c1|verbs|verb|ableiten|to derive|derivar
+c1|verbs|verb|deduzieren|to deduce|deducir
+c1|verbs|verb|interpretieren|to interpret|interpretar
+c1|verbs|verb|kontextualisieren|to contextualize|contextualizar
+c1|verbs|verb|systematisieren|to systematize|sistematizar
+c1|verbs|verb|kategorisieren|to categorize|categorizar
+c1|verbs|verb|operationalisieren|to operationalize|operacionalizar
+c1|verbs|verb|validieren|to validate|validar
+c1|verbs|verb|verallgemeinern|to generalize|generalizar
+c1|verbs|verb|spezifizieren|to specify|especificar
+c1|verbs|verb|präzisieren|to make precise|precisar
+c1|verbs|verb|relativieren|to put into perspective|relativizar
+c1|verbs|verb|problematisieren|to problematize|problematizar
+c1|verbs|verb|erörtern|to discuss thoroughly|debatir a fondo
+c1|verbs|verb|verknüpfen|to link conceptually|vincular
+c1|verbs|verb|herausarbeiten|to elaborate analytically|elaborar
+c1|verbs|verb|auseinandersetzen|to engage critically|confrontar
+c1|verbs|verb|synthetisieren|to synthesize|sintetizar
+c1|verbs|verb|evaluieren|to evaluate academically|evaluar
+c1|verbs|verb|konzipieren|to conceive|concebir
+c1|verbs|verb|theoretisieren|to theorize|teorizar
+c1|verbs|verb|empirisch prüfen|to test empirically|comprobar empíricamente
+c1|verbs|verb|triangulieren|to triangulate data|triangular
+c1|verbs|verb|replizieren|to replicate a study|replicar
+c1|verbs|verb|randomisieren|to randomize|aleatorizar
+c1|verbs|verb|standardisieren|to standardize|estandarizar
+c1|verbs|verb|normieren|to norm|normar
+c1|verbs|verb|kalibrieren|to calibrate|calibrar
+c1|verbs|verb|modellieren|to model|modelar
+c1|verbs|verb|prognostizieren|to forecast|pronosticar
+c1|verbs|verb|extrapolieren|to extrapolate|extrapolar
+c1|verbs|verb|interpolieren|to interpolate|interpolar
+c1|verbs|verb|verifizieren|to verify|verificar
+c1|verbs|verb|falsifizieren|to falsify scientifically|falsar
+c1|verbs|verb|postulieren|to postulate|postular
+c1|verbs|verb|konstatieren|to ascertain|constatar
+c1|verbs|verb|subsumieren|to subsume|subsumir
+c1|verbs|verb|deduktiv schließen|to reason deductively|razonar deductivamente
+c1|verbs|verb|induktiv schließen|to reason inductively|razonar inductivamente
+c1|verbs|verb|argumentieren|to argue academically|argumentar
+c1|verbs|verb|persuadieren|to persuade rhetorically|persuadir
+c1|adjectives|adj|epistemologisch|epistemological|epistemológico
+c1|adjectives|adj|ontologisch|ontological|ontológico
+c1|adjectives|adj|methodisch|methodical|metódico
+c1|adjectives|adj|empirisch|empirical|empírico
+c1|adjectives|adj|deduktiv|deductive|deductivo
+c1|adjectives|adj|induktiv|inductive|inductivo
+c1|adjectives|adj|analytisch|analytical|analítico
+c1|adjectives|adj|synthetisch|synthetic in reasoning|sintético
+c1|adjectives|adj|deskriptiv|descriptive|descriptivo
+c1|adjectives|adj|präskriptiv|prescriptive|prescriptivo
+c1|adjectives|adj|normativ|normative|normativo
+c1|adjectives|adj|deskriptiv-normativ|descriptive-normative|descriptivo-normativo
+c1|adjectives|adj|inkrementell|incremental|incremental
+c1|adjectives|adj|paradigmatisch|paradigmatic|paradigmático
+c1|adjectives|adj|heuristisch|heuristic|heurístico
+c1|adjectives|adj|kausal|causal|causal
+c1|adjectives|adj|korrelativ|correlative|correlativo
+c1|adjectives|adj|multikausal|multicausal|multicausal
+c1|adjectives|adj|interdisziplinär|interdisciplinary|interdisciplinario
+c1|adjectives|adj|transdisziplinär|transdisciplinary|transdisciplinario
+c1|adjectives|adj|multidisziplinär|multidisciplinary|multidisciplinario
+c1|adjectives|adj|kohärent|coherent|coherente
+c1|adjectives|adj|inkohärent|incoherent|incoherente
+c1|adjectives|adj|widersprüchlich|contradictory|contradictorio
+c1|adjectives|adj|ambivalent|ambivalent|ambivalente
+c1|adjectives|adj|dichotom|dichotomous|dicotómico
+c1|adjectives|adj|nuanciert|nuanced|matizado
+c1|adjectives|adj|fundamental|fundamental|fundamental
+c1|adjectives|adj|peripher|peripheral|periférico
+c1|adjectives|adj|zentral|central to thesis|central
+c1|adjectives|adj|auxiliär|auxiliary|auxiliar
+c1|adjectives|adj|primär|primary|primario
+c1|adjectives|adj|sekundär|secondary|secundario
+c1|adjectives|adj|tertiär|tertiary|terciario
+c1|adjectives|adj|latent|latent|latente
+c1|adjectives|adj|manifest|manifest|manifiesto
+c1|adjectives|adj|implizit|implicit|implícito
+c1|adjectives|adj|explizit|explicit|explícito
+c1|adjectives|adj|verfahren|biased in method|sesgado metodológicamente
+c1|adjectives|adj|unverzerrt|unbiased|sin sesgo
+c1|school|noun|Dissertation|doctoral thesis|tesis doctoral|die|Dissertationen
+c1|school|noun|Promotion|doctoral degree process|doctorado|die|Promotionen
+c1|school|noun|Habilitierung|postdoctoral qualification|habilitación|die|Habilitierungen
+c1|school|noun|Abstract|abstract summary|resumen|das|Abstracts
+c1|school|noun|Fußnote|footnote|nota al pie|die|Fußnoten
+c1|school|noun|Literaturverzeichnis|bibliography|bibliografía|das|Literaturverzeichnisse
+c1|school|noun|Zitat|quotation|cita|das|Zitate
+c1|school|noun|Paraphrase|paraphrase|paráfrasis|die|Paraphrasen
+c1|school|noun|Forschungsfrage|research question|pregunta de investigación|die|Forschungsfragen
+c1|school|noun|Forschungslücke|research gap|brecha investigativa|die|Forschungslücken
+c1|school|noun|Methodik|methodology|metodología|die|Methodiken
+c1|school|noun|Operationalisierung|operationalization|operacionalización|die|Operationalisierungen
+c1|school|noun|Stichprobe|sample|muestra|die|Stichproben
+c1|school|noun|Population|population statistics|población|die|Populationen
+c1|school|noun|Variablen|variables|variables|die|
+c1|school|noun|Kontrollgruppe|control group|grupo de control|die|Kontrollgruppen
+c1|school|noun|Experiment|experiment|experimento|das|Experimente
+c1|school|noun|Feldstudie|field study|estudio de campo|die|Feldstudien
+c1|school|noun|Fallstudie|case study|estudio de caso|die|Fallstudien
+c1|school|noun|Peer Review|peer review|revisión por pares|das|Peer Reviews
+c1|school|noun|Zeitschriftenartikel|journal article|artículo científico|der|Zeitschriftenartikel
+c1|school|noun|Konferenzband|conference proceedings|actas de congreso|der|Konferenzbände
+c1|school|noun|Paradigma|paradigm|paradigma|das|Paradigmen
+c1|school|noun|Diskurs|discourse|discurso|der|Diskurse
+c1|school|noun|Epoche|epoch period|época|die|Epochen
+c1|school|noun|Hermeneutik|hermeneutics|hermenéutica|die|
+c1|school|noun|Phenomenologie|phenomenology|fenomenología|die|
+c1|school|verb|zitieren nach APA|to cite in APA style|citar según APA
+c1|school|phrase|Aus fachlicher Sicht|from a professional viewpoint|desde un punto de vista profesional
+c1|school|phrase|Im Sinne der These|in the sense of the thesis|en el sentido de la tesis
+c1|school|phrase|Daraus folgt zwingend|it necessarily follows|de ello se sigue necesariamente
+c1|school|phrase|Dies gilt analog|this applies analogously|esto se aplica de manera análoga
+c1|office|noun|Compliance|compliance|cumplimiento normativo|die|
+c1|office|noun|Due Diligence|due diligence|auditoría previa|die|
+c1|office|noun|Governance|corporate governance|gobernanza|die|
+c1|office|noun|Transparenzbericht|transparency report|informe de transparencia|der|Transparenzberichte
+c1|office|noun|Stakeholder|stakeholder|parte interesada|der|Stakeholder
+c1|office|noun|Risikomanagement|risk management|gestión de riesgos|das|
+c1|office|noun|Audit|audit|auditoría|das|Audits
+c1|office|noun|Bilanz|balance sheet|balance|die|Bilanzen
+c1|office|noun|GuV|profit and loss statement|cuenta de resultados|die|
+c1|office|noun|Cashflow|cash flow|flujo de caja|der|Cashflows
+c1|office|noun|Wirtschaftsprüfer|auditor|auditor|der|Wirtschaftsprüfer
+c1|office|noun|Schadenfall|damage case|caso de siniestro|der|Schadenfälle
+c1|office|noun|Schiedsverfahren|arbitration proceeding|arbitraje|das|Schiedsverfahren
+c1|office|noun|Vollmacht|power of attorney|poder notarial|die|Vollmachten
+c1|office|noun|NDA|non-disclosure agreement|acuerdo de confidencialidad|das|NDAs
+c1|office|noun|Klausel|clause|cláusula|die|Klauseln
+c1|office|noun|Haftungsausschluss|disclaimer|exención de responsabilidad|der|Haftungsausschlüsse
+c1|office|verb|haftbar machen|to hold liable|hacer responsable
+c1|office|verb|rechtskräftig werden|to become legally binding|adquirir firmeza legal
+c1|money|noun|Derivative|derivative financial product|derivado financiero|das|Derivate
+c1|money|noun|Anleihe|bond|bono|die|Anleihen
+c1|money|noun|Aktienportfolio|stock portfolio|cartera de acciones|das|Aktienportfolios
+c1|money|noun|Volatilität|volatility|volatilidad|die|
+c1|money|noun|Liquidität|liquidity|liquidez|die|
+c1|money|noun|Solvenz|solvency|solvencia|die|
+c1|money|noun|Insolvenz|insolvency|insolvencia|die|Insolvenzen
+c1|money|noun|Bilanzierung|accounting|contabilización|die|
+c1|money|noun|Abschreibung|depreciation|amortización|die|Abschreibungen
+c1|money|noun|Wertberichtigung|write-down|corrección de valor|die|Wertberichtigungen
+c1|money|noun|Dividende|dividend|dividendo|die|Dividenden
+c1|money|noun|Börsenkurs|stock price|cotización|der|Börsenkurse
+c1|money|noun|Benchmark|benchmark|referencia|das|Benchmarks
+c1|money|noun|Synergieeffekt|synergy effect|efecto sinérgico|der|Synergieeffekte
+c1|money|verb|hedgen|to hedge financially|cubrirse
+c1|money|verb|diversifizieren|to diversify|diversificar
+c1|money|verb|spekulieren|to speculate|especular
+c1|health|noun|Multimorbidität|multimorbidity|multimorbilidad|die|
+c1|health|noun|Pharmakologie|pharmacology|farmacología|die|
+c1|health|noun|Randomisierung|randomization|aleatorización|die|Randomisierungen
+c1|health|noun|Placebo|placebo|placebo|das|Placebos
+c1|health|noun|Studienprotokoll|study protocol|protocolo del estudio|das|Studienprotokolle
+c1|health|noun|Ethikkommission|ethics board|comité de ética|die|Ethikkommissionen
+c1|health|noun|Prognose|prognosis|pronóstico|die|Prognosen
+c1|health|noun|Remission|remission|remisión|die|
+c1|health|noun|Rezidiv|relapse|recidiva|das|Rezidive
+c1|health|noun|Compliance patient|treatment adherence|adherencia al tratamiento|die|
+c1|health|adj|iatrogen|iatrogenic|iatrogénico
+c1|health|adj|prophylaktisch|prophylactic|profiláctico
+c1|health|verb|blindisieren|to blind a clinical trial|cegar un ensayo
+c1|nature|noun|Anthropozän|Anthropocene|antropoceno|das|
+c1|nature|noun|Carbonisierung|carbonization|carbonización|die|
+c1|nature|noun|Dekarbonisierung|decarbonization|descarbonización|die|
+c1|nature|noun|Biodiversitätsverlust|biodiversity loss|pérdida de biodiversidad|der|
+c1|nature|noun|Ökobilanz|life cycle assessment|evaluación del ciclo de vida|die|Ökobilanzen
+c1|nature|noun|Emissionshandel|emissions trading|comercio de emisiones|der|
+c1|nature|noun|Kipppunkt|tipping point|punto de inflexión|der|Kipppunkte
+c1|nature|noun|Regenerationsphase|regeneration phase|fase de regeneración|die|Regenerationsphasen
+c1|materials|noun|Nanomaterial|nanomaterial|nanomaterial|das|Nanomaterialien
+c1|materials|noun|Polymer|polymer|polímero|das|Polymere
+c1|materials|noun|Verbundwerkstoff|composite|material compuesto|der|Verbundwerkstoffe
+c1|materials|noun|Korrosionsbeständigkeit|corrosion resistance|resistencia a la corrosión|die|
+c1|materials|noun|Zugfestigkeit|tensile strength|resistencia a tracción|die|
+c1|materials|adj|porös|porous|poroso
+c1|materials|adj|dicht|dense material|denso
+c1|tech|noun|Algorithmus|algorithm|algoritmo|der|Algorithmen
+c1|tech|noun|Machine Learning|machine learning|aprendizaje automático|das|
+c1|tech|noun|Künstliche Intelligenz|artificial intelligence|inteligencia artificial|die|
+c1|tech|noun|Big Data|big data|macrodados|die|
+c1|tech|noun|Datenschutzgrundverordnung|GDPR|RGPD|die|
+c1|tech|noun|Open Source|open source|código abierto|das|
+c1|tech|noun|Blockchain|blockchain|cadena de bloques|die|Blockchains
+c1|tech|noun|API-Schnittstelle|API interface|interfaz API|die|API-Schnittstellen
+c1|tech|noun|Latenzzeit|latency|latencia|die|Latenzzeiten
+c1|tech|noun|Rechenzentrum|data center|centro de datos|das|Rechenzentren
+c1|tech|adj|skalierbar|scalable|escalable
+c1|tech|adj|fehlertolerant|fault-tolerant|tolerante a fallos
+c1|feelings|noun|Ambivalenz|ambivalence|ambivalencia|die|Ambivalenzen
+c1|feelings|noun|Selbstwirksamkeit|self-efficacy|autoeficacia|die|
+c1|feelings|noun|Resilienzfaktor|resilience factor|factor de resiliencia|der|Resilienzfaktoren
+c1|feelings|noun|Burn-out|burnout|síndrome de burnout|das|Burn-outs
+c1|feelings|adj|erschöpft|exhausted|agotado
+c1|feelings|adj|desillusioniert|disillusioned|desilusionado
+c1|feelings|verb|reflektieren|to reflect emotionally|reflexionar
+c1|feelings|phrase|Emotional aufgeladen|emotionally charged|cargado emocionalmente
+c1|jobs|noun|Wissenschaftler|scientist|científico|der|Wissenschaftler
+c1|jobs|noun|Forschungsgruppe|research group|grupo de investigación|die|Forschungsgruppen
+c1|jobs|noun|Tenure Track|tenure track|trayectoria hacia titularidad|der|
+c1|jobs|noun|Lehrauftrag|teaching assignment|encargo docente|der|Lehraufträge
+c1|jobs|noun|Akademischer Rat|academic council member|consejero académico|der|Akademische Räte
+c1|jobs|noun|Postdoc|postdoctoral researcher|postdoctorando|der|Postdocs
+c1|jobs|noun|Gutachter|reviewer|evaluador|der|Gutachter
+c1|jobs|noun|Stipendiat|stipend holder|becario|der|Stipendiaten
+c1|jobs|noun|Berufsethos|professional ethics|ética profesional|das|Berufsethos
+c1|jobs|noun|Wissensmanagement|knowledge management|gestión del conocimiento|das|
+c1|travel|noun|Erneuerung Reisepass|passport renewal|renovación del pasaporte|die|Erneuerungen Reisepass
+c1|travel|verb|quarantänepflichtig sein|to require quarantine|estar sujeto a cuarentena
+c1|school|phrase|In der Gesamtschau|overall|en conjunto
+c1|school|phrase|Unter Abwägung aller Faktoren|weighing all factors|sopesando todos los factores
+c1|school|phrase|Es lässt sich festhalten|it can be stated|puede afirmarse
+c1|school|phrase|Dabei ist zu bedenken|it should be considered|debe tenerse en cuenta
+c1|school|phrase|Im Ergebnis zeigt sich|the result shows|el resultado muestra
+c1|school|phrase|Dies steht in Kontrast zu|this contrasts with|esto contrasta con
+c1|school|phrase|In Anbetracht der Komplexität|given the complexity|dada la complejidad
+c1|school|phrase|Entsprechend der Literatur|according to the literature|según la bibliografía
+c1|school|other|evtl.|possibly|posiblemente
+c1|school|other|insbes.|especially|especialmente
+c1|school|other|ggf.|if applicable|si procede
+c1|school|other|vgl.|compare|véase
+c1|school|other|ibid.|in the same place|íd.
+c1|school|other|ebd.|ibid.|íd.
+c1|school|other|a. a. O.|op. cit.|ob. cit.
+c1|school|other|Hg.|editor|ed.
+c1|school|other|Hrsg.|edited by|coord.
+c1|verbs|verb|kumulieren|to accumulate|acumular
+c1|verbs|verb|dekonstruieren|to deconstruct|deconstruir
+c1|verbs|verb|rekonstruieren|to reconstruct|reconstruir
+c1|verbs|verb|rezipieren|to receive intellectually|recibir intelectualmente
+c1|verbs|verb|adäquat behandeln|to treat adequately|tratar adecuadamente
+c1|verbs|verb|in Frage stellen|to call into question|cuestionar
+c1|verbs|verb|veranschaulichen|to illustrate with clarity|ilustrar
+c1|verbs|verb|abwägen|to weigh options|sopesar
+c1|verbs|verb|gewichten|to weight factors|ponderar
+c1|verbs|verb|priorisieren nach Dringlichkeit|to prioritize by urgency|priorizar por urgencia
+c1|adjectives|adj|kanonisch|canonical|canónico
+c1|adjectives|adj|revisionistisch|revisionist|revisionista
+c1|adjectives|adj|teleologisch|teleological|teleológico
+c1|adjectives|adj|deterministisch|deterministic|determinista
+c1|adjectives|adj|konstruktivistisch|constructivist|constructivista
+c1|adjectives|adj|poststrukturalistisch|poststructuralist|postestructuralista
+c1|adjectives|adj|idiographisch|idiographic|idiográfico
+c1|adjectives|adj|nomothetisch|nomothetic|nomotético
+c1|adjectives|adj|explanatorisch|explanatory|explicativo
+c1|adjectives|adj|prädiktiv|predictive|predictivo
+c1|adjectives|adj|retrospektiv|retrospective|retrospectivo
+c1|adjectives|adj|prospektiv|prospective|prospectivo
+c1|school|noun|Evidenzniveau|level of evidence|nivel de evidencia|das|Evidenzniveaus
+c1|school|noun|Metaanalyse|meta-analysis|metaanálisis|die|Metaanalysen
+c1|school|noun|Effektstärke|effect size|tamaño del efecto|die|Effektstärken
+c1|school|noun|Signifikanzniveau|significance level|nivel de significancia|das|Signifikanzniveaus
+c1|office|noun|Wettbewerbsrecht|competition law|derecho de competencia|das|
+c1|money|noun|Sanierung|financial restructuring|reestructuración|die|Sanierungen
+c1|health|noun|Telemedizin|telemedicine|telemedicina|die|
+c1|nature|noun|Naturschutzrahmenrichtlinie|nature protection framework|marco de protección natural|die|Naturschutzrahmenrichtlinien
+c1|tech|noun|Zero-Trust-Architektur|zero trust architecture|arquitectura de confianza cero|die|Zero-Trust-Architekturen
+c1|feelings|noun|Affektregulation|emotion regulation|regulación emocional|die|
+c1|jobs|noun|Fachhochschullektor|university of applied sciences lecturer|profesor de FH|der|Fachhochschullektoren
+c1|materials|noun|Leichtbauweise|lightweight construction|construcción ligera|die|Leichtbauweisen
+c1|hobbies|noun|Citizen Science|citizen science|ciencia ciudadana|die|
+c1|city|noun|Gentrifizierung|gentrification|gentrificación|die|
+c1|transport|noun|Mobilitätswende|mobility transition|transición de movilidad|die|
+c1|weather|noun|Extremwetterereignis|extreme weather event|evento meteorológico extremo|das|Extremwetterereignisse
+c1|time|other|epochenübergreifend|epoch-spanning|interépoca
+c1|shop|noun|Preiselastizität|price elasticity|elasticidad del precio|die|Preiselastizitäten
+c1|music|noun|Improvisationskompetenz|improvisation skill|competencia improvisatoria|die|
+c1|sport|noun|Leistungsdiagnostik|performance diagnostics|diagnóstico del rendimiento|die|
+c1|garden|noun|Insektenfreundliche Fläche|insect-friendly area|zona amigable con insectos|die|Insektenfreundlichen Flächen
+c1|tools|noun|Kalibriergerät|calibration device|dispositivo de calibración|das|Kalibriergeräte
+c1|house|noun|Energieeffizienzklasse|energy efficiency class|clase de eficiencia energética|die|Energieeffizienzklassen
+c1|bath|noun|Dermatologische Untersuchung|dermatological exam|examen dermatológico|die|Dermatologischen Untersuchungen
+c1|food|noun|Mikronährstoff|micronutrient|micronutriente|der|Mikronährstoffe
+c1|drinks|noun|Dehydration|dehydration|deshidratación|die|
+c1|family|noun|Patchworkfamilie|blended family|familia ensamblada|die|Patchworkfamilien
+c1|body|noun|Hormonhaushalt|hormone balance|equilibrio hormonal|der|Hormonhaushalte
+c1|clothes|noun|Nachhaltige Mode|sustainable fashion|moda sostenible|die|
+c1|animals|noun|Invasionsart|invasive species|especie invasora|die|Invasionsarten
+c1|shapes|noun|Schwerpunktdiagramm|bubble chart|diagrama de burbujas|das|Schwerpunktdiagramme
+c1|numbers|noun|Standardabweichung|standard deviation|desviación estándar|die|Standardabweichungen
+c1|colors|adj|monochromatisch|monochromatic|monocromático
+c1|hello|phrase|Mit akademischen Grüßen|with academic regards|saludos académicos
+c1|lands|noun|Schwellenland|emerging economy country|país emergente|das|Schwellenländer
+c1|kitchen|noun|Batch Cooking|batch cooking|cocción por lotes|das|
+c1|furniture|noun|Ergonomisches Setup|ergonomic setup|configuración ergonómica|das|Ergonomischen Setups
+c1|verbs|verb|extrahieren|to extract data|extraer
+c1|verbs|verb|kodieren|to code qualitatively|codificar
+c1|verbs|verb|transkribieren|to transcribe|transcribir
+c1|verbs|verb|gegenüberstellen|to juxtapose|yuxtaponer
+c1|verbs|verb|stratifizieren|to stratify|estratificar
+c1|school|noun|Gegenargument|counterargument|contraargumento|das|Gegenargumente
+c1|school|noun|Literaturkritik|literature critique|crítica bibliográfica|die|Literaturkritiken
+c1|office|noun|Szenarioplanung|scenario planning|planificación de escenarios|die|
+c1|money|noun|Nachrangdarlehen|subordinated loan|préstamo subordinado|das|Nachrangdarlehen

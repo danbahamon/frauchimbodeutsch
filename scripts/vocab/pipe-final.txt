@@ -1,0 +1,192 @@
+b1|verbs|verb|anbahnen|to initiate contact|iniciar contacto
+b1|verbs|verb|aufarbeiten|to work through|elaborar un tema
+b1|verbs|verb|nacharbeiten|to catch up work|poner al día el trabajo
+b1|verbs|verb|vorarbeiten|to do preliminary work|hacer trabajo previo
+b1|verbs|verb|zuarbeiten|to support with prep|apoyar con preparación
+b1|verbs|verb|mitarbeiten|to collaborate|colaborar
+b1|verbs|verb|zusammenarbeiten|to work together|trabajar juntos
+b1|verbs|verb|weiterarbeiten|to keep working|seguir trabajando
+b2|verbs|verb|überdenken|to rethink|repensar
+b2|verbs|verb|umdenken|to change thinking|cambiar de mentalidad
+b2|verbs|verb|nachdenken|to reflect|reflexionar
+b2|verbs|verb|vorausdenken|to think ahead|pensar con antelación
+b2|verbs|verb|querdenken|to think laterally|pensar en lateral
+b2|verbs|verb|mitdenken|to think along|pensar a la par
+b2|verbs|verb|weiterdenken|to think further|seguir pensando
+b2|verbs|verb|zuendedenken|to think through fully|pensar hasta el final
+c1|verbs|verb|evaluieren|to evaluate formally|evaluar formalmente
+c1|verbs|verb|validieren|to validate|validar
+c1|verbs|verb|falsifizieren|to falsify scientifically|falsar científicamente
+c1|verbs|verb|verifizieren|to verify scientifically|verificar científicamente
+c1|verbs|verb|triangulieren|to triangulate|triangular métodos
+c1|verbs|verb|operationalisieren weiter|to operationalize further|operacionalizar más
+c2|verbs|verb|poetisieren|to poeticize language|poetizar el lenguaje
+c2|verbs|verb|prosaisieren|to make prosaic|hacer prosaico
+c2|verbs|verb|dramatisieren|to dramatize events|dramatizar hechos
+c2|verbs|verb|lyrisieren|to lyricize|lirizar
+c2|verbs|verb|episieren|to epicize|epizar
+b1|adjectives|adj|tragfähig|viable lasting|sostenible viable
+b1|adjectives|adj|belastbar|resilient under load|resistente a carga
+b1|adjectives|adj|skalierbar|scalable size|escalable en tamaño
+b1|feelings|adj|zuversichtlich|confident hopeful|esperanzado confiado
+b1|feelings|adj|mutlos|discouraged|desanimado
+b1|feelings|adj|ermutigt|encouraged|animado
+b1|feelings|adj|verunsichert|unnerved|inseguro de sí
+b1|feelings|adj|bestärkt|reinforced emotionally|reforzado emocionalmente
+b2|adjectives|adj|agil aufgestellt|agilely set up|organizado con agilidad
+b2|adjectives|adj|lean aufgestellt|leanly organized|organizado en lean
+b2|adjectives|adj|hybride aufgestellt|hybridly organized|organizado híbrido
+b2|adjectives|adj|robust skalierbar|robustly scalable|escalable con robustez
+b2|adjectives|adj|tragfähig skalierbar|viably scalable|escalable con solidez
+c1|adjectives|adj|epistemisch gehaltvoll|epistemically rich|rico epistémicamente
+c1|adjectives|adj|ontologisch fundiert|ontologically grounded|fundado ontológicamente
+c1|adjectives|adj|heuristisch fruchtbar|heuristically fruitful|fértil heurísticamente
+c1|adjectives|adj|diskursiv anschlussfähig|discursively connectable|conectable discursivamente
+c1|adjectives|adj|normativ gehaltvoll|normatively rich|rico normativamente
+c2|adjectives|adj|poetologisch|poetological|poetológico
+c2|adjectives|adj|narratologisch|narratological|narratológico
+c2|adjectives|adj|tropologisch|tropological|tropológico
+c2|adjectives|adj|figural|figural|figural
+c2|adjectives|adj|emblematisch|emblematic|emblemático
+b1|bath|noun|Körperlotion|body lotion|loción corporal|die|Körperlotionen
+b1|bath|noun|Duschgel|shower gel|gel de ducha|das|Duschgele
+b1|bath|noun|Haarspülung|conditioner|acondicionador|die|Haarspülungen
+b1|bath|noun|Deodorant|deodorant|desodorante|das|Deodorants
+b1|bath|noun|Lippenbalsam|lip balm|bálsamo labial|der|Lippenbalsame
+b1|furniture|noun|Ecksofa|corner sofa|sofá esquinero|das|Ecksofas
+b1|furniture|noun|Schlafsofa|sofa bed|sofá cama|das|Schlafsofas
+b1|furniture|noun|Couchtisch|coffee table|mesa de centro|der|Couchtische
+b1|furniture|noun|Sideboard|sideboard|aparador|das|Sideboards
+b1|furniture|noun|Vitrine|display cabinet|vitrina|die|Vitrinen
+b1|drinks|noun|Kräutertee|herbal tea|té de hierbas|der|Kräutertees
+b1|drinks|noun|Früchtetee|fruit tea|té de frutas|der|Früchtetees
+b1|drinks|noun|Matcha|matcha|matcha|der|
+b1|drinks|noun|Smoothie|smoothie|batido smoothie|der|Smoothies
+b1|drinks|noun|Energiegetränk|energy drink|bebida energética|das|Energiegetränke
+b1|family|noun|Schwiegertochter|daughter-in-law|nuera|die|Schwiegertöchter
+b1|family|noun|Schwiegersohn|son-in-law|yerno|der|Schwiegersöhne
+b1|family|noun|Schwägerin|sister-in-law|cuñada|die|Schwägerinnen
+b1|family|noun|Schwager|brother-in-law|cuñado|der|Schwäger
+b1|family|noun|Stiefkind|stepchild|hijastro|das|Stiefkinder
+b2|body|noun|Lymphknoten|lymph node|ganglio linfático|der|Lymphknoten
+b2|body|noun|Sehne|tendon|tendón|die|Sehnen
+b2|body|noun|Band|ligament|ligamento|das|Bänder
+b2|body|noun|Knorpel|cartilage|cartílago|der|Knorpel
+b2|body|noun|Gelenkschmiere|synovial fluid|líquido sinovial|die|
+b2|tech|noun|Firmware|firmware|firmware|die|
+b2|tech|noun|Middleware|middleware|middleware|die|
+b2|tech|noun|API|application interface|interfaz de aplicación|die|APIs
+b2|tech|noun|SDK|software kit|kit de software|das|SDKs
+b2|tech|noun|Open Source|open source code|código abierto|das|
+c1|materials|noun|Graphen|graphene|grafeno|das|
+c1|materials|noun|Nanoröhre|nanotube|nanotubo|die|Nanoröhren
+c1|materials|noun|Aerogel|aerogel|aerogel|das|Aerogele
+c1|materials|noun|Biokunststoff|bioplastic|bioplástico|der|Biokunststoffe
+c1|materials|noun|Verbundwerkstoff|composite material|material compuesto|der|Verbundwerkstoffe
+c1|nature|noun|Kipppunkt|tipping point|punto de inflexión|der|Kipppunkte
+c1|nature|noun|Rückkopplung|feedback loop|bucle de retroalimentación|die|Rückkopplungen
+c1|nature|noun|Kippelement|tipping element|elemento de vuelco|das|Kippelemente
+c1|nature|noun|Planetare Grenze|planetary boundary|límite planetario|die|Planetaren Grenzen
+c2|music|noun|Kontrapunkt|counterpoint|contrapunto|der|Kontrapunkte
+c2|music|noun|Polyphonie|polyphony|polifonía|die|Polyphonien
+c2|music|noun|Homophonie|homophony|homofonía|die|Homophonien
+c2|music|noun|Dissonanz|dissonance|disonancia|die|Dissonanzen
+c2|music|noun|Konsonanz|consonance|consonancia|die|Konsonanzen
+c2|lands|other|Kurdistan|Kurdistan region|Kurdistán
+c2|lands|other|Patagonien|Patagonia|Patagonia
+c2|lands|other|Sibirien|Siberia|Siberia
+c2|lands|other|Skandinavien|Scandinavia|Escandinavia
+c2|lands|other|Balkan|Balkans|Balcanes
+c2|hobbies|noun|Kalligrafie|calligraphy|caligrafía|die|Kalligrafien
+c2|hobbies|noun|Origami|origami|origami|das|
+c2|hobbies|noun|Ikebana|ikebana|ikebana|das|
+c2|hobbies|noun|Bonsai|bonsai|bonsái|der|Bonsais
+c2|hobbies|noun|Aquarellmalerei|watercolor painting|acuarela pintura|die|
+a2|hello|phrase|Lass gut sein|let it go|déjalo estar
+a2|hello|phrase|Schon gut|it is alright|está bien ya
+a2|hello|phrase|Passt schon|that is fine|está bien así
+a2|hello|phrase|Na dann|well then|pues entonces
+a2|hello|phrase|Na gut|oh well|bueno pues
+b1|hello|phrase|Im Grunde genommen|basically speaking|en el fondo
+b1|hello|phrase|Meiner Meinung nach|in my opinion|en mi opinión
+b1|hello|phrase|Soweit ich weiß|as far as I know|por lo que sé
+b1|hello|phrase|Soweit ich sehe|as far as I can see|por lo que veo
+b1|hello|phrase|Wenn ich mich nicht irre|if I am not mistaken|si no me equivoco
+b2|hello|phrase|Ungeachtet dessen|notwithstanding that|no obstante ello
+b2|hello|phrase|Dessen ungeachtet|regardless of that|a pesar de ello
+b2|hello|phrase|Nichtsdestotrotz|nevertheless still|no obstante aún así
+b2|hello|phrase|Nichtsdestoweniger|nonetheless|no obstante
+c1|hello|phrase|In Anbetracht dessen|in consideration of that|en consideración de ello
+c1|hello|phrase|Unter Berücksichtigung|taking into account|teniendo en cuenta
+c1|hello|phrase|Vor dem Hintergrund|against the backdrop|ante el trasfondo
+c1|hello|phrase|Im Lichte dessen|in light of that|a la luz de ello
+c1|hello|phrase|Im Zuge dessen|in the course of that|en el curso de ello
+c2|hello|phrase|Quod erat demonstrandum|which was to be shown|lo que se quería demostrar
+c2|hello|phrase|Summa summarum|all in all Latin|en resumen latino
+c2|hello|phrase|Ceteris paribus|other things equal|permaneciendo igual lo demás
+c2|hello|phrase|Mutatis mutandis|with necessary changes|cambiando lo que haya que cambiar
+c2|hello|phrase|Pars pro toto|part for the whole|la parte por el todo
+a2|numbers|noun|Bruchzahl|fraction number|número fraccionario|die|Bruchzahlen
+a2|numbers|noun|Dezimalzahl|decimal number|número decimal|die|Dezimalzahlen
+a2|numbers|noun|Primzahl|prime number|número primo|die|Primzahlen
+a2|numbers|noun|Quadratwurzel|square root|raíz cuadrada|die|Quadratwurzeln
+a2|numbers|noun|Potenz|power math|potencia matemática|die|Potenzen
+a2|colors|noun|Farbverlauf|color gradient|degradado de color|der|Farbverläufe
+a2|colors|noun|Kontrastfarbe|contrast color|color de contraste|die|Kontrastfarben
+a2|colors|noun|Pastellton|pastel tone|tono pastel|der|Pastelltöne
+a2|colors|noun|Neonfarbe|neon color|color neón|die|Neonfarben
+a2|colors|noun|Erdton|earth tone|tono tierra|der|Erdtöne
+a2|time|noun|Wochentag|weekday|día de la semana|der|Wochentage
+a2|time|noun|Wochenende|weekend|fin de semana|das|Wochenenden
+a2|time|noun|Feiertag|public holiday|día festivo|der|Feiertage
+a2|time|noun|Werktag|workday|día laborable|der|Werktage
+a2|weather|noun|Wetterkarte|weather map|mapa del tiempo|die|Wetterkarten
+a2|weather|noun|Wetterapp|weather app|app del tiempo|die|Wetterapps
+a2|weather|noun|Wetterwarnung|weather warning|alerta meteorológica|die|Wetterwarnungen
+a2|weather|noun|Unwetter|severe weather|mal tiempo severo|das|Unwetter
+a2|weather|noun|Orkan|hurricane wind|huracán viento|der|Orkane
+a2|shop|noun|Schnäppchen|bargain|ganga|das|Schnäppchen
+a2|shop|noun|Sonderpreis|special price|precio especial|der|Sonderpreise
+a2|shop|noun|Aktionsware|promotional goods|artículo en promoción|die|Aktionswaren
+a2|shop|noun|Ladenhüter|shelf warmer|artículo que no se vende|der|Ladenhüter
+a2|shop|noun|Kassenzettel|till receipt|ticket de caja|der|Kassenzettel
+a2|travel|noun|Reiseroute|itinerary|itinerario|die|Reiserouten
+a2|travel|noun|Reiseziel|travel destination|destino de viaje|das|Reiseziele
+a2|travel|noun|Reisezeit|travel season|temporada de viaje|die|Reisezeiten
+a2|travel|noun|Reisegruppe|tour group|grupo de viaje|die|Reisegruppen
+a2|travel|noun|Reiseleitung|tour guide service|guía de grupo|die|Reiseleitungen
+a2|hobbies|noun|Brettspiel|board game|juego de mesa|das|Brettspiele
+a2|hobbies|noun|Kartenspiel|card game|juego de cartas|das|Kartenspiele
+a2|hobbies|noun|Videospiel|video game|videojuego|das|Videospiele
+a2|hobbies|noun|Gesellschaftsspiel|party game|juego de sociedad|das|Gesellschaftsspiele
+a2|hobbies|noun|Puzzle|jigsaw puzzle|rompecabezas|das|Puzzles
+b1|sport|noun|Triathlon|triathlon|triatlón|der|Triathlons
+b1|sport|noun|Marathon|marathon|maratón|der|Marathons
+b1|sport|noun|Halbmarathon|half marathon|media maratón|der|Halbmarathons
+b1|sport|noun|Staffellauf|relay race|carrera de relevos|der|Staffelläufe
+b1|sport|noun|Hindernislauf|hurdle race|carrera de vallas|der|Hindernisläufe
+b1|garden|noun|Gewächshaus|greenhouse|invernadero|das|Gewächshäuser
+b1|garden|noun|Hochbeet|raised bed|bancal elevado|das|Hochbeete
+b1|garden|noun|Komposter|composter|compostera|der|Komposter
+b1|garden|noun|Gartenschlauch|garden hose|manguera de jardín|der|Gartenschläuche
+b1|garden|noun|Rasensprenger|lawn sprinkler|aspersor|der|Rasensprenger
+b1|tools|noun|Akkuschrauber|cordless screwdriver|atornillador a batería|der|Akkuschrauber
+b1|tools|noun|Stichsäge|jigsaw tool|sierra de calar|die|Stichsägen
+b1|tools|noun|Kreissäge|circular saw|sierra circular|die|Kreissägen
+b1|tools|noun|Winkelschleifer|angle grinder|amoladora|der|Winkelschleifer
+b1|tools|noun|Schweißgerät|welder|soldadora|das|Schweißgeräte
+b2|office|noun|Organigramm|org chart|organigrama|das|Organigramme
+b2|office|noun|Prozesslandkarte|process map|mapa de procesos|die|Prozesslandkarten
+b2|office|noun|Kennzahl|KPI metric|indicador clave|die|Kennzahlen
+b2|office|noun|Scorecard|scorecard|cuadro de mando|die|Scorecards
+b2|office|noun|Change Request|change request|solicitud de cambio|der|Change Requests
+c1|jobs|noun|Chief Scientist|chief scientist|científico jefe|der|Chief Scientists
+c1|jobs|noun|Data Scientist|data scientist|científico de datos|der|Data Scientists
+c1|jobs|noun|Product Owner|product owner|dueño de producto|der|Product Owner
+c1|jobs|noun|Scrum Master|scrum master|scrum master|der|Scrum Master
+c1|jobs|noun|DevOps Engineer|devops engineer|ingeniero devops|der|DevOps Engineers
+c2|feelings|noun|Sehnsuchtsort|place of longing|lugar de añoranza|der|Sehnsuchtsorte
+c2|feelings|noun|Sehnsuchtsbild|image of longing|imagen de añoranza|das|Sehnsuchtsbilder
+c2|feelings|noun|Sehnsuchtstraum|dream of longing|sueño de añoranza|der|Sehnsuchtsträume
+c2|feelings|noun|Lebenshunger|hunger for life|hambre de vivir|der|
+c2|feelings|noun|Lebensfreude|joy of living|alegría de vivir|die|

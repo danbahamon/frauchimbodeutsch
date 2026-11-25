@@ -1,0 +1,359 @@
+a2|hello|noun|Kompliment|compliment|cumplido|das|Komplimente
+a2|hello|phrase|Keine Sorge|don't worry|no te preocupes
+a2|hello|phrase|Stimmt so|keep the change|quédese con el cambio
+a2|hello|phrase|Das stimmt|that's right|eso es cierto
+a2|hello|phrase|Das wäre toll|that would be great|sería genial
+a2|hello|noun|Einladung|invitation|invitación|die|Einladungen
+a2|hello|noun|Verabschiedung|farewell|despedida|die|Verabschiedungen
+a2|hello|phrase|Macht nichts|never mind|no importa
+a2|hello|phrase|Es tut mir leid|I'm sorry|lo siento
+a2|numbers|other|ein Viertel|one quarter|un cuarto
+a2|numbers|other|prozentual|in percent terms|en porcentaje
+a2|numbers|other|mindestens|at least|como mínimo
+a2|numbers|num|Viertel|quarter fraction|cuarto
+a2|numbers|num|Dutzend|dozen|docena
+a2|numbers|num|Drittel|third fraction|tercio
+a2|numbers|other|höchstens|at most|como máximo
+a2|numbers|other|dreimal|three times|tres veces
+a2|numbers|other|paarweise|in pairs|en pares
+a2|colors|adj|dunkelblau|dark blue|azul oscuro
+a2|colors|noun|Lackierung|paint coat|capa de pintura|die|Lackierungen
+a2|colors|adj|blass|pale|pálido
+a2|colors|adj|glänzend|glossy|brillante
+a2|colors|adj|lila|purple|morado
+a2|colors|adj|silbern|silvery|plateado
+a2|colors|noun|Streifen|stripe|raya|der|Streifen
+a2|colors|noun|Farbpalette|color palette|paleta de colores|die|Farbpaletten
+a2|colors|noun|Schattierung|shade|sombra|die|Schattierungen
+a2|family|noun|Patenkind|godchild|ahijado|das|Patenkinder
+a2|family|noun|Pflegevater|foster father|padre de acogida|der|Pflegeväter
+a2|family|noun|Elternschaft|parenthood|paternidad|die|
+a2|family|noun|Erziehungsberechtigte|legal guardian|tutor legal|die|Erziehungsberechtigten
+a2|family|phrase|Wir verstehen uns gut|we get along well|nos llevamos bien
+a2|family|noun|Schwager|brother-in-law|cuñado|der|Schwäger
+a2|family|noun|Patchworkfamilie|blended family|familia ensamblada|die|Patchworkfamilien
+a2|family|noun|Patenonkel|godfather|padrino|der|Patenonkel
+a2|family|noun|Familienrat|family council|consejo familiar|der|Familienräte
+a2|family|noun|Verlobte|fiancée|prometida|die|Verlobten
+a2|body|noun|Knöchel|ankle joint|tobillo|der|Knöchel
+a2|body|noun|Zehennagel|toenail|uña del pie|der|Zehennägel
+a2|body|noun|Schläfe|temple|sien|die|Schläfen
+a2|body|noun|Hautfalte|skin fold|pliegue de la piel|die|Hautfalten
+a2|body|noun|Nasenflügel|nostril|fosa nasal|der|Nasenflügel
+a2|body|noun|Oberschenkel|thigh|muslo|der|Oberschenkel
+a2|body|noun|Daumen|thumb|pulgar|der|Daumen
+a2|body|noun|Kehle|throat|garganta|die|Kehlen
+a2|body|noun|Wimper|eyelash|pestaña|die|Wimpern
+a2|clothes|noun|Weste|vest|chaleco|die|Westen
+a2|clothes|noun|Kapuze|hood|capucha|die|Kapuzen
+a2|clothes|noun|Sandal|sandal|sandalia|die|Sandalen
+a2|clothes|noun|Anorak|anorak|anorak|der|Anoraks
+a2|clothes|noun|Bluse|blouse|blusa|die|Blusen
+a2|clothes|noun|Strickjacke|cardigan|cárdigan|die|Strickjacken
+a2|clothes|adj|gestreift|striped|a rayas
+a2|clothes|noun|Stiefel|boot|bota|der|Stiefel
+a2|clothes|noun|Knopfloch|buttonhole|ojal|das|Knopflöcher
+a2|food|noun|Butterbrot|bread with butter|pan con mantequilla|das|Butterbrote
+a2|food|noun|Leberwurst|liverwurst|paté de hígado|die|Leberwürste
+a2|food|noun|Frikadelle|meatball patty|albóndiga|die|Frikadellen
+a2|food|noun|Kartoffelpüree|mashed potatoes|puré de patatas|das|
+a2|food|noun|Rührei|scrambled eggs|huevos revueltos|das|
+a2|food|noun|Kohlroulade|stuffed cabbage roll|rollo de col|die|Kohlrouladen
+a2|food|noun|Pfannkuchen|pancake|panqueque|der|Pfannkuchen
+a2|food|noun|Sauerkraut|sauerkraut|chucrut|das|
+a2|food|noun|Lebkuchen|gingerbread|pan de jengibre|der|Lebkuchen
+a2|food|noun|Semmelknödel|bread dumpling|bollo de pan|der|Semmelknödel
+a2|fruit|noun|Johannisbeere|currant|grosella|die|Johannisbeeren
+a2|fruit|noun|Granatapfel|pomegranate|granada|der|Granatäpfel
+a2|fruit|noun|Quitte|quince|membrillo|die|Quitten
+a2|fruit|noun|Physalis|physalis|physalis|die|
+a2|fruit|noun|Birne|pear|pera|die|Birnen
+a2|fruit|noun|Stachelbeere|gooseberry|grosella espinosa|die|Stachelbeeren
+a2|fruit|noun|Holunderbeere|elderberry|baya de saúco|die|Holunderbeeren
+a2|fruit|noun|Kumquat|kumquat|kumquat|die|Kumquats
+a2|fruit|noun|Mirabelle|mirabelle plum|ciruela amarilla|die|Mirabellen
+a2|veg|noun|Lauch|leek|puerro|der|Lauch
+a2|veg|noun|Rote Bete|beetroot|remolacha|die|
+a2|veg|noun|Rucola|arugula|rúcula|die|
+a2|veg|noun|Knoblauch|garlic|ajo|der|
+a2|veg|noun|Rosenkohl|brussels sprout|col de Bruselas|der|
+a2|veg|noun|Champignon|button mushroom|champiñón|der|Champignons
+a2|veg|noun|Pastinake|parsnip|chirivía|die|Pastinaken
+a2|veg|noun|Sellerie|celery|apio|der|
+a2|veg|noun|Radieschen|radish|rábano|das|Radieschen
+a2|drinks|noun|Sekt|sparkling wine|vino espumoso|der|Sekte
+a2|drinks|noun|Radler|shandy beer|cerveza con limonada|der|Radler
+a2|drinks|noun|Milchshake|milkshake|malteada|der|Milchshakes
+a2|drinks|noun|Malzbier|malt beer|cerveza de malta|das|Malzbier
+a2|drinks|noun|Weißwein|white wine|vino blanco|der|Weißweine
+a2|drinks|noun|Smoothie|smoothie|batido|der|Smoothies
+a2|drinks|noun|Eistee|iced tea|té helado|der|Eistees
+a2|drinks|noun|Kakao|cocoa|cacao|der|Kakaos
+a2|drinks|noun|Holunderlimonade|elderflower soda|limonada de saúco|die|Holunderlimonaden
+a2|animals|noun|Maulwurf|mole|topo|der|Maulwürfe
+a2|animals|noun|Eule|owl|búho|die|Eulen
+a2|animals|noun|Hamster|hamster|hámster|der|Hamster
+a2|animals|noun|Streifenhörnchen|chipmunk|ardilla listada|das|Streifenhörnchen
+a2|animals|noun|Wildschwein|wild boar|jabalí|das|Wildschweine
+a2|animals|noun|Reh|roe deer|corzo|das|Rehe
+a2|animals|noun|Dachs|badger|tejón|der|Dachse
+a2|animals|noun|Pfau|peacock|pavo real|der|Pfauen
+a2|animals|noun|Schwan|swan|cisne|der|Schwäne
+a2|house|noun|Putzmittel|cleaning supplies|productos de limpieza|das|Putzmittel
+a2|house|noun|Klingel|doorbell|timbre|die|Klingeln
+a2|house|noun|Dachrinne|gutter|canaleta|die|Dachrinnen
+a2|house|noun|Thermostat|thermostat|termostato|das|Thermostate
+a2|house|noun|Fensterbank|windowsill|alféizar|die|Fensterbänke
+a2|house|noun|Fußmatte|doormat|felpudo|die|Fußmatten
+a2|house|noun|Heizkörper|radiator|radiador|der|Heizkörper
+a2|house|noun|Regenrinne|rain gutter|bajante|die|Regenrinnen
+a2|house|noun|Stromkasten|fuse box|caja de fusibles|der|Stromkästen
+a2|furniture|noun|Vitrine|display cabinet|vitrina|die|Vitrinen
+a2|furniture|noun|Lattenrost|slatted frame|somier|der|Lattenroste
+a2|furniture|noun|Couchtisch|coffee table|mesa de centro|der|Couchtische
+a2|furniture|noun|Esstisch|dining table|mesa de comedor|der|Esstische
+a2|furniture|noun|Sitzbank|bench|banco|die|Sitzbänke
+a2|furniture|noun|Nachttischlampe|bedside lamp|lámpara de mesita|die|Nachttischlampen
+a2|furniture|noun|Bettgestell|bed frame|marco de cama|das|Bettgestelle
+a2|furniture|noun|Bücherregal|bookshelf|estantería|das|Bücherregale
+a2|furniture|noun|Sessel|armchair|sillón|der|Sessel
+a2|kitchen|noun|Reibe|grater|rallador|die|Reiben
+a2|kitchen|noun|Korkenzieher|corkscrew|sacacorchos|der|Korkenzieher
+a2|kitchen|noun|Sieb|sieve|colador|das|Siebe
+a2|kitchen|noun|Schneidebrett|cutting board|tabla de cortar|das|Schneidebretter
+a2|kitchen|noun|Messbecher|measuring cup|taza medidora|der|Messbecher
+a2|kitchen|noun|Salzstreuer|salt shaker|salero|der|Salzstreuer
+a2|kitchen|noun|Dosenöffner|can opener|abrelatas|der|Dosenöffner
+a2|kitchen|noun|Backblech|baking tray|bandeja de horno|das|Backbleche
+a2|kitchen|noun|Schöpfkelle|ladle|cucharón|die|Schöpfkellen
+a2|city|noun|Fußgängerzone|pedestrian zone|zona peatonal|die|Fußgängerzonen
+a2|city|noun|Bushaltestelle|bus stop|parada de autobús|die|Bushaltestellen
+a2|city|noun|Baustelle|construction site|obra|die|Baustellen
+a2|city|noun|Altstadt|old town|casco antiguo|die|Altstädte
+a2|city|noun|Sehenswürdigkeit|sight|lugar de interés|die|Sehenswürdigkeiten
+a2|city|noun|Polizeiwache|police station|comisaría|die|Polizeiwachen
+a2|city|noun|Einkaufszentrum|shopping mall|centro comercial|das|Einkaufszentren
+a2|city|noun|Springbrunnen|fountain|fuente|der|Springbrunnen
+a2|city|noun|Feuerwache|fire station|parque de bomberos|die|Feuerwachen
+a2|city|noun|Stadtplan|city map|plano de la ciudad|der|Stadtpläne
+a2|transport|noun|U-Bahn|subway|metro|die|U-Bahnen
+a2|transport|noun|Wegweiser|signpost|señal|der|Wegweiser
+a2|transport|noun|Straßenbahn|tram|tranvía|die|Straßenbahnen
+a2|transport|noun|S-Bahn|commuter train|tren suburbano|die|S-Bahnen
+a2|transport|noun|Anschluss|connection|conexión|der|Anschlüsse
+a2|transport|noun|Umsteigen|transfer|transbordo|das|
+a2|transport|noun|Reisebus|coach bus|autobús de larga distancia|der|Reisebusse
+a2|transport|noun|Fahrkartenautomat|ticket machine|máquina de billetes|der|Fahrkartenautomaten
+a2|transport|noun|Fahrplan|timetable|horario|der|Fahrpläne
+a2|school|noun|Klassenzimmer|classroom|aula|das|Klassenzimmer
+a2|school|noun|Zeugnis|report card|boletín de notas|das|Zeugnisse
+a2|school|noun|Stundenplan|class schedule|horario escolar|der|Stundenpläne
+a2|school|noun|Studiengebühr|tuition fee|matrícula|die|Studiengebühren
+a2|school|noun|Schulhof|schoolyard|patio escolar|der|Schulhöfe
+a2|school|noun|Schulbuch|textbook|libro de texto|das|Schulbücher
+a2|school|noun|Schulranzen|school backpack|mochila escolar|der|Schulranzen
+a2|school|noun|Hausarbeit|term paper|trabajo escrito|die|Hausarbeiten
+a2|school|noun|Referat|presentation talk|exposición|das|Referate
+a2|jobs|noun|Rezeptionist|receptionist|recepcionista|der|Rezeptionisten
+a2|jobs|noun|Krankenschwester|nurse|enfermera|die|Krankenschwestern
+a2|jobs|noun|Gärtner|gardener|jardinero|der|Gärtner
+a2|jobs|noun|Verkäufer|sales clerk|vendedor|der|Verkäufer
+a2|jobs|noun|Projektleiter|project manager|jefe de proyecto|der|Projektleiter
+a2|jobs|noun|Bäcker|baker|panadero|der|Bäcker
+a2|jobs|noun|Elektriker|electrician|electricista|der|Elektriker
+a2|jobs|noun|Klempner|plumber|fontanero|der|Klempner
+a2|jobs|noun|Lagerarbeiter|warehouse worker|almacenista|der|Lagerarbeiter
+a2|nature|noun|Ufer|shore|orilla|das|Ufer
+a2|nature|noun|Wasserfall|waterfall|cascada|der|Wasserfälle
+a2|nature|noun|Lichtung|clearing|claro|die|Lichtungen
+a2|nature|noun|Heide|heath|brezal|die|Heiden
+a2|nature|noun|Steppe|steppe|estepa|die|Steppen
+a2|nature|noun|Delta|river delta|delta|das|Deltas
+a2|nature|noun|Felsen|rock formation|roca|der|Felsen
+a2|nature|noun|Tierwelt|wildlife|fauna|die|
+a2|nature|noun|Quelle|spring|manantial|die|Quellen
+a2|weather|noun|Glatteis|black ice|hielo invisible|das|
+a2|weather|noun|Wetterbericht|weather report|informe del tiempo|der|Wetterberichte
+a2|weather|noun|Frühling|spring season|primavera|der|Frühlinge
+a2|weather|phrase|Es gibt Sturm|there is a storm|hay tormenta
+a2|weather|phrase|Es ist bewölkt|it is cloudy|está nublado
+a2|weather|noun|Nebel|fog|niebla|der|
+a2|weather|noun|Herbst|autumn|otoño|der|Herbste
+a2|weather|noun|Luftdruck|air pressure|presión atmosférica|der|Luftdrücke
+a2|weather|noun|Gewitter|thunderstorm|tormenta|das|Gewitter
+a2|time|other|vorher|beforehand|antes
+a2|time|noun|Feiertag|public holiday|día festivo|der|Feiertage
+a2|time|noun|Werktag|workday|día laborable|der|Werktage
+a2|time|noun|Zeitzone|time zone|huso horario|die|Zeitzonen
+a2|time|noun|Frist|deadline|plazo|die|Fristen
+a2|time|noun|Mittagspause|lunch break|pausa del almuerzo|die|Mittagspausen
+a2|time|other|danach|afterward|después
+a2|time|other|bald|soon|pronto
+a2|time|noun|Zeitpunkt|point in time|momento|der|Zeitpunkte
+a2|feelings|adj|eifersüchtig|jealous|celoso
+a2|feelings|adj|verzweifelt|desperate|desesperado
+a2|feelings|adj|verlegen|embarrassed|avergonzado
+a2|feelings|adj|unsicher|insecure|inseguro
+a2|feelings|adj|dankbar|grateful|agradecido
+a2|feelings|adj|neugierig|curious|curioso
+a2|feelings|adj|zufrieden|content|satisfecho
+a2|feelings|adj|erschöpft|exhausted|agotado
+a2|feelings|adj|erleichtert|relieved|aliviado
+a2|verbs|verb|ausprobieren|to try out|probar
+a2|verbs|verb|mitnehmen|to take along|llevar consigo
+a2|verbs|verb|spazieren gehen|to go for a walk|pasear
+a2|verbs|verb|bestellen|to order|pedir
+a2|verbs|verb|reparieren|to repair|reparar
+a2|verbs|verb|organisieren|to organize|organizar
+a2|verbs|verb|umziehen|to move house|mudarse
+a2|verbs|verb|vergessen|to forget|olvidar
+a2|verbs|verb|überprüfen|to check|comprobar
+a2|verbs|verb|anrufen|to phone|llamar por teléfono
+a2|adjectives|adj|unnötig|unnecessary|innecesario
+a2|adjectives|adj|modern|modern|moderno
+a2|adjectives|adj|mutig|brave|valiente
+a2|adjectives|adj|nützlich|useful|útil
+a2|adjectives|adj|zuverlässig|reliable|fiable
+a2|adjectives|adj|ehrlich|honest|honesto
+a2|adjectives|adj|traditionell|traditional|tradicional
+a2|adjectives|adj|geduldig|patient|paciente
+a2|adjectives|adj|bequem|comfortable|cómodo
+a2|adjectives|adj|verantwortungsvoll|responsible|responsable
+a2|travel|phrase|Wir fahren los|we are setting off|nos vamos
+a2|travel|noun|Zwischenstopp|layover|escala|der|Zwischenstopps
+a2|travel|noun|Fährticket|ferry ticket|billete de ferry|das|Fährtickets
+a2|travel|noun|Bordkarte|boarding pass|tarjeta de embarque|die|Bordkarten
+a2|travel|noun|Mietwagen|rental car|coche de alquiler|der|Mietwagen
+a2|travel|noun|Jugendherberge|youth hostel|albergue juvenil|die|Jugendherbergen
+a2|travel|noun|Sicherheitskontrolle|security check|control de seguridad|die|Sicherheitskontrollen
+a2|travel|noun|Reiseführer|travel guidebook|guía de viaje|der|Reiseführer
+a2|travel|noun|Rückreise|return journey|viaje de regreso|die|Rückreisen
+a2|travel|noun|Reiseversicherung|travel insurance|seguro de viaje|die|Reiseversicherungen
+a2|shop|noun|Kundenkarte|loyalty card|tarjeta de cliente|die|Kundenkarten
+a2|shop|noun|Kaufhaus|department store|grandes almacenes|das|Kaufhäuser
+a2|shop|noun|Probierkabine|fitting room|probador|die|Probierkabinen
+a2|shop|noun|Lieferung|delivery|entrega|die|Lieferungen
+a2|shop|noun|Schuhgeschäft|shoe store|zapatería|das|Schuhgeschäfte
+a2|shop|noun|Inventur|stocktaking|inventario|die|Inventuren
+a2|shop|noun|Feinkostladen|delicatessen|tienda gourmet|der|Feinkostläden
+a2|shop|noun|Sonderangebot|special offer|oferta especial|das|Sonderangebote
+a2|shop|noun|Umtausch|exchange|cambio|der|Umtausche
+a2|hobbies|noun|Fernglas|binoculars|prismáticos|das|Ferngläser
+a2|hobbies|noun|Stricknadel|knitting needle|aguja de tejer|die|Stricknadeln
+a2|hobbies|noun|Pinselset|brush set|set de pinceles|das|Pinselsets
+a2|hobbies|noun|Kreuzworträtsel|crossword|crucigrama|das|Kreuzworträtsel
+a2|hobbies|noun|Modellbau|model building|modelismo|der|
+a2|hobbies|noun|Vinylplatte|vinyl record|disco de vinilo|die|Vinylplatten
+a2|hobbies|noun|Angelrute|fishing rod|caña de pescar|die|Angelruten
+a2|hobbies|noun|Konzertkarte|concert ticket|entrada de concierto|die|Konzertkarten
+a2|hobbies|noun|Brettspiel|board game|juego de mesa|das|Brettspiele
+a2|tech|noun|Speicherkarte|memory card|tarjeta de memoria|die|Speicherkarten
+a2|tech|noun|Cloudspeicher|cloud storage|almacenamiento en la nube|der|
+a2|tech|noun|Router|router|router|der|Router
+a2|tech|noun|Ladekabel|charging cable|cable de carga|das|Ladekabel
+a2|tech|noun|Bluetooth|Bluetooth|bluetooth|das|
+a2|tech|noun|Drucker|printer|impresora|der|Drucker
+a2|tech|noun|Festplatte|hard drive|disco duro|die|Festplatten
+a2|tech|noun|Akku|battery pack|batería|der|Akkus
+a2|tech|noun|Passwort|password|contraseña|das|Passwörter
+a2|lands|other|Schweden|Sweden|Suecia
+a2|lands|other|Kroatien|Croatia|Croacia
+a2|lands|other|Niederlande|Netherlands|Países Bajos
+a2|lands|other|Norwegen|Norway|Noruega
+a2|lands|other|Türkei|Turkey|Turquía
+a2|lands|other|Dänemark|Denmark|Dinamarca
+a2|lands|other|Tschechien|Czechia|Chequia
+a2|lands|other|Irland|Ireland|Irlanda
+a2|lands|other|Belgien|Belgium|Bélgica
+a2|bath|noun|Wattestäbchen|cotton swab|bastoncillo|das|Wattestäbchen
+a2|bath|noun|Duschgel|shower gel|gel de ducha|das|Duschgele
+a2|bath|noun|Badematte|bath mat|alfombra de baño|die|Badematten
+a2|bath|noun|Zahnseide|dental floss|hilo dental|die|
+a2|bath|noun|Rasierer|razor|maquinilla de afeitar|der|Rasierer
+a2|bath|noun|Waschlappen|washcloth|paño de lavar|der|Waschlappen
+a2|bath|noun|Haarbürste|hairbrush|cepillo de pelo|die|Haarbürsten
+a2|bath|noun|Feuchtigkeitscreme|moisturizer|crema hidratante|die|Feuchtigkeitscremes
+a2|bath|noun|Nagelschere|nail scissors|tijeras de uñas|die|Nagelscheren
+a2|office|noun|Unterschrift|signature|firma|die|Unterschriften
+a2|office|noun|Projektplan|project plan|plan de proyecto|der|Projektpläne
+a2|office|noun|Dringlichkeit|urgency|urgencia|die|
+a2|office|noun|Schreibtischlampe|desk lamp|lámpara de escritorio|die|Schreibtischlampen
+a2|office|phrase|Ich bin im Termin|I'm in a meeting|estoy en una reunión
+a2|office|noun|Gehaltsabrechnung|pay slip|nómina|die|Gehaltsabrechnungen
+a2|office|noun|Protokoll|minutes|acta|das|Protokolle
+a2|office|noun|Dienstreise|business trip|viaje de negocios|die|Dienstreisen
+a2|office|noun|Kopierer|copier|fotocopiadora|der|Kopierer
+a2|office|noun|Stempel|stamp|sello|der|Stempel
+a2|music|noun|Playlist|playlist|lista de reproducción|die|Playlists
+a2|music|noun|Verstärker|amplifier|amplificador|der|Verstärker
+a2|music|noun|Bass|bass guitar|bajo|der|Bässe
+a2|music|noun|Blasinstrument|wind instrument|instrumento de viento|das|Blasinstrumente
+a2|music|noun|Einstieg|intro|introducción|der|Einstiege
+a2|music|noun|Probe|rehearsal|ensayo|die|Proben
+a2|music|noun|Text|lyrics|letra|der|Texte
+a2|music|noun|Chor|choir|coro|der|Chöre
+a2|music|noun|Streichquartett|string quartet|cuarteto de cuerdas|das|Streichquartette
+a2|sport|noun|Elfmeter|penalty kick|penalti|der|Elfmeter
+a2|sport|noun|Mannschaftskapitän|team captain|capitán de equipo|der|Mannschaftskapitäne
+a2|sport|noun|Ausdauertraining|endurance training|entrenamiento de resistencia|das|
+a2|sport|noun|Sporthalle|gymnasium|polideportivo|die|Sporthallen
+a2|sport|noun|Wettkampfrichter|competition judge|juez de competición|der|Wettkampfrichter
+a2|sport|noun|Aufwärmen|warm-up|calentamiento|das|
+a2|sport|noun|Freistoß|free kick|tiro libre|der|Freistöße
+a2|sport|noun|Turnschuh|sneaker|zapatilla deportiva|der|Turnschuhe
+a2|sport|noun|Jogginghose|sweatpants|pantalón de chándal|die|Jogginghosen
+a2|health|noun|Impfung|vaccination|vacuna|die|Impfungen
+a2|health|noun|Blutdruck|blood pressure|presión arterial|der|
+a2|health|noun|Apotheker|pharmacist|farmacéutico|der|Apotheker
+a2|health|noun|Physiotherapie|physiotherapy|fisioterapia|die|
+a2|health|phrase|Mir geht es besser|I'm feeling better|me siento mejor
+a2|health|noun|Untersuchung|examination|examen médico|die|Untersuchungen
+a2|health|noun|Allergie|allergy|alergia|die|Allergien
+a2|health|noun|Erste Hilfe|first aid|primeros auxilios|die|
+a2|health|noun|Vorsorge|preventive care|prevención|die|
+a2|health|noun|Verband|bandage|vendaje|der|Verbände
+a2|tools|noun|Farbeimer|paint bucket|cubo de pintura|der|Farbeimer
+a2|tools|noun|Pinsel|paintbrush|pincel|der|Pinsel
+a2|tools|noun|Schraubenzieher|screwdriver|destornillador|der|Schraubenzieher
+a2|tools|noun|Maßband|tape measure|cinta métrica|das|Maßbänder
+a2|tools|noun|Wasserwaage|spirit level|nivel de burbuja|die|Wasserwaagen
+a2|tools|noun|Metallsäge|hacksaw|sierra de metal|die|Metallsägen
+a2|tools|noun|Inbusschlüssel|Allen key|llave Allen|der|Inbusschlüssel
+a2|tools|noun|Bohrmaschine|drill|taladro|die|Bohrmaschinen
+a2|tools|noun|Klebeband|adhesive tape|cinta adhesiva|das|Klebebänder
+a2|garden|noun|Schubkarre|wheelbarrow|carretilla|die|Schubkarren
+a2|garden|noun|Heckenschere|hedge trimmer|cortasetos|die|Heckenscheren
+a2|garden|noun|Grabgabel|garden fork|horquilla de jardín|die|Grabgabeln
+a2|garden|noun|Rasenmäher|lawn mower|cortacésped|der|Rasenmäher
+a2|garden|noun|Kompost|compost|compost|der|
+a2|garden|noun|Gartenhaus|garden shed|caseta de jardín|das|Gartenhäuser
+a2|garden|noun|Regentonne|rain barrel|barril de lluvia|die|Regentonnen
+a2|garden|noun|Laub|foliage|follaje|das|
+a2|garden|noun|Unkraut|weed|hierba mala|das|Unkräuter
+a2|money|noun|Sparkonto|savings account|cuenta de ahorros|das|Sparkonten
+a2|money|noun|Überweisung|bank transfer|transferencia|die|Überweisungen
+a2|money|noun|Budget|budget|presupuesto|das|Budgets
+a2|money|noun|Kreditkarte|credit card|tarjeta de crédito|die|Kreditkarten
+a2|money|noun|Inflation|inflation|inflación|die|Inflationen
+a2|money|noun|Rückzahlung|repayment|reembolso|die|Rückzahlungen
+a2|money|noun|Spesen|expenses|gastos|die|
+a2|money|noun|Ratenzahlung|installment payment|pago a plazos|die|Ratenzahlungen
+a2|money|noun|Girokonto|checking account|cuenta corriente|das|Girokonten
+a2|materials|noun|Edelstahl|stainless steel|acero inoxidable|der|
+a2|materials|noun|Leder|leather|cuero|das|
+a2|materials|noun|Bronze|bronze|bronce|die|
+a2|materials|noun|Gummi|rubber|goma|der|
+a2|materials|noun|Baumwolle|cotton|algodón|die|
+a2|materials|noun|Keramik|ceramic|cerámica|die|
+a2|materials|noun|Ton|clay|arcilla|der|
+a2|materials|noun|Gips|plaster|yeso|der|
+a2|materials|noun|Beton|concrete|hormigón|der|
+a2|shapes|noun|Spirale|spiral|espiral|die|Spiralen
+a2|shapes|noun|Kegel|cone|cono|der|Kegel
+a2|shapes|noun|Trapez|trapezoid|trapecio|das|Trapeze
+a2|shapes|noun|Oval|oval|óvalo|das|Ovale
+a2|shapes|noun|Zylinder|cylinder|cilindro|der|Zylinder
+a2|shapes|noun|Raute|diamond shape|rombo|die|Rauten
+a2|shapes|noun|Sternform|star shape|forma de estrella|die|Sternformen
+a2|shapes|noun|Pyramide|pyramid|pirámide|die|Pyramiden
+a2|shapes|noun|Halbkreis|semicircle|semicírculo|der|Halbkreise

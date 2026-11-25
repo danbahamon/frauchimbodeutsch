@@ -238,6 +238,16 @@ button { transition: transform .18s ease, background-color .2s ease, border-colo
   min-width: 0;
 }
 .suggest { grid-template-columns: 1fr; border-left: 6px solid var(--ink); }
+.suggest.coral { border-left-color: var(--coral); }
+.group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 22px 0 10px;
+}
+.word-row[data-done='true'] {
+  border-left: 4px solid var(--teal);
+}
 .feature small, .action small, .suggest small, .pick small, .cat-card small { display: block; }
 .well {
   width: 46px;

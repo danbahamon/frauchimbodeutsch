@@ -27,6 +27,7 @@ function cleanStat(raw: unknown, version: 1 | 2 | 3): WordStat | null {
   const stat = raw as Partial<WordStat>
   const level = migrateShelf(Number(stat.level) || 1, version)
   const cleanHits = Math.max(0, Number(stat.cleanHits) || 0)
+  const lastMissedAt = typeof stat.lastMissedAt === 'number' && Number.isFinite(stat.lastMissedAt) ? stat.lastMissedAt : undefined
   return {
     level,
     clean: clamp(Number(stat.clean) || 0, 0, 3),
@@ -34,6 +35,8 @@ function cleanStat(raw: unknown, version: 1 | 2 | 3): WordStat | null {
     correct: Math.max(0, Number(stat.correct) || cleanHits),
     cleanHits,
     misses: Math.max(0, Number(stat.misses) || 0),
+    shelfMisses: clamp(Number(stat.shelfMisses) || 0, 0, 3),
+    ...(lastMissedAt ? { lastMissedAt } : {}),
     mastered: Boolean(stat.mastered) && level === MAX_LEVEL,
   }
 }

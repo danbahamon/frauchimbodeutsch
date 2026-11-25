@@ -12,12 +12,14 @@ interface Props {
   locale: Locale
   sound: boolean
   voice: boolean
+  gradeIds?: string[]
   onGrade: (wordId: string, errors: number, correct: boolean) => void
   onDone: () => void
 }
 
-export function MatchGame({ words, mode, bridge, locale, sound, voice, onGrade, onDone }: Props) {
+export function MatchGame({ words, mode, bridge, locale, sound, voice, gradeIds, onGrade, onDone }: Props) {
   const cards = useMemo(() => matchCards(words, bridge), [words, bridge])
+  const graded = useMemo(() => (gradeIds?.length ? new Set(gradeIds) : null), [gradeIds])
   const [picked, setPicked] = useState<string[]>([])
   const [matched, setMatched] = useState<string[]>([])
   const [bad, setBad] = useState(false)
@@ -65,7 +67,7 @@ export function MatchGame({ words, mode, bridge, locale, sound, voice, onGrade, 
       setPicked([])
       playFeedback(true, sound)
       if (voice) speakGerman(card.speak, true)
-      onGrade(card.wordId, errors, true)
+      if (!graded || graded.has(card.wordId)) onGrade(card.wordId, errors, true)
       if (nextMatched.length === words.length && !done.current) {
         done.current = true
         timer.current = window.setTimeout(onDone, 420)

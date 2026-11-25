@@ -11,6 +11,7 @@ interface ShareJob {
 
 interface Solved {
   leveled: boolean
+  demoted: boolean
   mastered: boolean
   level: number
 }
@@ -103,10 +104,10 @@ export function Provider({ children }: { children: ReactNode }) {
           profile: current.profile ? { ...current.profile, ...patch } : current.profile,
         })),
       recordWord: (wordId, gameLevel, errors, correct) => {
-        let result: Solved = { leveled: false, mastered: false, level: 1 }
+        let result: Solved = { leveled: false, demoted: false, mastered: false, level: 1 }
         setData((current) => {
           const applied = applyStat({ stat: readStat(current.words, wordId), gameLevel, errors, correct })
-          result = { leveled: applied.leveled, mastered: applied.masteredNow, level: applied.stat.level }
+          result = { leveled: applied.leveled, demoted: applied.demoted, mastered: applied.masteredNow, level: applied.stat.level }
           return { ...current, words: { ...current.words, [wordId]: applied.stat } }
         })
         return result

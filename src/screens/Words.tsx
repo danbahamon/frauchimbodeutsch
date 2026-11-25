@@ -18,7 +18,7 @@ function WordLine({ id }: { id: string }) {
       <div>
         <Lemma word={word} />
         <p>{gloss(word, 'en')} · {gloss(word, 'es')}</p>
-        {word.pl ? <p className="fine">{t(locale, 'common.plural')}: die {word.pl}</p> : null}
+        <p className="fine">{t(locale, 'common.cefr', { level: word.cefr.toUpperCase() })}{word.pl ? ` · ${t(locale, 'common.plural')}: die ${word.pl}` : ''}</p>
       </div>
       <Pips stat={readStat(data.words, word.id)} />
       <SpeakButton text={deLabel(word)} label={t(locale, 'play.listen')} />

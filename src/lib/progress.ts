@@ -1,7 +1,13 @@
 import { CATEGORIES } from '../data/categories'
 import { WORD_BY_ID, WORDS } from '../data/words'
 import { shuffle } from './text'
-import type { Source, StatMap, TargetWord, Word, WordStat } from './types'
+import type { Cefr, Source, StatMap, TargetWord, Word, WordStat } from './types'
+import { CEFR_LEVELS } from './types'
+
+export function cefrRank(cefr: Cefr) {
+  const index = CEFR_LEVELS.indexOf(cefr)
+  return index < 0 ? CEFR_LEVELS.indexOf('a2') : index
+}
 
 export const SHELF = {
   open: 1,
@@ -19,6 +25,7 @@ export const MAX_LEVEL = 9
 export const LEVELS = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 export const UNLOCK_AT = 50
 export const CLEAN_NEED = 3
+export const DROP_AT = 3
 
 const FROM_FIVE = [0, 1, 2, 5, 6, 8]
 const FROM_EIGHT = [0, 1, 2, 4, 5, 6, 7, 8, 9]
@@ -42,7 +49,7 @@ export function isBoard(level: number) {
 }
 
 export function blankStat(): WordStat {
-  return { level: 1, clean: 0, seen: 0, correct: 0, cleanHits: 0, misses: 0, mastered: false }
+  return { level: 1, clean: 0, seen: 0, correct: 0, cleanHits: 0, misses: 0, shelfMisses: 0, mastered: false }
 }
 
 export function readStat(stats: StatMap, id: string) {
@@ -54,40 +61,65 @@ export interface ApplyInput {
   gameLevel: number
   errors: number
   correct: boolean
+  now?: number
 }
 
 export function applyStat(input: ApplyInput) {
   const prev = input.stat
   const wrong = input.correct ? Math.max(0, input.errors) : Math.max(input.errors, 1)
+  const clean = input.correct && (input.gameLevel === SHELF.memory || input.errors === 0)
+  const now = input.now ?? Date.now()
   const counted: WordStat = {
     ...prev,
     seen: prev.seen + 1,
     correct: prev.correct + (input.correct ? 1 : 0),
     cleanHits: prev.cleanHits + (input.correct && input.errors === 0 ? 1 : 0),
     misses: prev.misses + wrong,
+    shelfMisses: prev.shelfMisses ?? 0,
   }
-  if (prev.level !== input.gameLevel) return { stat: counted, leveled: false, masteredNow: false }
-  const clean = input.correct && (input.gameLevel === SHELF.memory || input.errors === 0)
-  const counts = !prev.mastered
+  if (wrong > 0) counted.lastMissedAt = now
+  else if (input.correct) delete counted.lastMissedAt
+  if (prev.level !== input.gameLevel) {
+    return { stat: counted, leveled: false, demoted: false, masteredNow: false }
+  }
   const next: WordStat = counted
   let leveled = false
+  let demoted = false
   let masteredNow = false
-  if (counts && clean) {
-    const streak = prev.clean + 1
-    if (streak >= CLEAN_NEED) {
-      if (prev.level < MAX_LEVEL) {
-        next.level = prev.level + 1
+  if (clean) {
+    if (!prev.mastered) {
+      const streak = prev.clean + 1
+      if (streak >= CLEAN_NEED) {
+        if (prev.level < MAX_LEVEL) {
+          next.level = prev.level + 1
+          next.clean = 0
+          next.shelfMisses = 0
+          leveled = true
+        } else {
+          next.level = MAX_LEVEL
+          next.clean = CLEAN_NEED
+          next.shelfMisses = 0
+          next.mastered = true
+          masteredNow = true
+        }
+      } else next.clean = streak
+    }
+  } else {
+    next.clean = 0
+    if (!input.correct) {
+      const missesOnShelf = (prev.shelfMisses ?? 0) + 1
+      if (missesOnShelf >= DROP_AT && prev.level > 1) {
+        next.level = prev.level - 1
         next.clean = 0
-        leveled = true
+        next.shelfMisses = 0
+        next.mastered = false
+        demoted = true
       } else {
-        next.level = MAX_LEVEL
-        next.clean = CLEAN_NEED
-        next.mastered = true
-        masteredNow = true
+        next.shelfMisses = prev.level > 1 ? missesOnShelf : Math.min(missesOnShelf, DROP_AT)
       }
-    } else next.clean = streak
-  } else if (counts) next.clean = 0
-  return { stat: next, leveled, masteredNow }
+    }
+  }
+  return { stat: next, leveled, demoted, masteredNow }
 }
 
 export function countReached(stats: StatMap, level: number) {
@@ -174,14 +206,16 @@ export function collect(stats: StatMap, level: number, opts?: { cat?: string; id
 
 export function orderPool(pool: readonly Word[], stats: StatMap, level: number, remix: boolean) {
   if (remix) return shuffle(pool)
-  const prefer: Word[] = []
-  const rest: Word[] = []
+  // Lower CEFR bands first; within a band, unfinished shelf words before the rest.
+  const active: Word[][] = CEFR_LEVELS.map(() => [])
+  const idle: Word[][] = CEFR_LEVELS.map(() => [])
   for (const word of pool) {
+    const rank = cefrRank(word.cefr)
     const stat = readStat(stats, word.id)
-    if (stat.level === level && !stat.mastered) prefer.push(word)
-    else rest.push(word)
+    if (stat.level === level && !stat.mastered) active[rank].push(word)
+    else idle[rank].push(word)
   }
-  return [...shuffle(prefer), ...shuffle(rest)]
+  return [...active.flatMap((group) => shuffle(group)), ...idle.flatMap((group) => shuffle(group))]
 }
 
 export function planHands(words: readonly Word[], level: number) {
@@ -212,27 +246,128 @@ export function nextLocked(stats: StatMap) {
 export interface PlayHand {
   level: number
   words: Word[]
+  gradeIds?: string[]
 }
 
-export function testHands(stats: StatMap, items: readonly TargetWord[], exam: boolean): PlayHand[] {
-  const buckets = new Map<number, Word[]>()
+function padBoard(picked: Word[], items: readonly TargetWord[], preferOutside = false): PlayHand['words'] {
+  const taken = new Set(picked.map((w) => w.id))
+  const sheetIds = new Set(items.map((item) => item.id))
+  const want = Math.max(0, 4 - picked.length)
+  const decoys: Word[] = []
+  if (!preferOutside) {
+    for (const item of items) {
+      if (taken.has(item.id)) continue
+      const w = WORD_BY_ID.get(item.id)
+      if (w) {
+        decoys.push(w)
+        taken.add(w.id)
+      }
+    }
+  }
+  let filler = shuffle(preferOutside
+    ? WORDS.filter((w) => !taken.has(w.id) && !sheetIds.has(w.id))
+    : WORDS.filter((w) => !taken.has(w.id)))
+  const pickedDecoys = shuffle(decoys).slice(0, want)
+  if (pickedDecoys.length < want) {
+    pickedDecoys.push(...filler.slice(0, want - pickedDecoys.length))
+  }
+  return shuffle([...picked, ...pickedDecoys])
+}
+
+export function pendingSummary(stats: StatMap, items: readonly TargetWord[]) {
+  let count = 0
+  let nextLevel: number | null = null
+  for (const item of items) {
+    if (!WORD_BY_ID.has(item.id)) continue
+    const now = readStat(stats, item.id).level
+    const target = Math.min(MAX_LEVEL, Math.max(1, item.target || 1))
+    if (now >= target) continue
+    count += 1
+    if (nextLevel === null || now < nextLevel) nextLevel = now
+  }
+  return { count, nextLevel }
+}
+
+export function nextPendingHand(stats: StatMap, items: readonly TargetWord[]): PlayHand | null {
+  let minLevel: number | null = null
+  const pending: { word: Word; now: number }[] = []
   for (const item of items) {
     const word = WORD_BY_ID.get(item.id)
     if (!word) continue
     const now = readStat(stats, word.id).level
     const target = Math.min(MAX_LEVEL, Math.max(1, item.target || 1))
-    if (!exam && now >= target) continue
-    const game = exam ? target : now
-    const list = buckets.get(game) ?? []
-    list.push(word)
-    buckets.set(game, list)
+    if (now >= target) continue
+    pending.push({ word, now })
+    if (minLevel === null || now < minLevel) minLevel = now
   }
-  const hands: PlayHand[] = []
-  for (const level of [...buckets.keys()].sort((a, b) => a - b)) {
-    const words = buckets.get(level) ?? []
-    for (const hand of planHands(shuffle(words), level)) hands.push({ level, words: hand })
+  if (minLevel === null) return null
+  const level = minLevel
+  const pool = shuffle(pending.filter((entry) => entry.now === level).map((entry) => entry.word))
+  const picked = planHands(pool, level)[0] ?? []
+  if (!picked.length) return null
+  if (isBoard(level) && picked.length < 2) {
+    return { level, words: padBoard(picked, items), gradeIds: picked.map((w) => w.id) }
   }
-  return hands
+  return { level, words: picked }
+}
+
+export function simTestHands(items: readonly TargetWord[]): PlayHand[] {
+  const boards = new Map<number, Word[]>()
+  const singles: PlayHand[] = []
+  for (const item of items) {
+    const word = WORD_BY_ID.get(item.id)
+    if (!word) continue
+    const target = Math.min(MAX_LEVEL, Math.max(1, item.target || 1))
+    if (isBoard(target)) {
+      const list = boards.get(target) ?? []
+      list.push(word)
+      boards.set(target, list)
+    } else {
+      singles.push({ level: target, words: [word] })
+    }
+  }
+  const hands: PlayHand[] = [...singles]
+  for (const [level, words] of boards) {
+    for (const chunk of planHands(shuffle(words), level)) {
+      if (chunk.length < 2) {
+        hands.push({ level, words: padBoard(chunk, items, true), gradeIds: chunk.map((w) => w.id) })
+      } else {
+        hands.push({ level, words: chunk })
+      }
+    }
+  }
+  return shuffle(hands)
+}
+
+export function testHands(stats: StatMap, items: readonly TargetWord[], exam: boolean): PlayHand[] {
+  if (exam) return simTestHands(items)
+  const hand = nextPendingHand(stats, items)
+  return hand ? [hand] : []
+}
+
+export function recentMissed(stats: StatMap) {
+  const groups = new Map<number, { ids: string[]; latest: number }>()
+  for (const word of WORDS) {
+    const stat = stats[word.id]
+    if (!stat || !stat.lastMissedAt) continue
+    const entry = groups.get(stat.level) ?? { ids: [], latest: 0 }
+    entry.ids.push(word.id)
+    if (stat.lastMissedAt > entry.latest) entry.latest = stat.lastMissedAt
+    groups.set(stat.level, entry)
+  }
+  let best: { level: number; ids: string[]; latest: number } | null = null
+  for (const [level, entry] of groups) {
+    entry.ids.sort((a, b) => (stats[b]?.lastMissedAt ?? 0) - (stats[a]?.lastMissedAt ?? 0))
+    if (!best || entry.latest > best.latest) best = { level, ids: entry.ids.slice(0, 12), latest: entry.latest }
+  }
+  if (!best) return null
+  let playIds = best.ids
+  if (isBoard(best.level) && playIds.length < 2) {
+    const extra = collect(stats, best.level).filter((word) => !playIds.includes(word.id))
+    if (!extra.length) return null
+    playIds = [...playIds, ...shuffle(extra).slice(0, 3).map((word) => word.id)]
+  }
+  return { level: best.level, count: best.ids.length, ids: playIds }
 }
 
 export function almostWords(stats: StatMap) {
